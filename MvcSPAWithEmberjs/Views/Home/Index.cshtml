@@ -14,15 +14,18 @@
               target="TodoEmberApp.todoListsController"
               action="addTodoList"}}Add Todo list{{/view}}
 
-        {{#each TodoEmberApp.todoListsController}}
-            {{#view TodoEmberApp.TodoListView contentBinding="this" tagName="article" classNames="todoList"}}
-            
-                 {{TodoListId}}:
-                 {{#view Ember.TextField valueBinding="Title"}}
-            
-                 {{/view}}
-            {{/view}}
-        {{/each}}
+        <section id="lists">
+            {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
+                <header>
+                    <form data-bind="validate: true">
+                        {{view.content.TodoListId}}:
+                            {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.Title" itemClassNames="required" }}
+                        {{/view}}
+                    </form>
+                </header>
+                <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="view.content"}}>X</a>
+            {{/collection}}
+        </section>
 
         </script>
 	  
@@ -31,6 +34,7 @@
         </script>
                 
 @*
+        <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="TodoEmberApp.todoListsController"}}>Save</a>
     
         {{#each TodoEmberApp.todoListsController}}
             {{#view TodoEmberApp.TodoListView contentBinding="this" tagName="article" classNames="todoList"}}
@@ -61,21 +65,15 @@
             {{/view}}
         {{/each}}
 
-
+    
         {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
               <form data-bind="validate: true">
-                {{content.TodoListId}}:
-                {{#view TodoEmberApp.CreateTodoView valueBinding="content.Title" itemClassNames="required" }}
-                    {{#view TodoEmberApp.CreateTodoView valueBinding="Title"}}
+                {{view.content.TodoListId}}:
+                {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.Title" itemClassNames="required" }}
                 {{/view}}
               </form>
         {{/collection}}
-
-  {{#collection contentBinding="Todos.todosController" tagName="ul" itemClassBinding="content.isDone"}}
-    {{view Em.Checkbox titleBinding="content.title"
-        valueBinding="content.isDone"}}
-  {{/collection}}
-
+    
 
 
         <p class="error" data-bind="text: error"></p>
@@ -127,28 +125,6 @@
             <p>Already signed up? <a id="showLogin">Log in</a></p>
         </div>
     }
-</div>
-
-<div>
-
-    <h2>Currently working:</h2>
-    <ul>
-        <li>Add works, get webapi works</li>
-        <li>changed todo.datacontext.js so that it should work for all kind of frameworks without the need to change this file anymore</li>
-    </ul>
-
-    <h2>Current blocking problem:</h2>
-    <h3>default with Ember-1.0.0=pre.2:</h3>
-    <ul>
-        <li>could not display the getted TaskListId title, can display the TaskListId</li>
-        <li>Displayed area went to the bottom instead of in the middle section</li>
-    </ul>
-    <h3>home/WithEmber095.cshtml:</h3>
-    <ul>
-        <li>could not get title change update working properly</li>
-    </ul>
-
-
 </div>
 
 @if (@User.Identity.IsAuthenticated)

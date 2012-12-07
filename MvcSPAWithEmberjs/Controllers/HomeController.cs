@@ -13,9 +13,5 @@ namespace MvcSPAWithEmberjs.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-        public ActionResult WithEmber095()
-        {
-            return View();
-        }
     }
 }

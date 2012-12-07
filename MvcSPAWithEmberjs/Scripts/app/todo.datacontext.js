@@ -85,7 +85,9 @@ window.createTodoAppDataContext = function CreateTodoAppDataContext(toJsonFuncti
     }
 
     // Private
-    function clearErrorMessage(entity) { entity.ErrorMessage(null); }
+    function clearErrorMessage(entity) {
+        entity.ErrorMessage(null);
+    }
     function ajaxRequest(type, url, data) { // Ajax helper
         var options = {
             dataType: "json",

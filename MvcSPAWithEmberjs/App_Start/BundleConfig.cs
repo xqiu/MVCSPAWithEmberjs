@@ -21,7 +21,6 @@ namespace MvcSPAWithEmberjs
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
                 "~/Scripts/handlebars-1.0.0.beta.6.js",
                 "~/Scripts/ember-1.0.0-pre.2.js"));
-                        //"~/Scripts/ember.0.9.5.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
                 "~/Scripts/app/ajaxlogin.js"));

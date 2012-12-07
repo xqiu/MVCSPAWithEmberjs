@@ -27,10 +27,12 @@
         showTodoList: function (todoList) {
             this.unshiftObject(todoList); // Insert new TodoList at the front
 
-            todoList.addObserver('Title', this, 'saveTodoList');
+            todoList.addObserver('Title', todoList, 'saveTodoList');  //todo: every character change will call saveTodoList, how to make it only call during the blur and enter event?
         },
-        deleteTodoList: function (todoList) {
-            content.remove(todoList);
+        deleteTodoList: function (event) {
+
+            var todoList = this.get('content');
+            this.content.removeObject(todoList);
             datacontext.deleteTodoList(todoList)
                 .fail(deleteFailed);
 
@@ -38,9 +40,6 @@
                 showTodoList(todoList); // re-show the restored list
             }
         },
-        saveTodoList: function (todoList) {
-            return datacontext.saveChangedTodoList(todoList.toJson());
-        }
     });
 
     //datacontext.getTodoLists(TodoEmberApp.todoListsController.todoLists, TodoEmberApp.todoListsController.error); // load TodoLists
@@ -137,6 +136,8 @@
         options.hash.valueBinding = path;
         return Ember.Handlebars.helpers.view.call(this, TodoEmberApp.EditField, options);
     });
+
+    TodoEmberApp.initialize();
 
 })(window.todoApp.datacontext);
 

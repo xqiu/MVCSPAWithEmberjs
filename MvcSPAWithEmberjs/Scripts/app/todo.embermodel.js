@@ -15,21 +15,35 @@ TodoEmberApp.TodoList = Ember.Object.extend({
 
     deleteTodo: function () {
         var todoItem = this;
-        return datacontext.deleteTodoItem(todoItem)
+        return window.todoApp.datacontext.deleteTodoItem(todoItem)
              .done(function () { self.Todos.remove(todoItem); });
     },
 
     addTodo: function () {
         var self = this;
         if (self.NewTodoTitle) { // need a title to save
-            var todoItem = datacontext.createTodoItem(
+            var todoItem = window.todoApp.datacontext.createTodoItem(
                 {
                     Title: self.NewTodoTitle,
                     TodoListId: self.TodoListId
                 });
             self.Todos.push(todoItem);
-            datacontext.saveNewTodoItem(todoItem);
+            window.todoApp.datacontext.saveNewTodoItem(todoItem);
             self.NewTodoTitle = "";
+        }
+    },
+    saveTodoList: function () {
+        var self = this;
+        return window.todoApp.datacontext.saveChangedTodoList(self);
+    },
+    deleteTodoList: function (event) {
+        //todo: this function should belong to todo.embercontroller.js, but I don't know how to make the contentBinding and target combination work properly
+        TodoEmberApp.todoListsController.content.removeObject(this);
+        window.todoApp.datacontext.deleteTodoList(this)
+            .fail(deleteFailed);
+
+        function deleteFailed() {
+            showTodoList(this); // todo: re-show the restored list, this function is not defined in this context
         }
     },
 
