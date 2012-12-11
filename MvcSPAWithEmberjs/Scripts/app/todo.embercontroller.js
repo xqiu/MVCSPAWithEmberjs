@@ -1,4 +1,4 @@
-﻿/// <reference path="../ember.0.9.5.min.js" />
+﻿/// <reference path="../ember-1.0.0-pre.2.js" />
 /// <reference path="todo.datacontext.js" />
 /// <reference path="todo.embermodel.js" />
 
@@ -27,7 +27,7 @@
         showTodoList: function (todoList) {
             this.unshiftObject(todoList); // Insert new TodoList at the front
 
-            todoList.addObserver('Title', todoList, 'saveTodoList');  //todo: every character change will call saveTodoList, how to make it only call during the blur and enter event?
+            //todoList.addObserver('Title', todoList, 'saveTodoList');  //todo: every character change will call saveTodoList, how to make it only call during the blur and enter event?
         },
         deleteTodoList: function (event) {
 
@@ -40,148 +40,68 @@
                 showTodoList(todoList); // re-show the restored list
             }
         },
+        findTodoList: function (todoListId) {
+            for (var i = 0; i < this.content.length; i++) {
+                if (this.content[i].TodoListId === todoListId) {
+                    return this.content[i];
+                }
+            }
+            return undefined;
+        },
+        loadTodoList: function () {
+            var self = this;
+            datacontext.getTodoLists(
+                function (mappedTodoLists) {
+                    for (var i = 0; i < mappedTodoLists.length; i++) {
+                        self.pushObject(mappedTodoLists[i]);
+                    }
+                },
+                function (error) {
+                    self.error = error;
+                }
+            ); // load TodoLists
+        }
     });
 
-    //datacontext.getTodoLists(TodoEmberApp.todoListsController.todoLists, TodoEmberApp.todoListsController.error); // load TodoLists
-    datacontext.getTodoLists(
-        function (mappedTodoLists) {
-            for (var i = 0; i < mappedTodoLists.length; i++) {
-                TodoEmberApp.todoListsController.pushObject(mappedTodoLists[i]);
-
-                mappedTodoLists[i].addObserver('Title', mappedTodoLists[i], 'saveTodoList');
-            }
+    TodoEmberApp.todosView = Em.View.extend({
+        deleteTodo: function () {
+            var todoItem = this.content;
+            return window.todoApp.datacontext.deleteTodoItem(todoItem)
+                 .done(function () {
+                     var todoList = TodoEmberApp.todoListsController.findTodoList(todoItem.TodoListId);
+                     todoList.Todos.removeObject(todoItem);
+                 });
         },
-        function (error) {
-            TodoEmberApp.todoListsController.error = error;
-        }
-    ); // load TodoLists
-
+    });
 
     TodoEmberApp.ErrorView = Em.View.extend({
         error: TodoEmberApp.todoListsController.error
     });
 
-    TodoEmberApp.CreateTodoView = Em.TextField.extend({
-        //insertNewline: function () {
-        //    var value = this.get('value');
-        //    if (value) {
-        //        TodoEmberApp.todoListsController.addTodoList(value);
-        //    }
-        //}
+    TodoEmberApp.CreateTodoListView = Em.TextField.extend({
 
     });
-
-    TodoEmberApp.TodoListView = Ember.View.extend({
-        classNameBindings: ['todoList']
-
-        //click: function () {
-        //    var content = this.get('content');
-
-        //    App.selectedContactController.set('content', content);
-        //},
-
-        //touchEnd: function () {
-        //    this.click();
-        //},
-
-        //isSelected: function () {
-        //    var selectedItem = App.selectedContactController.get('content'),
-        //        content = this.get('content');
-
-        //    if (content === selectedItem) { return true; }
-        //}.property('App.selectedContactController.content')
-    });
-
-    TodoEmberApp.TextField = Ember.TextField.extend({
-        didInsertElement: function () {
-            this.$().focus();
-        }
-    });
-
-    TodoEmberApp.EditField = Ember.View.extend({
-        tagName: 'span',
-        templateName: 'edit-field',
-
-        doubleClick: function () {
-            this.set('isEditing', true);
-            return false;
-        },
-
-        touchEnd: function () {
-            // Rudimentary double tap support, could be improved
-            var touchTime = new Date();
-            if (this._lastTouchTime && touchTime - this._lastTouchTime < 250) {
-                this.doubleClick();
-                this._lastTouchTime = null;
-            } else {
-                this._lastTouchTime = touchTime;
-            }
-
-            // Prevent zooming
-            return false;
-        },
-
+    
+    TodoEmberApp.CreateToTodoView = Ember.TextField.extend({
         focusOut: function () {
-            this.set('isEditing', false);
+            var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
+            todoList.addTodo(function (todoItem){
+                todoList.Todos.pushObject(todoItem);
+            });
         },
 
         keyUp: function (evt) {
             if (evt.keyCode === 13) {
-                this.set('isEditing', false);
+                this.focusOut();
             }
         }
     });
 
-    Ember.Handlebars.registerHelper('editable', function (path, options) {
-        options.hash.valueBinding = path;
-        return Ember.Handlebars.helpers.view.call(this, TodoEmberApp.EditField, options);
-    });
+    //Initialize the todoList
+    TodoEmberApp.todoListsController.loadTodoList();
 
+    //Initialize the app
     TodoEmberApp.initialize();
 
 })(window.todoApp.datacontext);
 
-//todoApp.datacontext = window.todoApp.datacontext(ko.toJson);
-//window.todoApp.todoListViewModel = (function (ko, datacontext) {
-//    var todoLists = ko.observableArray(),
-//        error = ko.observable(),
-//        addTodoList = function () {
-//            var todoList = datacontext.createTodoList();
-//            todoList.IsEditingListTitle(true);
-//            datacontext.saveNewTodoList(todoList)
-//                .then(addSucceeded)
-//                .fail(addFailed);
-
-//            function addSucceeded() {
-//                showTodoList(todoList);
-//            }
-//            function addFailed() {
-//                error("Save of new TodoList failed");
-//            }
-//        },
-//        showTodoList = function (todoList) {
-//            todoLists.unshift(todoList); // Insert new TodoList at the front
-//        },
-//        deleteTodoList = function (todoList) {
-//            todoLists.remove(todoList);
-//            datacontext.deleteTodoList(todoList)
-//                .fail(deleteFailed);
-
-//            function deleteFailed() {
-//                showTodoList(todoList); // re-show the restored list
-//            }
-//        };
-
-//    datacontext.getTodoLists(todoLists, error); // load TodoLists
-
-//    return {
-//        todoLists: todoLists,
-//        error: error,
-//        addTodoList: addTodoList,
-//        deleteTodoList: deleteTodoList
-//    };
-
-//})(ko, todoApp.datacontext);
-
-//// Initiate the Knockout bindings
-//ko.applyBindings(window.todoApp.todoListViewModel);

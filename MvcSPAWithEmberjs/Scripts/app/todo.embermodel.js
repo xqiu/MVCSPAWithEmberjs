@@ -3,39 +3,77 @@ window.todoApp.datacontext = window.createTodoAppDataContext(JSON.stringify);
 
 window.TodoEmberApp = Em.Application.create();
 
+TodoEmberApp.Todo = Ember.Object.extend({
+    TodoItemId: 0,
+    Title: '',
+    IsDone: false,
+    TodoListId: 0,
+
+    ErrorMessage: function (error) {
+        return error;
+    },
+    save: function () {
+        var self = this;
+        return window.todoApp.datacontext.saveChangedTodoItem(self);
+    }.observes('Title'),   //todo: currently called on every key change, should use focusout/enter instead
+
+    saveCheckbox: function () {
+        var self = this;
+        return window.todoApp.datacontext.saveChangedTodoItem(self);
+    }.observes('IsDone'),
+    
+    toJson: function () {
+        var self = this;
+        return JSON.stringify({
+            TodoItemId: self.TodoItemId,
+            Title: self.Title,
+            IsDone: self.IsDone,
+            TodoListId: self.TodoListId
+        });
+    }
+});
+
 TodoEmberApp.TodoList = Ember.Object.extend({
     TodoListId: 0,
-    Title: "",
-    UserId: "",
-    //todoItems
+    Title: '',
+    UserId: '',
+    Todos: [],
+    NewTodoTitle: '',
+
+    FreshTodos: function(){
+        return this.get('Todos');
+    }.observes('Todos'),
 
     ErrorMessage: function (error) {
         return error;
     },
 
-    deleteTodo: function () {
-        var todoItem = this;
-        return window.todoApp.datacontext.deleteTodoItem(todoItem)
-             .done(function () { self.Todos.remove(todoItem); });
-    },
-
-    addTodo: function () {
+    addTodo: function (callback) {
         var self = this;
         if (self.NewTodoTitle) { // need a title to save
             var todoItem = window.todoApp.datacontext.createTodoItem(
                 {
                     Title: self.NewTodoTitle,
-                    TodoListId: self.TodoListId
+                    TodoListId: self.TodoListId,
+                    IsDone: false
                 });
-            self.Todos.push(todoItem);
-            window.todoApp.datacontext.saveNewTodoItem(todoItem);
-            self.NewTodoTitle = "";
+            window.todoApp.datacontext.saveNewTodoItem(todoItem)
+                .then(addSucceeded);
+
+            function addSucceeded() {
+                if (callback) {
+                    callback(todoItem);
+                }
+            }
+            self.set('NewTodoTitle', '');
         }
-    },
+    },   //do not .observes('NewTodoTitle'), as otherwise it will be called for every key change instead of focusout
+
     saveTodoList: function () {
         var self = this;
         return window.todoApp.datacontext.saveChangedTodoList(self);
-    },
+    }.observes('Title'), //todo: currently called on every key change, should use focusout/enter instead
+
     deleteTodoList: function (event) {
         //todo: this function should belong to todo.embercontroller.js, but I don't know how to make the contentBinding and target combination work properly
         TodoEmberApp.todoListsController.content.removeObject(this);
@@ -67,20 +105,11 @@ TodoEmberApp.TodoList = Ember.Object.extend({
     function TodoItem(data) {
         var self = this;
         data = data || {};
-        return Ember.Object.extend({
+        return TodoEmberApp.Todo.create({
             TodoItemId: data.TodoItemId,
             Title: data.Title,
             IsDone: data.IsDone,
             TodoListId: data.TodoListId,
-
-            ErrorMessage: function (error) {
-                return error;
-            },
-            save: function () { return datacontext.saveChangedTodoItem(self); },
-
-            // Auto-save when these properties change
-            //self.IsDone.subscribe(self.save);
-            //self.Title.subscribe(self.save);
         });
     };
 
@@ -94,103 +123,22 @@ TodoEmberApp.TodoList = Ember.Object.extend({
             TodoListId: data.TodoListId,
             UserId: data.UserId || "to be replaced",
             Title: data.Title || "My todos",
-            Todos: [], //= ko.observableArray(importTodoItems(data.Todos));
+            Todos: importTodoItems(data.Todos),
 
             IsEditingListTitle: false,
-            NewTodoTitle: null,
+            NewTodoTitle: '',
         });
-
-        //// Auto-save when these properties change
-        //ret.addObserver('Title', function (todoList) {
-        //    return datacontext.saveChangedTodoList(todoList.toJson());
-        //});
 
         return ret;
     };
 
-    //// convert raw todoItem data objects into array of TodoItems
-    //function importTodoItems(todoItems) {
-    //    return $.map(todoItems || [],
-    //            function (todoItemData) {
-    //                return datacontext.createTodoItem(todoItemData);
-    //            });
-    //}
+    // convert raw todoItem data objects into array of TodoItems
+    function importTodoItems(todoItems) {
+        return $.map(todoItems || [],
+                function (todoItemData) {
+                    return datacontext.createTodoItem(todoItemData);
+                });
+    }
 
 })(Ember, todoApp.datacontext);
 
-
-
-
-//(function (ko, datacontext) {
-
-//    datacontext.TodoItem = TodoItem;
-//    datacontext.TodoList = TodoList;
-
-//    function TodoItem(data) {
-//        var self = this;
-//        data = data || {};
-
-//        // Persisted properties
-//        self.TodoItemId = data.TodoItemId;
-//        self.Title = ko.observable(data.Title);
-//        self.IsDone = ko.observable(data.IsDone);
-//        self.TodoListId = data.TodoListId;
-
-//        // Non-persisted properties
-//        self.ErrorMessage = ko.observable();
-
-//        self.save = function () { return datacontext.saveChangedTodoItem(self); };
-
-//        // Auto-save when these properties change
-//        self.IsDone.subscribe(self.save);
-//        self.Title.subscribe(self.save);
-//    };
-
-//    function TodoList(data) {
-//        var self = this;
-//        data = data || {};
-
-//        // Persisted properties
-//        self.TodoListId = data.TodoListId;
-//        self.UserId = data.UserId || "to be replaced";
-//        self.Title = ko.observable(data.Title || "My todos");
-//        self.Todos = ko.observableArray(importTodoItems(data.Todos));
-
-//        // Non-persisted properties
-//        self.IsEditingListTitle = ko.observable(false);
-//        self.NewTodoTitle = ko.observable();
-//        self.ErrorMessage = ko.observable();
-
-//        self.save = function () { return datacontext.saveChangedTodoList(self); };
-//        self.deleteTodo = function () {
-//            var todoItem = this;
-//            return datacontext.deleteTodoItem(todoItem)
-//                 .done(function () { self.Todos.remove(todoItem); });
-//        };
-
-//        // Auto-save when these properties change
-//        self.Title.subscribe(self.save);
-
-//    };
-//    // convert raw todoItem data objects into array of TodoItems
-//    function importTodoItems(todoItems) {
-//        return $.map(todoItems || [],
-//                function (todoItemData) {
-//                    return datacontext.createTodoItem(todoItemData);
-//                });
-//    }
-//    TodoList.prototype.addTodo = function () {
-//        var self = this;
-//        if (self.NewTodoTitle()) { // need a title to save
-//            var todoItem = datacontext.createTodoItem(
-//                {
-//                    Title: self.NewTodoTitle(),
-//                    TodoListId: self.TodoListId
-//                });
-//            self.Todos.push(todoItem);
-//            datacontext.saveNewTodoItem(todoItem);
-//            self.NewTodoTitle("");
-//        }
-//    };
-
-//})(ko, todoApp.datacontext);

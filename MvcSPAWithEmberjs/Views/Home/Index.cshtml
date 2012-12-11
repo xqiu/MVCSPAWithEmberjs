@@ -18,22 +18,59 @@
             {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
                 <header>
                     <form data-bind="validate: true">
-                        {{view.content.TodoListId}}:
-                            {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.Title" itemClassNames="required" }}
+                        {{#view TodoEmberApp.CreateTodoListView valueBinding="view.content.Title" class="required" }}
                         {{/view}}
                     </form>
                 </header>
                 <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="view.content"}}>X</a>
+            
+                <ul>
+                       {{#each todoItem in view.content.Todos}}
+                           {{#view TodoEmberApp.todosView contentBinding="todoItem"}}
+                                    <li>
+                                        {{view Ember.Checkbox checkedBinding="todoItem.IsDone"}}
+                                        {{#view TodoEmberApp.CreateTodoListView valueBinding="todoItem.Title" class="required" }}
+                                        {{/view}}
+                                        <a href="#" {{action "deleteTodo" on="click" }}>X</a>
+                                    </li>
+                           {{/view}}
+                       {{/each}}
+                </ul>
+
+                {{#view TodoEmberApp.CreateToTodoView valueBinding="view.content.NewTodoTitle" class="addTodo" }}
+                {{/view}}
             {{/collection}}
         </section>
 
         </script>
-	  
-        <script type="text/x-handlebars" data-template-name="edit-field">
-            {{view TodoEmberApp.TextField valueBinding="value" propagatesEvents=true}}
-        </script>
-                
+
+        //todo: todoItem edit/checkbox/delete doesn't work
+        //todo: adding an todo item not refreshing
+        //todo: todo insert editbox need placeholder
+        //todo: AdditionalMetadataAttribute error messages
+        
 @*
+                <ul>
+                   {{#each view.content.FreshTodos}}
+                                <li>
+                                    {{Title}}
+                                </li>
+                   {{/each}}
+                </ul>
+    
+                {{#view contentBinding=view.content.FreshTodos}}
+                {{#each view.content}}
+                            {{#view tagName="ul"}}
+                                <li>
+                                    {{Title}}
+                                </li>
+                            {{/view}}
+                    {{/each}}
+                {{/view}}
+
+    
+{{view.content.Todos.TodoListId}}:{{view.content.Todos.TodoItemId}}:{{view.content.Todos.Title}}:{{view.content.Todos.IsDone}}
+
         <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="TodoEmberApp.todoListsController"}}>Save</a>
     
         {{#each TodoEmberApp.todoListsController}}
@@ -43,15 +80,6 @@
                  {{#view TodoEmberApp.CreateTodoView valueBinding="Title" value="Title"}}
             
                  {{/view}}
-            {{/view}}
-        {{/each}}
-
-        {{#each TodoEmberApp.todoListsController}}
-            {{#view TodoEmberApp.TodoListView contentBinding="this" tagName="article" classNames="todoList"}}
-              <form data-bind="validate: true">
-                {{TodoListId}}:
-                {{editable "Title"}}
-              </form>
             {{/view}}
         {{/each}}
 

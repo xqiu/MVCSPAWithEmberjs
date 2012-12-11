@@ -1,6 +1,6 @@
 ﻿window.todoApp = window.todoApp || {};
 
-window.createTodoAppDataContext = function CreateTodoAppDataContext(toJsonFunction) {
+window.createTodoAppDataContext = function CreateTodoAppDataContext() {
 
     var datacontext = {
         getTodoLists: getTodoLists,
@@ -94,7 +94,6 @@ window.createTodoAppDataContext = function CreateTodoAppDataContext(toJsonFuncti
             contentType: "application/json",
             cache: false,
             type: type,
-            //data: toJsonFunction(data)   //e.g. ko.toJSON, JSON.stringify
             data: data ? data.toJson(): null //todo: examine how to make it also work for ko.toJSON
         };
         return $.ajax(url, options);
