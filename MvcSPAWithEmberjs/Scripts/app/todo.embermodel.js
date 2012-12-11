@@ -12,10 +12,6 @@ TodoEmberApp.Todo = Ember.Object.extend({
     ErrorMessage: function (error) {
         return error;
     },
-    save: function () {
-        var self = this;
-        return window.todoApp.datacontext.saveChangedTodoItem(self);
-    }.observes('Title'),   //todo: currently called on every key change, should use focusout/enter instead
 
     saveCheckbox: function () {
         var self = this;
@@ -39,10 +35,6 @@ TodoEmberApp.TodoList = Ember.Object.extend({
     UserId: '',
     Todos: [],
     NewTodoTitle: '',
-
-    FreshTodos: function(){
-        return this.get('Todos');
-    }.observes('Todos'),
 
     ErrorMessage: function (error) {
         return error;
@@ -68,11 +60,6 @@ TodoEmberApp.TodoList = Ember.Object.extend({
             self.set('NewTodoTitle', '');
         }
     },   //do not .observes('NewTodoTitle'), as otherwise it will be called for every key change instead of focusout
-
-    saveTodoList: function () {
-        var self = this;
-        return window.todoApp.datacontext.saveChangedTodoList(self);
-    }.observes('Title'), //todo: currently called on every key change, should use focusout/enter instead
 
     deleteTodoList: function (event) {
         //todo: this function should belong to todo.embercontroller.js, but I don't know how to make the contentBinding and target combination work properly
@@ -119,7 +106,6 @@ TodoEmberApp.TodoList = Ember.Object.extend({
         data = data || {};
 
         var ret = TodoEmberApp.TodoList.create({
-
             TodoListId: data.TodoListId,
             UserId: data.UserId || "to be replaced",
             Title: data.Title || "My todos",

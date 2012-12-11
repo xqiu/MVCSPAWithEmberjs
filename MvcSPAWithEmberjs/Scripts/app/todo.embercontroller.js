@@ -78,11 +78,49 @@
         error: TodoEmberApp.todoListsController.error
     });
 
-    TodoEmberApp.CreateTodoListView = Em.TextField.extend({
+    TodoEmberApp.EditTodoListView = Em.TextField.extend({
+        lastValue: '',
+        focusOut: function (evt) {
+            this.changeContent();
+        },
 
+        keyPress: function (evt) {
+            if (evt.keyCode === 13 /* enter */) {
+                $(evt.target).blur();
+            }
+        },
+
+        changeContent: function () {
+            var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
+            if (this.lastValue != todoList.Title) {
+                window.todoApp.datacontext.saveChangedTodoList(todoList);
+                this.lastValue = todoList.Title;
+            }
+        }
     });
-    
-    TodoEmberApp.CreateToTodoView = Ember.TextField.extend({
+
+    TodoEmberApp.EditTodoItemView = Em.TextField.extend({
+        lastValue: '',
+        focusOut: function () {
+            this.changeContent();
+        },
+
+        keyUp: function (evt) {
+            if (evt.keyCode === 13) {
+                $(evt.target).blur();
+            }
+        },
+
+        changeContent: function () {
+            var todoItem = this.templateData.view.content;  //todo: how to properly get todoList object?
+            if (this.lastValue != todoItem.Title) {
+                window.todoApp.datacontext.saveChangedTodoItem(todoItem);
+                this.lastValue = todoItem.Title;
+            }
+        }
+    });
+
+    TodoEmberApp.CreateTodoView = Ember.TextField.extend({
         focusOut: function () {
             var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
             todoList.addTodo(function (todoItem){
@@ -96,6 +134,12 @@
             }
         }
     });
+
+    var view = Ember.View.create({
+        templateName: 'todoTemplate',
+        name: "todoView"
+    });
+    view.appendTo("#main-content");
 
     //Initialize the todoList
     TodoEmberApp.todoListsController.loadTodoList();

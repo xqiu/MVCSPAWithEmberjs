@@ -7,7 +7,7 @@
 
     @if (@User.Identity.IsAuthenticated)
     {
-        <script type="text/x-handlebars">
+        <script type="text/x-handlebars" data-template-name="todoTemplate">
         <p class="error">{{TodoEmberApp.todoListsController.error}}</p>
 
         {{#view Em.Button classBinding="isActive"
@@ -17,8 +17,8 @@
         <section id="lists">
             {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
                 <header>
-                    <form data-bind="validate: true">
-                        {{#view TodoEmberApp.CreateTodoListView valueBinding="view.content.Title" class="required" }}
+                    <form data-bind="validate: true" onsubmit="return false;">
+                        {{#view TodoEmberApp.EditTodoListView valueBinding="view.content.Title" class="required" }}
                         {{/view}}
                     </form>
                 </header>
@@ -29,7 +29,7 @@
                            {{#view TodoEmberApp.todosView contentBinding="todoItem"}}
                                     <li>
                                         {{view Ember.Checkbox checkedBinding="todoItem.IsDone"}}
-                                        {{#view TodoEmberApp.CreateTodoListView valueBinding="todoItem.Title" class="required" }}
+                                        {{#view TodoEmberApp.EditTodoItemView valueBinding="todoItem.Title" class="required" }}
                                         {{/view}}
                                         <a href="#" {{action "deleteTodo" on="click" }}>X</a>
                                     </li>
@@ -37,102 +37,12 @@
                        {{/each}}
                 </ul>
 
-                {{#view TodoEmberApp.CreateToTodoView valueBinding="view.content.NewTodoTitle" class="addTodo" }}
+                {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.NewTodoTitle" class="addTodo" }}
                 {{/view}}
             {{/collection}}
         </section>
 
         </script>
-
-        //todo: todoItem edit/checkbox/delete doesn't work
-        //todo: adding an todo item not refreshing
-        //todo: todo insert editbox need placeholder
-        //todo: AdditionalMetadataAttribute error messages
-        
-@*
-                <ul>
-                   {{#each view.content.FreshTodos}}
-                                <li>
-                                    {{Title}}
-                                </li>
-                   {{/each}}
-                </ul>
-    
-                {{#view contentBinding=view.content.FreshTodos}}
-                {{#each view.content}}
-                            {{#view tagName="ul"}}
-                                <li>
-                                    {{Title}}
-                                </li>
-                            {{/view}}
-                    {{/each}}
-                {{/view}}
-
-    
-{{view.content.Todos.TodoListId}}:{{view.content.Todos.TodoItemId}}:{{view.content.Todos.Title}}:{{view.content.Todos.IsDone}}
-
-        <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="TodoEmberApp.todoListsController"}}>Save</a>
-    
-        {{#each TodoEmberApp.todoListsController}}
-            {{#view TodoEmberApp.TodoListView contentBinding="this" tagName="article" classNames="todoList"}}
-            
-                 {{TodoListId}}:
-                 {{#view TodoEmberApp.CreateTodoView valueBinding="Title" value="Title"}}
-            
-                 {{/view}}
-            {{/view}}
-        {{/each}}
-
-          
-        {{#each TodoEmberApp.todoListsController}}
-            {{#view TodoEmberApp.TodoListView tagName="article" classNames="todoList"}}
-              <form data-bind="validate: true">
-                {{content.TodoListId}}:
-                {{editable "content.Title"}}
-              </form>
-            {{/view}}
-        {{/each}}
-
-    
-        {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
-              <form data-bind="validate: true">
-                {{view.content.TodoListId}}:
-                {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.Title" itemClassNames="required" }}
-                {{/view}}
-              </form>
-        {{/collection}}
-    
-
-
-        <p class="error" data-bind="text: error"></p>
-        <button data-bind="click: addTodoList">Add Todo list</button>
-
-        <section id="lists" data-bind="foreach: todoLists, visible: todoLists().length > 0">
-            <article class="todoList">
-                <header>
-                    <form data-bind="validate: true">
-                        <input class="required" data-bind="value: Title, selected: IsEditingListTitle, blurOnEnter: true" />
-                    </form>
-                </header>
-
-                <a href="#" class="deletelist" data-bind="click: $parent.deleteTodoList">X</a>
-
-                <ul data-bind="foreach: Todos">
-                    <li>
-                        <input type="checkbox" data-bind="checked: IsDone" />
-                        <input type="text" data-bind="value: Title, disable: IsDone, blurOnEnter: true" />
-                        <a href="#" data-bind="click: $parent.deleteTodo">X</a>
-                        <p class="error" data-bind="visible: ErrorMessage, text: ErrorMessage"></p>
-                    </li>
-                </ul>
-
-                <form data-bind="submit: addTodo">
-                    <input class="addTodo" type="text" data-bind="value: NewTodoTitle, placeholder: 'Type here to add', blurOnEnter: true, event: { blur: addTodo }" />
-                </form>
-
-                <p class="error" data-bind="visible: ErrorMessage, text: ErrorMessage"></p>
-            </article>
-        </section>*@
     }
     else
     {
