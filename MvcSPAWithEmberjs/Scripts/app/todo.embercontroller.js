@@ -26,8 +26,6 @@
         },
         showTodoList: function (todoList) {
             this.unshiftObject(todoList); // Insert new TodoList at the front
-
-            //todoList.addObserver('Title', todoList, 'saveTodoList');  //todo: every character change will call saveTodoList, how to make it only call during the blur and enter event?
         },
         deleteTodoList: function (event) {
 
@@ -59,7 +57,7 @@
                 function (error) {
                     self.error = error;
                 }
-            ); // load TodoLists
+            );
         }
     });
 
@@ -123,7 +121,7 @@
                 $(evt.target).blur();
             }
         },
-        
+
         changeContent: function () {
             var todoItem = this.templateData.view.content;  //todo: how to properly get todoList object?
             if (this.lastValue != todoItem.Title) {
@@ -166,7 +164,7 @@
         //},
         focusOut: function () {
             var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
-            todoList.addTodo(function (todoItem){
+            todoList.addTodo(function (todoItem) {
                 todoList.Todos.pushObject(todoItem);
             });
         },
