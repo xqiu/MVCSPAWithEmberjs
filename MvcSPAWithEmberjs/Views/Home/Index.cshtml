@@ -17,7 +17,7 @@
         <section id="lists">
             {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
                 <header>
-                    <form data-bind="validate: true" onsubmit="return false;">
+                    <form onsubmit="return false;">
                         {{#view TodoEmberApp.EditTodoListView valueBinding="view.content.Title" class="required" }}
                         {{/view}}
                     </form>
@@ -29,16 +29,23 @@
                            {{#view TodoEmberApp.todosView contentBinding="todoItem"}}
                                     <li>
                                         {{view Ember.Checkbox checkedBinding="todoItem.IsDone"}}
-                                        {{#view TodoEmberApp.EditTodoItemView valueBinding="todoItem.Title" class="required" }}
+                                        {{#view TodoEmberApp.EditTodoItemView valueBinding="todoItem.Title" class="required" disabledBinding="todoItem.IsDone" }}
                                         {{/view}}
                                         <a href="#" {{action "deleteTodo" on="click" }}>X</a>
+                                        {{#if todoItem.hasError}}
+                                            <p class="error">{{todoItem.error}}</p>
+                                        {{/if}}
                                     </li>
                            {{/view}}
                        {{/each}}
                 </ul>
 
-                {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.NewTodoTitle" class="addTodo" }}
+                {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.NewTodoTitle" class="addTodo" placeholder="Type here to add"}}
                 {{/view}}
+            
+                {{#if view.content.hasError}}
+                    <p class="error">{{view.content.error}}</p>
+                {{/if}}
             {{/collection}}
         </section>
 

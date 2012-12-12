@@ -80,11 +80,21 @@
 
     TodoEmberApp.EditTodoListView = Em.TextField.extend({
         lastValue: '',
+        ////todo: see if we can use validate inside init function instead of calling focusIn and keyUp
+        //init: function () {
+        //    this._super();
+        //    $(this).parent("form").validate();  //initialize jquery.validate
+        //},
+        focusIn: function (evt) {
+            $(evt.target).parent("form").validate();  //initialize jquery.validate
+            this.lastValue = this.templateData.view.content.Title;
+        },
         focusOut: function (evt) {
             this.changeContent();
         },
 
-        keyPress: function (evt) {
+        keyUp: function (evt) {
+            $(evt.target).parent("form").validate();  //calling jquery.validate
             if (evt.keyCode === 13 /* enter */) {
                 $(evt.target).blur();
             }
@@ -101,7 +111,10 @@
 
     TodoEmberApp.EditTodoItemView = Em.TextField.extend({
         lastValue: '',
-        focusOut: function () {
+        focusIn: function (evt) {
+            this.lastValue = this.templateData.view.content.Title;
+        },
+        focusOut: function (evt) {
             this.changeContent();
         },
 
@@ -110,7 +123,7 @@
                 $(evt.target).blur();
             }
         },
-
+        
         changeContent: function () {
             var todoItem = this.templateData.view.content;  //todo: how to properly get todoList object?
             if (this.lastValue != todoItem.Title) {
@@ -121,6 +134,36 @@
     });
 
     TodoEmberApp.CreateTodoView = Ember.TextField.extend({
+        //todo: overwrite placeholder for legacy browsers including IE9
+        //placeholder: function () {
+        //    var placeholderText = ko.utils.unwrapObservable(valueAccessor()),
+        //        input = $(elem);
+
+        //    input.attr('placeholder', placeholderText);
+
+        //    // For older browsers, manually implement placeholder behaviors
+        //    if (!Modernizr.input.placeholder) {
+        //        input.focus(function () {
+        //            if (input.val() === placeholderText) {
+        //                input.val('');
+        //                input.removeClass('placeholder');
+        //            }
+        //        }).blur(function () {
+        //            setTimeout(function () {
+        //                if (input.val() === '' || input.val() === placeholderText) {
+        //                    input.addClass('placeholder');
+        //                    input.val(placeholderText);
+        //                }
+        //            }, 0);
+        //        }).blur();
+
+        //        input.parents('form').submit(function () {
+        //            if (input.val() === placeholderText) {
+        //                input.val('');
+        //            }
+        //        });
+        //    }
+        //},
         focusOut: function () {
             var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
             todoList.addTodo(function (todoItem){

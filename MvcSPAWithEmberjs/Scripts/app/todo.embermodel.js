@@ -8,10 +8,16 @@ TodoEmberApp.Todo = Ember.Object.extend({
     Title: '',
     IsDone: false,
     TodoListId: 0,
+    error: '',
 
-    ErrorMessage: function (error) {
-        return error;
+    ErrorMessage: function (errorMsg) {
+        this.set("error", errorMsg);
     },
+
+    hasError: function () {
+        var currentError = this.get("error");
+        return !(currentError === '' || currentError === null);
+    }.property('error'),
 
     saveCheckbox: function () {
         var self = this;
@@ -35,11 +41,17 @@ TodoEmberApp.TodoList = Ember.Object.extend({
     UserId: '',
     Todos: [],
     NewTodoTitle: '',
+    error: '',
 
-    ErrorMessage: function (error) {
-        return error;
+    ErrorMessage: function (errorMsg) {
+        this.set("error", errorMsg);
     },
 
+    hasError: function () {
+        var currentError = this.get("error");
+        return !(currentError === '' || currentError === null);
+    }.property('error'),
+    
     addTodo: function (callback) {
         var self = this;
         if (self.NewTodoTitle) { // need a title to save
@@ -84,6 +96,7 @@ TodoEmberApp.TodoList = Ember.Object.extend({
     }
 });
 
+// datacontext call back functions, so that different framework (e.g. knockoutjs and emberjs) can use the same datacontext.js file
 (function (ember, datacontext) {
 
     datacontext.TodoItem = TodoItem;
