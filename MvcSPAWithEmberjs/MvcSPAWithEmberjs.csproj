@@ -356,9 +356,6 @@
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\Home\_Register.cshtml" />
     <Content Include="Templates\todoTemplate.mustache" />
-    <Content Include="Templates\test1\todoTemplate.mustache" />
-    <Content Include="Templates\test1\todoTemplate2.mustache" />
-    <Content Include="Templates\test2\todoTemplate2.mustache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
