@@ -19,8 +19,10 @@ namespace MvcSPAWithEmberjs
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                "~/Scripts/handlebars-1.0.0.beta.6.js",
-                "~/Scripts/ember-1.0.0-pre.2.js"));
+                "~/Scripts/handlebars-1.0.rc.1.js",
+                "~/Scripts/ember-master01072013.js"));
+                //"~/Scripts/handlebars-1.0.0.beta.6.js",
+                //"~/Scripts/ember-1.0.0-pre.2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
                 "~/Scripts/app/ajaxlogin.js"));

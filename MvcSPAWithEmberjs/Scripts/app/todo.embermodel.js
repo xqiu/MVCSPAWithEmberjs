@@ -1,16 +1,14 @@
 ﻿/// <reference path="todo.datacontext.js" />
-window.todoApp.datacontext = window.createTodoAppDataContext(JSON.stringify);
-
 window.TodoEmberApp = Em.Application.create();
 
 TodoEmberApp.Todo = Ember.Object.extend({
-    TodoItemId: 0,
-    Title: '',
-    IsDone: false,
-    TodoListId: 0,
+    todoItemId: 0,
+    title: '',
+    isDone: false,
+    todoListId: 0,
     error: '',
 
-    ErrorMessage: function (errorMsg) {
+    errorMessage: function (errorMsg) {
         this.set("error", errorMsg);
     },
 
@@ -22,28 +20,28 @@ TodoEmberApp.Todo = Ember.Object.extend({
     saveCheckbox: function () {
         var self = this;
         return window.todoApp.datacontext.saveChangedTodoItem(self);
-    }.observes('IsDone'),
+    }.observes('isDone'),
     
     toJson: function () {
         var self = this;
         return JSON.stringify({
-            TodoItemId: self.TodoItemId,
-            Title: self.Title,
-            IsDone: self.IsDone,
-            TodoListId: self.TodoListId
+            todoItemId: self.todoItemId,
+            title: self.title,
+            isDone: self.isDone,
+            todoListId: self.todoListId
         });
     }
 });
 
 TodoEmberApp.TodoList = Ember.Object.extend({
-    TodoListId: 0,
-    Title: '',
-    UserId: '',
-    Todos: [],
-    NewTodoTitle: '',
+    todoListId: 0,
+    title: '',
+    userId: '',
+    todos: [],
+    newTodoTitle: '',
     error: '',
 
-    ErrorMessage: function (errorMsg) {
+    errorMessage: function (errorMsg) {
         this.set("error", errorMsg);
     },
 
@@ -54,12 +52,12 @@ TodoEmberApp.TodoList = Ember.Object.extend({
     
     addTodo: function (callback) {
         var self = this;
-        if (self.NewTodoTitle) { // need a title to save
+        if (self.newTodoTitle) { // need a title to save
             var todoItem = window.todoApp.datacontext.createTodoItem(
                 {
-                    Title: self.NewTodoTitle,
-                    TodoListId: self.TodoListId,
-                    IsDone: false
+                    title: self.newTodoTitle,
+                    todoListId: self.todoListId,
+                    isDone: false
                 });
             window.todoApp.datacontext.saveNewTodoItem(todoItem)
                 .then(addSucceeded);
@@ -69,9 +67,9 @@ TodoEmberApp.TodoList = Ember.Object.extend({
                     callback(todoItem);
                 }
             }
-            self.set('NewTodoTitle', '');
+            self.set('newTodoTitle', '');
         }
-    },   //do not .observes('NewTodoTitle'), as otherwise it will be called for every key change instead of focusout
+    },   //do not .observes('newTodoTitle'), as otherwise it will be called for every key change instead of focusout
 
     deleteTodoList: function (event) {
         //todo: this function should belong to todo.embercontroller.js, but I don't know how to make the contentBinding and target combination work properly
@@ -87,11 +85,11 @@ TodoEmberApp.TodoList = Ember.Object.extend({
     toJson: function () {
         var self = this;
         return JSON.stringify({
-            TodoListId: self.TodoListId,
-            UserId: self.UserId,
-            Title: self.Title,
-            Todo: [],
-            IsEditingListTitle: true,
+            todoListId: self.todoListId,
+            userId: self.userId,
+            title: self.title,
+            todo: [],
+            isEditingListTitle: true,
         });
     }
 });
@@ -99,33 +97,33 @@ TodoEmberApp.TodoList = Ember.Object.extend({
 // datacontext call back functions, so that different framework (e.g. knockoutjs and emberjs) can use the same datacontext.js file
 (function (ember, datacontext) {
 
-    datacontext.TodoItem = TodoItem;
-    datacontext.TodoList = TodoList;
+    datacontext.todoItem = todoItem;
+    datacontext.todoList = todoList;
 
-    function TodoItem(data) {
+    function todoItem(data) {
         var self = this;
         data = data || {};
         return TodoEmberApp.Todo.create({
-            TodoItemId: data.TodoItemId,
-            Title: data.Title,
-            IsDone: data.IsDone,
-            TodoListId: data.TodoListId,
+            todoItemId: data.todoItemId,
+            title: data.title,
+            isDone: data.isDone,
+            todoListId: data.todoListId,
         });
     };
 
-    function TodoList(data) {
+    function todoList(data) {
 
         var self = this;
         data = data || {};
 
         var ret = TodoEmberApp.TodoList.create({
-            TodoListId: data.TodoListId,
-            UserId: data.UserId || "to be replaced",
-            Title: data.Title || "My todos",
-            Todos: importTodoItems(data.Todos),
+            todoListId: data.todoListId,
+            userId: data.userId || "to be replaced",
+            title: data.title || "My todos",
+            todos: importTodoItems(data.todos),
 
-            IsEditingListTitle: false,
-            NewTodoTitle: '',
+            isEditingListTitle: false,
+            newTodoTitle: '',
         });
 
         return ret;

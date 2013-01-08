@@ -1,55 +1,15 @@
 ﻿@model MvcSPAWithEmberjs.Models.LoginModel
+@using MvcHtmlHelpers;
+
 @{
     ViewBag.Title = "My Todo List";
 }
 
 <div id="main-content">
-
+    
     @if (@User.Identity.IsAuthenticated)
     {
-        <script type="text/x-handlebars" data-template-name="todoTemplate">
-        <p class="error">{{TodoEmberApp.todoListsController.error}}</p>
-
-        {{#view Em.Button classBinding="isActive"
-              target="TodoEmberApp.todoListsController"
-              action="addTodoList"}}Add Todo list{{/view}}
-
-        <section id="lists">
-            {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
-                <header>
-                    <form onsubmit="return false;">
-                        {{#view TodoEmberApp.EditTodoListView valueBinding="view.content.Title" class="required" }}
-                        {{/view}}
-                    </form>
-                </header>
-                <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="view.content"}}>X</a>
-            
-                <ul>
-                       {{#each todoItem in view.content.Todos}}
-                           {{#view TodoEmberApp.todosView contentBinding="todoItem"}}
-                                    <li>
-                                        {{view Ember.Checkbox checkedBinding="todoItem.IsDone"}}
-                                        {{#view TodoEmberApp.EditTodoItemView valueBinding="todoItem.Title" class="required" disabledBinding="todoItem.IsDone" }}
-                                        {{/view}}
-                                        <a href="#" {{action "deleteTodo" on="click" }}>X</a>
-                                        {{#if todoItem.hasError}}
-                                            <p class="error">{{todoItem.error}}</p>
-                                        {{/if}}
-                                    </li>
-                           {{/view}}
-                       {{/each}}
-                </ul>
-
-                {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.NewTodoTitle" class="addTodo" placeholder="Type here to add"}}
-                {{/view}}
-            
-                {{#if view.content.hasError}}
-                    <p class="error">{{view.content.error}}</p>
-                {{/if}}
-            {{/collection}}
-        </section>
-
-        </script>
+        @Html.RenderEmber("")
     }
     else
     {

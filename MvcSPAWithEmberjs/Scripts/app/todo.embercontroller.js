@@ -4,24 +4,37 @@
 
 (function (datacontext) {
 
+    //TodoEmberApp.Router = Ember.Router.extend({
+    //    root: Ember.Route.extend({
+    //        index: Ember.Route.extend({
+    //            route: '/'
+    //        })
+    //    })
+    //})
+
+    //TodoEmberApp.ApplicationController = Ember.Controller.extend();
+    //TodoEmberApp.ApplicationView = Ember.View.extend({
+    //    templateName: 'todoTemplate'
+    //});
+
     TodoEmberApp.todoListsController = Ember.ArrayProxy.create({
         content: [],
         error: "",
         addTodoList: function (title) {
             var self = this;
             var todoList = datacontext.createTodoList();
-            todoList.IsEditingListTitle = true;
+            todoList.isEditingListTitle = true;
             datacontext.saveNewTodoList(todoList)
                 .then(addSucceeded)
                 .fail(addFailed);
 
             function addSucceeded() {
                 self.showTodoList(todoList);
-                todoList.IsEditingListTitle = false;
+                todoList.isEditingListTitle = false;
             }
             function addFailed() {
                 error = "Save of new TodoList failed";
-                todoList.IsEditingListTitle = false;
+                todoList.isEditingListTitle = false;
             }
         },
         showTodoList: function (todoList) {
@@ -40,7 +53,7 @@
         },
         findTodoList: function (todoListId) {
             for (var i = 0; i < this.content.length; i++) {
-                if (this.content[i].TodoListId === todoListId) {
+                if (this.content[i].todoListId === todoListId) {
                     return this.content[i];
                 }
             }
@@ -66,8 +79,8 @@
             var todoItem = this.content;
             return window.todoApp.datacontext.deleteTodoItem(todoItem)
                  .done(function () {
-                     var todoList = TodoEmberApp.todoListsController.findTodoList(todoItem.TodoListId);
-                     todoList.Todos.removeObject(todoItem);
+                     var todoList = TodoEmberApp.todoListsController.findTodoList(todoItem.todoListId);
+                     todoList.todos.removeObject(todoItem);
                  });
         },
     });
@@ -85,7 +98,7 @@
         //},
         focusIn: function (evt) {
             $(evt.target).parent("form").validate();  //initialize jquery.validate
-            this.lastValue = this.templateData.view.content.Title;
+            this.lastValue = this.templateData.view.content.title;
         },
         focusOut: function (evt) {
             this.changeContent();
@@ -100,9 +113,9 @@
 
         changeContent: function () {
             var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
-            if (this.lastValue != todoList.Title) {
+            if (this.lastValue != todoList.title) {
                 window.todoApp.datacontext.saveChangedTodoList(todoList);
-                this.lastValue = todoList.Title;
+                this.lastValue = todoList.title;
             }
         }
     });
@@ -110,7 +123,7 @@
     TodoEmberApp.EditTodoItemView = Em.TextField.extend({
         lastValue: '',
         focusIn: function (evt) {
-            this.lastValue = this.templateData.view.content.Title;
+            this.lastValue = this.templateData.view.content.title;
         },
         focusOut: function (evt) {
             this.changeContent();
@@ -124,9 +137,9 @@
 
         changeContent: function () {
             var todoItem = this.templateData.view.content;  //todo: how to properly get todoList object?
-            if (this.lastValue != todoItem.Title) {
+            if (this.lastValue != todoItem.title) {
                 window.todoApp.datacontext.saveChangedTodoItem(todoItem);
-                this.lastValue = todoItem.Title;
+                this.lastValue = todoItem.title;
             }
         }
     });
@@ -165,7 +178,7 @@
         focusOut: function () {
             var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
             todoList.addTodo(function (todoItem) {
-                todoList.Todos.pushObject(todoItem);
+                todoList.todos.pushObject(todoItem);
             });
         },
 

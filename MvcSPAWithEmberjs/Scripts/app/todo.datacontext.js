@@ -1,6 +1,6 @@
 ﻿window.todoApp = window.todoApp || {};
 
-window.createTodoAppDataContext = function CreateTodoAppDataContext() {
+window.todoApp.datacontext = (function () {
 
     var datacontext = {
         getTodoLists: getTodoLists,
@@ -31,70 +31,68 @@ window.createTodoAppDataContext = function CreateTodoAppDataContext() {
         }
     }
     function createTodoItem(data) {
-        return new datacontext.TodoItem(data); // TodoItem is injected by model.js
+        return new datacontext.todoItem(data); // todoItem is injected by model.js
     }
     function createTodoList(data) {
-        return new datacontext.TodoList(data); // TodoList is injected by model.js
+        return new datacontext.todoList(data); // todoList is injected by model.js
     }
     function saveNewTodoItem(todoItem) {
         clearErrorMessage(todoItem);
         return ajaxRequest("post", todoItemUrl(), todoItem)
             .done(function (result) {
-                todoItem.TodoItemId = result.TodoItemId;
+                todoItem.todoItemId = result.todoItemId;
             })
             .fail(function () {
-                todoItem.ErrorMessage("Error adding a new todo item.");
+                todoItem.errorMessage("Error adding a new todo item.");
             });
     }
     function saveNewTodoList(todoList) {
         clearErrorMessage(todoList);
         return ajaxRequest("post", todoListUrl(), todoList)
             .done(function (result) {
-                todoList.TodoListId = result.TodoListId;
-                todoList.UserId = result.UserId;
+                todoList.todoListId = result.todoListId;
+                todoList.userId = result.userId;
             })
             .fail(function () {
-                todoList.ErrorMessage("Error adding a new todo list.");
+                todoList.errorMessage("Error adding a new todo list.");
             });
     }
     function deleteTodoItem(todoItem) {
-        return ajaxRequest("delete", todoItemUrl(todoItem.TodoItemId))
+        return ajaxRequest("delete", todoItemUrl(todoItem.todoItemId))
             .fail(function () {
-                todoItem.ErrorMessage("Error removing todo item.");
+                todoItem.errorMessage("Error removing todo item.");
             });
     }
     function deleteTodoList(todoList) {
-        return ajaxRequest("delete", todoListUrl(todoList.TodoListId))
+        return ajaxRequest("delete", todoListUrl(todoList.todoListId))
             .fail(function () {
-                todoList.ErrorMessage("Error removing todo list.");
+                todoList.errorMessage("Error removing todo list.");
             });
     }
     function saveChangedTodoItem(todoItem) {
         clearErrorMessage(todoItem);
-        return ajaxRequest("put", todoItemUrl(todoItem.TodoItemId), todoItem)
+        return ajaxRequest("put", todoItemUrl(todoItem.todoItemId), todoItem)
             .fail(function () {
-                todoItem.ErrorMessage("Error updating todo item.");
+                todoItem.errorMessage("Error updating todo item.");
             });
     }
     function saveChangedTodoList(todoList) {
         clearErrorMessage(todoList);
-        return ajaxRequest("put", todoListUrl(todoList.TodoListId), todoList)
+        return ajaxRequest("put", todoListUrl(todoList.todoListId), todoList)
             .fail(function () {
-                todoList.ErrorMessage("Error updating the todo list title. Please make sure it is non-empty.");
+                todoList.errorMessage("Error updating the todo list title. Please make sure it is non-empty.");
             });
     }
 
     // Private
-    function clearErrorMessage(entity) {
-        entity.ErrorMessage(null);
-    }
+    function clearErrorMessage(entity) { entity.errorMessage(null); }
     function ajaxRequest(type, url, data) { // Ajax helper
         var options = {
             dataType: "json",
             contentType: "application/json",
             cache: false,
             type: type,
-            data: data ? data.toJson(): null //todo: examine how to make it also work for ko.toJSON
+            data: data ? data.toJson() : null
         };
         return $.ajax(url, options);
     }
@@ -102,4 +100,5 @@ window.createTodoAppDataContext = function CreateTodoAppDataContext() {
     function todoListUrl(id) { return "/api/todolist/" + (id || ""); }
     function todoItemUrl(id) { return "/api/todo/" + (id || ""); }
 
-};
+})();
+
