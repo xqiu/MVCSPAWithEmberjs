@@ -11,7 +11,7 @@ namespace MvcHtmlHelpers
     {
         private static string templateFolder = HttpContext.Current.Server.MapPath("templates");
 
-        public static MvcHtmlString RenderEmber(this HtmlHelper helper, string path)
+        public static MvcHtmlString RenderEmber(this HtmlHelper helper, string path, bool noTemplateName=false)
         {
             if (HttpRuntime.Cache[path] == null)
             {
@@ -34,8 +34,18 @@ namespace MvcHtmlHelpers
                     {
                         templateName = templateName.Substring(0, fileExtensionPosition);
                     }
-                    MvcHtmlString result = new MvcHtmlString(WrapWithHandlebarScript(templateName, absolutePath));
-                    HttpRuntime.Cache.Insert(path, result, new CacheDependency(absolutePath));
+
+                    string templateContent;
+                    if (noTemplateName)
+                    {
+                        templateContent = "<script type=\"text/x-handlebars\">\n" + File.ReadAllText(absolutePath) + "\n</script>\n";
+                    }
+                    else
+                    {
+                        templateContent = WrapWithHandlebarScript(templateName, absolutePath);
+                    }
+
+                    HttpRuntime.Cache.Insert(path, new MvcHtmlString(templateContent), new CacheDependency(absolutePath));
                 }
                 else
                 {

@@ -1,5 +1,11 @@
 ﻿/// <reference path="todo.datacontext.js" />
-window.TodoEmberApp = Em.Application.create();
+window.TodoEmberApp = Em.Application.create({
+    rootElement: '#main-content',
+    ready: function () {
+        //Initialize the todoList
+        this.todoListsController.loadTodoList();
+    }
+});
 
 TodoEmberApp.Todo = Ember.Object.extend({
     todoItemId: 0,

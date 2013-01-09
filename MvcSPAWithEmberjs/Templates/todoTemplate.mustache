@@ -1,8 +1,6 @@
 ﻿        <p class="error">{{TodoEmberApp.todoListsController.error}}</p>
 
-        {{#view Em.Button classBinding="isActive"
-              target="TodoEmberApp.todoListsController"
-              action="addTodoList"}}Add Todo list{{/view}}
+        <button {{action "addTodoList" target="TodoEmberApp.todoListsController"}} class="isActive">Add Todo list</button>
 
         <section id="lists">
             {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
@@ -13,7 +11,7 @@
                     </form>
                 </header>
                 <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="view.content"}}>X</a>
-            
+                
                 {{! todo: demo the outlets here }}
                 <ul>
                        {{#each todoItem in view.content.todos}}
@@ -33,7 +31,7 @@
 
                 {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.newTodoTitle" class="addTodo" placeholder="Type here to add"}}
                 {{/view}}
-            
+
                 {{#if view.content.hasError}}
                     <p class="error">{{view.content.error}}</p>
                 {{/if}}

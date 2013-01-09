@@ -4,18 +4,15 @@
 
 (function (datacontext) {
 
-    //TodoEmberApp.Router = Ember.Router.extend({
-    //    root: Ember.Route.extend({
-    //        index: Ember.Route.extend({
-    //            route: '/'
-    //        })
-    //    })
-    //})
+    TodoEmberApp.Router.map(function (match) {
+        match('/').to('index');
+    });
 
-    //TodoEmberApp.ApplicationController = Ember.Controller.extend();
-    //TodoEmberApp.ApplicationView = Ember.View.extend({
-    //    templateName: 'todoTemplate'
-    //});
+    TodoEmberApp.IndexRoute = Ember.Route.extend({
+        renderTemplate: function () {
+            this.render('todoTemplate');
+        }
+    });
 
     TodoEmberApp.todoListsController = Ember.ArrayProxy.create({
         content: [],
@@ -189,17 +186,6 @@
         }
     });
 
-    var view = Ember.View.create({
-        templateName: 'todoTemplate',
-        name: "todoView"
-    });
-    view.appendTo("#main-content");
-
-    //Initialize the todoList
-    TodoEmberApp.todoListsController.loadTodoList();
-
-    //Initialize the app
-    TodoEmberApp.initialize();
 
 })(window.todoApp.datacontext);
 
