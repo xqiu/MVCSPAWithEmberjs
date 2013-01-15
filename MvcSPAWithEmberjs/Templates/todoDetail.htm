@@ -1,0 +1,19 @@
+﻿<script type="text/x-handlebars" data-template-name="todoDetail">
+    {{! todo: demo the outlets here }}
+    <ul>
+      {{#each todoItem in view.content.todos}}
+      {{#view TodoEmberApp.todosView contentBinding="todoItem"}}  {{! todo: check using routing conventions }}
+      <li>
+        {{view Ember.Checkbox checkedBinding="todoItem.isDone"}}
+        {{#view TodoEmberApp.EditTodoItemView valueBinding="todoItem.title" class="required" disabledBinding="todoItem.isDone" }}
+        {{/view}}
+        <a href="#" {{action "deleteTodo" on="click" target="view"}}>X</a>
+        {{#if todoItem.hasError}}
+        <p class="error">{{todoItem.error}}</p>
+        {{/if}}
+      </li>
+      {{/view}}
+      {{/each}}
+    </ul>
+<p>you kidding</p>
+    </script>

@@ -4,20 +4,27 @@
 
 (function (datacontext) {
 
-    TodoEmberApp.Router.map(function (match) {
-        match('/').to('index');
+    TodoEmberApp.Router.map(function () {
+        //match('/').to('index');  master 01072013 syntax
+        this.route("index", { path: "/" });  //master 01142013 syntax
     });
 
     TodoEmberApp.IndexRoute = Ember.Route.extend({
         renderTemplate: function () {
             this.render('todoTemplate');
+
+            //this.render('todoDetail', {   // the template to render
+            //    into: 'todoTemplate',          // the template to render into
+            //    //outlet: 'detail',       // the name of the outlet in that template
+            //    //controller: 'todoListsController'  // the controller to use for the template
+            //});
         }
     });
 
     TodoEmberApp.todoListsController = Ember.ArrayProxy.create({
         content: [],
         error: "",
-        addTodoList: function (title) {
+        addTodoList: function () {
             var self = this;
             var todoList = datacontext.createTodoList();
             todoList.isEditingListTitle = true;
@@ -38,7 +45,6 @@
             this.unshiftObject(todoList); // Insert new TodoList at the front
         },
         deleteTodoList: function (event) {
-
             var todoList = this.get('content');
             this.content.removeObject(todoList);
             datacontext.deleteTodoList(todoList)
@@ -100,14 +106,12 @@
         focusOut: function (evt) {
             this.changeContent();
         },
-
-        keyUp: function (evt) {
+        
+        insertNewline: function (evt) {
             $(evt.target).parent("form").validate();  //calling jquery.validate
-            if (evt.keyCode === 13 /* enter */) {
-                $(evt.target).blur();
-            }
+            $(evt.target).blur();
         },
-
+        
         changeContent: function () {
             var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
             if (this.lastValue != todoList.title) {
@@ -126,10 +130,8 @@
             this.changeContent();
         },
 
-        keyUp: function (evt) {
-            if (evt.keyCode === 13) {
-                $(evt.target).blur();
-            }
+        insertNewline: function (evt) {
+            $(evt.target).blur();
         },
 
         changeContent: function () {
@@ -179,10 +181,8 @@
             });
         },
 
-        keyUp: function (evt) {
-            if (evt.keyCode === 13) {
-                this.focusOut();
-            }
+        insertNewline: function (evt) {
+            this.focusOut();  //don't use $(evt.target).blur(); as it won't set the focus back
         }
     });
 

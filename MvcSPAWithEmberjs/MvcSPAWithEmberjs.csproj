@@ -297,7 +297,7 @@
     <Content Include="Scripts\app\todo.router.js" />
     <Content Include="Scripts\ember-1.0.0-pre.2.js" />
     <Content Include="Scripts\ember-1.0.0-pre.2.min.js" />
-    <Content Include="Scripts\ember-master01072013.js" />
+    <Content Include="Scripts\ember-master01142013.js" />
     <Content Include="Scripts\handlebars-1.0.0.beta.6.js" />
     <Content Include="Scripts\handlebars-1.0.rc.1.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -312,6 +312,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="Templates\Backup\todoTemplate.xhtm" />
+    <Content Include="Templates\todoDetail.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -355,8 +357,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\Home\_Register.cshtml" />
-    <Content Include="Templates\todoTemplate.mustache" />
+    <Content Include="Templates\todoTemplate.htm" />
+    <Content Include="Templates\Backup\todoTemplate1.mustache" />
     <Content Include="Templates\Backup\todoTemplate.mustache" />
+    <Content Include="Templates\todoTemplate.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

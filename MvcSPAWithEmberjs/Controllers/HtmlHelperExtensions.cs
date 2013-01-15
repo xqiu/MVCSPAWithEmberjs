@@ -35,15 +35,7 @@ namespace MvcHtmlHelpers
                         templateName = templateName.Substring(0, fileExtensionPosition);
                     }
 
-                    string templateContent;
-                    if (noTemplateName)
-                    {
-                        templateContent = "<script type=\"text/x-handlebars\">\n" + File.ReadAllText(absolutePath) + "\n</script>\n";
-                    }
-                    else
-                    {
-                        templateContent = WrapWithHandlebarScript(templateName, absolutePath);
-                    }
+                    string templateContent = ReadTemplate(templateName, new FileInfo(absolutePath), noTemplateName);
 
                     HttpRuntime.Cache.Insert(path, new MvcHtmlString(templateContent), new CacheDependency(absolutePath));
                 }
@@ -98,16 +90,27 @@ namespace MvcHtmlHelpers
                 {
                     relativeDirName += "-";
                 }
-                content += WrapWithHandlebarScript(templateName + relativeDirName + subtemplateName, templateFile.FullName);
+                content += ReadTemplate(templateName + relativeDirName + subtemplateName, templateFile);
             }
             return content;
         }
 
-        private static string WrapWithHandlebarScript(string templateName, string templatePath)
+        private static string ReadTemplate(string templateName, FileInfo templateFile, bool noTemplateName = false)
         {
-            string content = File.ReadAllText(templatePath);
-            string startTag = string.Format("<script type=\"text/x-handlebars\" data-template-name=\"{0}\">\n", templateName);
-            return startTag + content + "\n</script>\n";
+            string content = File.ReadAllText(templateFile.FullName);
+            if (templateFile.Extension.ToLowerInvariant().StartsWith(".htm"))
+            {
+                //for .html/.htm* files, we'll simply return the content
+                return content;
+            }
+
+            //for other template files, we treate them as x-handlebars script type
+            if (noTemplateName)
+            {
+                return "<script type=\"text/x-handlebars\">\n" + content + "\n</script>\n";
+            }
+
+            return "<script type=\"text/x-handlebars\" data-template-name=\"" + templateName + "\">\n" + content + "\n</script>\n";
         }
 
     }
