@@ -3,7 +3,7 @@
 /// <reference path="todo.embermodel.js" />
 
 (function (datacontext) {
-
+    
     TodoEmberApp.Router.map(function () {
         //match('/').to('index');  master 01072013 syntax
         this.route("index", { path: "/" });  //master 01142013 syntax

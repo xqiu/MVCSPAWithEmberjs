@@ -11,7 +11,7 @@ namespace MvcHtmlHelpers
     {
         private static string templateFolder = HttpContext.Current.Server.MapPath("templates");
 
-        public static MvcHtmlString RenderEmber(this HtmlHelper helper, string path, bool noTemplateName=false)
+        public static MvcHtmlString RenderEmber(this HtmlHelper helper, string path="", bool noTemplateName=false)
         {
             if (HttpRuntime.Cache[path] == null)
             {
