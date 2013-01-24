@@ -1,0 +1,43 @@
+﻿<script type="text/x-handlebars" data-template-name="OLD_todoTemplate">
+  <p class="error">{{TodoEmberApp.todoListsController.error}}</p>
+
+  <input type="button" {{action "addTodoList" target="TodoEmberApp.todoListsController"}} class="isActive" value="Add Todo list"></input>
+  
+  <section id="lists">
+    {{#collection contentBinding="TodoEmberApp.todoListsController" itemTagName="article" itemClassNames="todoList" }}
+    <header>
+      <form onsubmit="event.preventDefault();">
+        {{#view TodoEmberApp.EditTodoListView valueBinding="view.content.title" class="required" }}
+        {{/view}}
+      </form>
+    </header>
+    <a href="#" class="deletelist" {{action "deleteTodoList" on="click" contentBinding="view.content" target="view.content"}}>X</a>
+
+    {{! todo: demo the outlets here }}
+    <ul>
+      {{#each todoItem in view.content.todos}}
+      {{#view TodoEmberApp.todosView contentBinding="todoItem"}}  {{! todo: check using routing conventions }}
+      <li>
+        {{view Ember.Checkbox checkedBinding="todoItem.isDone"}}
+        
+        {{view App.TodoItemEditView valueBinding="todoItem.title" class="required" disabledBinding="todoItem.isDone" }}
+
+        <a href="#" {{action "deleteTodo" on="click" target="view"}}>X</a>
+                
+        {{#if todoItem.hasError}}
+        <p class="error">{{todoItem.error}}</p>
+        {{/if}}
+      </li>
+      {{/view}}
+      {{/each}}
+    </ul>
+
+    {{#view TodoEmberApp.CreateTodoView valueBinding="view.content.newTodoTitle" class="addTodo" placeholder="Type here to add"}}
+    {{/view}}
+
+    {{#if view.content.hasError}}
+    <p class="error">{{view.content.error}}</p>
+    {{/if}}
+    {{/collection}}
+  </section>
+</script>

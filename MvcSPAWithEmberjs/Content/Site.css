@@ -29,6 +29,7 @@ button, input[type=submit] {
 header {
     margin: 0 .7em;
     position: relative;
+    z-index: -1;
 }
 
     header p {
@@ -146,6 +147,11 @@ header {
     margin-bottom: 12px;
 }
 
+#externalLogins {
+    text-align: left;
+    padding-left: 25px;
+}
+
 fieldset {
     border: none;
     margin: 0 auto;
@@ -180,7 +186,7 @@ ol.round {
 
 /*#endregion */
 
-#body {
+#main-content {
     min-height: 400px;
     text-align: center;
 }
@@ -253,5 +259,6 @@ footer {
 
     header {
         text-align: center;
+        clear: both;
     }
 }

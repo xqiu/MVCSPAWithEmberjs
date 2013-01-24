@@ -1,0 +1,19 @@
+﻿<script type="text/x-handlebars" data-template-name="application">
+	<header>
+		<p>My Ember App</p>
+	</header>
+	<div id="body">
+	<nav>
+	  {{#linkTo "index"}}Home{{/linkTo}}
+	  {{#linkTo "about"}}About{{/linkTo}}
+	  {{#linkTo "todoList"}}Todo{{/linkTo}}
+	</nav>
+		<div id="main-content">
+			{{outlet}}
+		</div>
+	</div>
+	   <footer>
+		<p>Learn more about <a href="http://go.microsoft.com/fwlink/?LinkId=273732">Single Page Applications</a></p>
+		{{copyright "My ASP.NET MVC Application"}}
+	</footer>
+</script>

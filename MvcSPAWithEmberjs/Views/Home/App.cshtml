@@ -1,0 +1,29 @@
+﻿@using MvcHtmlHelpers;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/themes/base/css")
+</head>
+<body>
+    <div id="userSettings">
+        @Html.Partial("_UserSettings")
+    </div>
+    @Html.RenderEmber()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/ember")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>

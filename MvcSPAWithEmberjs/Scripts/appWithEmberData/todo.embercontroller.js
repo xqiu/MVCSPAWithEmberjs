@@ -1,8 +1,7 @@
 ﻿/// <reference path="../ember-1.0.0-pre.2.js" />
-/// <reference path="todo.datacontext.js" />
 /// <reference path="todo.embermodel.js" />
 
-(function (datacontext) {
+(function () {
     
     TodoEmberApp.Router.map(function () {
         //match('/').to('index');  master 01072013 syntax
@@ -22,69 +21,33 @@
     });
 
     TodoEmberApp.todoListsController = Ember.ArrayProxy.create({
-        content: [],
+        content: TodoEmberApp.TodoList.find(),
         error: "",
         addTodoList: function () {
-            var self = this;
-            var todoList = datacontext.createTodoList();
-            todoList.isEditingListTitle = true;
-            datacontext.saveNewTodoList(todoList)
-                .then(addSucceeded)
-                .fail(addFailed);
-
-            function addSucceeded() {
-                self.showTodoList(todoList);
-                todoList.isEditingListTitle = false;
-            }
-            function addFailed() {
-                error = "Save of new TodoList failed";
-                todoList.isEditingListTitle = false;
-            }
+            var transaction = TodoEmberApp.store.transaction();
+            transaction.createRecord(TodoEmberApp.TodoList, { title: "My todos", todos: [], userId: "to be replaced" });
+            transaction.commit();
         },
         showTodoList: function (todoList) {
             this.unshiftObject(todoList); // Insert new TodoList at the front
         },
         deleteTodoList: function (event) {
-            var todoList = this.get('content');
-            this.content.removeObject(todoList);
-            datacontext.deleteTodoList(todoList)
-                .fail(deleteFailed);
-
-            function deleteFailed() {
-                showTodoList(todoList); // re-show the restored list
-            }
+            alert("todo, find a proper place for the delete event");
+            var transaction = TodoEmberApp.store.transaction();
+            transaction.add(TodoEmberApp.TodoList.find(4));
+            TodoEmberApp.TodoList.find(4).deleteRecord();
+            transaction.commit();
         },
-        findTodoList: function (todoListId) {
-            for (var i = 0; i < this.content.length; i++) {
-                if (this.content[i].todoListId === todoListId) {
-                    return this.content[i];
-                }
-            }
-            return undefined;
-        },
-        loadTodoList: function () {
-            var self = this;
-            datacontext.getTodoLists(
-                function (mappedTodoLists) {
-                    for (var i = 0; i < mappedTodoLists.length; i++) {
-                        self.pushObject(mappedTodoLists[i]);
-                    }
-                },
-                function (error) {
-                    self.error = error;
-                }
-            );
-        }
     });
 
     TodoEmberApp.todosView = Em.View.extend({
         deleteTodo: function () {
             var todoItem = this.content;
-            return window.todoApp.datacontext.deleteTodoItem(todoItem)
-                 .done(function () {
-                     var todoList = TodoEmberApp.todoListsController.findTodoList(todoItem.todoListId);
-                     todoList.todos.removeObject(todoItem);
-                 });
+
+            var transaction = TodoEmberApp.store.transaction();
+            transaction.add(todoItem);
+            todoItem.deleteRecord();
+            transaction.commit();
         },
     });
 
@@ -101,7 +64,7 @@
         //},
         focusIn: function (evt) {
             $(evt.target).parent("form").validate();  //initialize jquery.validate
-            this.lastValue = this.templateData.view.content.title;
+            this.lastValue = this.templateData.view.content.get("title");
         },
         focusOut: function (evt) {
             this.changeContent();
@@ -113,10 +76,10 @@
         },
         
         changeContent: function () {
-            var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
-            if (this.lastValue != todoList.title) {
-                window.todoApp.datacontext.saveChangedTodoList(todoList);
-                this.lastValue = todoList.title;
+            var todoList = this.templateData.view.content;
+            if (this.lastValue != todoList.get("title")) {
+                TodoEmberApp.store.commit();
+                this.lastValue = todoList.get("title");
             }
         }
     });
@@ -135,10 +98,13 @@
         },
 
         changeContent: function () {
-            var todoItem = this.templateData.view.content;  //todo: how to properly get todoList object?
-            if (this.lastValue != todoItem.title) {
-                window.todoApp.datacontext.saveChangedTodoItem(todoItem);
-                this.lastValue = todoItem.title;
+            var todoItem = this.templateData.view.content;
+            if (this.lastValue != todoItem.get("title")) {
+
+                // todo: direct commmit will send update for the todoList instead of todo item, what to do?
+
+                TodoEmberApp.store.commit();
+                this.lastValue = todoItem.get("title");
             }
         }
     });
@@ -175,9 +141,9 @@
         //    }
         //},
         focusOut: function () {
-            var todoList = this.templateData.view.content;  //todo: how to properly get todoList object?
+            var todoList = this.templateData.view.content;
             todoList.addTodo(function (todoItem) {
-                todoList.todos.pushObject(todoItem);
+                //todoList.get("todos").content.pushObject(todoItem);
             });
         },
 
@@ -187,5 +153,5 @@
     });
 
 
-})(window.todoApp.datacontext);
+})();
 

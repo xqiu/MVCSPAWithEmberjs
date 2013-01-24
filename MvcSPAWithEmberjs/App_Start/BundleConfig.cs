@@ -19,19 +19,24 @@ namespace MvcSPAWithEmberjs
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                "~/Scripts/handlebars-1.0.rc.1.js",
-                "~/Scripts/ember-master01142013.js"));
-                //"~/Scripts/handlebars-1.0.0.beta.6.js",
-                //"~/Scripts/ember-1.0.0-pre.2.js"));
+                "~/Scripts/handlebars-1.0.rc.2.js",
+                "~/Scripts/ember-1.0.0-pre.4.js",
+                "~/Scripts/ember-data.js",
+                "~/Scripts/app/WebAPISerializer.js",
+                "~/Scripts/app/WebAPIAdapter.js"
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
-                "~/Scripts/app/ajaxlogin.js"));
+                "~/Scripts/ajaxlogin.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/todo").Include(
-                "~/Scripts/app/todo.emberbindings.js",
-                "~/Scripts/app/todo.datacontext.js",
-                "~/Scripts/app/todo.embermodel.js",
-                "~/Scripts/app/todo.embercontroller.js"));
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/app/app.js",
+                "~/Scripts/app/router.js",
+                "~/Scripts/app/helpers.js")
+                .IncludeDirectory("~/Scripts/app/routes", "*.js")
+                .IncludeDirectory("~/Scripts/app/models", "*.js")
+                .IncludeDirectory("~/Scripts/app/views", "*.js")
+                .IncludeDirectory("~/Scripts/app/controllers", "*.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
