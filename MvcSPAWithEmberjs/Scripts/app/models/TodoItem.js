@@ -18,6 +18,6 @@ App.Todo = DS.Model.extend({
     }.property('error'),
 
     saveCheckbox: function () {
-        App.store.commit();
+        App.store.commit(); //todo: this 
     }.observes('isDone'),
 });

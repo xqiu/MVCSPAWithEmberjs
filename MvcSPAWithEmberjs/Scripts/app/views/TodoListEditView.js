@@ -7,7 +7,7 @@
     //},
     focusIn: function (evt) {
         $(evt.target).parent("form").validate();  //initialize jquery.validate
-        this.lastValue = this.templateData.view.get("title");
+        this.lastValue = this.get('parentView').templateData.view.content.get("title");
     },
     focusOut: function (evt) {
         this.changeContent();
@@ -19,10 +19,11 @@
     },
 
     changeContent: function () {
-        var todoList = this.templateData.view;
-        if (this.lastValue != todoList.get("title")) {
-            App.store.commit();     //todo: not commited somehow
-            this.lastValue = todoList.get("title");
+        var todoList = this.get('parentView').templateData.view.content;
+        var newValue = todoList.get("title");
+        if (this.lastValue != newValue) {
+            App.store.commit();
+            this.lastValue = newValue;
         }
     }
 });

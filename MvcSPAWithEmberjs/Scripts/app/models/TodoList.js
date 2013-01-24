@@ -19,20 +19,19 @@ App.TodoList.reopen({
     }.property('error'),
 
     addTodo: function (callback) {
-        var self = this;
-        if (self.get('newTodoTitle')) { // need a title to save
+        if (this.get('newTodoTitle')) { // need a title to save
             var transaction = App.store.transaction();
             //var newTodo = new App.Todo({
             var newTodo = {
-                title: self.get('newTodoTitle'),
-                todoListId: self.id,
+                title: this.get('newTodoTitle'),
+                todoListId: this.id,
                 isDone: false
             };
             transaction.createRecord(App.Todo, newTodo);
 
             transaction.commit();
 
-            self.set('newTodoTitle', '');
+            this.set('newTodoTitle', '');
 
             // todo: how to make the todoList update to show it?  The following doesn't work, need to refresh for now
 
