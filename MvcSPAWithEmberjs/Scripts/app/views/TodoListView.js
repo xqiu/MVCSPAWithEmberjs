@@ -2,9 +2,8 @@
     deleteTodoList: function (event) {
         var todoList = this.templateData.view.content;
         var transaction = App.store.transaction();
+        transaction.add(todoList);
         todoList.deleteRecord();
         transaction.commit();
-
-        //todo: commit() call does not issue delete AJAX call, do not know why yet
     },
 });

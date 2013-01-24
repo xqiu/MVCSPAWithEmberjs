@@ -113,12 +113,21 @@ DS.WebAPIAdapter = DS.Adapter.extend({
     deleteRecord: function (store, type, record) {
         var id = get(record, 'id');
         var root = this.rootForType(type);
+        
+        var config = get(this, 'serializer').configurationForType(type),
+            primaryKey = config && config.primaryKey;
 
         this.ajax(this.buildURL(root, id), "DELETE", {
             context: this,
             success: function (json) {
                 Ember.run(this, function () {
-                    this.didSaveRecord(store, type, record, json);
+                    if (json[primaryKey] == id) {
+                        //webAPI delete will just return the original record, in this case, we ignore it
+                        this.didSaveRecord(store, type, record);
+                    }
+                    else {
+                        this.didSaveRecord(store, type, record, json);
+                    }
                 });
             }
         });
