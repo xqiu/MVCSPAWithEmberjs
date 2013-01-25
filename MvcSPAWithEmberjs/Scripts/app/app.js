@@ -1,7 +1,8 @@
 ﻿window.App = Em.Application.create();
 
 DS.WebAPIAdapter.map('App.TodoList', {
-    todos: { embedded: 'always' }
+    // Web API server is not handling reference update/delete, so use "load" instead of "always"
+    todos: { embedded: 'load' } 
 });
 
 DS.WebAPIAdapter.map('App.TodoList', {

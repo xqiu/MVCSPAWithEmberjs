@@ -2,6 +2,7 @@
 DS.WebAPIAdapter = DS.Adapter.extend({
     bulkCommit: false,
     since: 'since',
+    //createTypesAtBeginning: [],
 
     serializer: DS.WebAPISerializer,
 
@@ -10,10 +11,18 @@ DS.WebAPIAdapter = DS.Adapter.extend({
     },
 
     shouldSave: function (record) {
-        var reference = get(record, '_reference');
-
-        return !reference.parent;
+        // Different with RESETAdapter, we always return true here, even if it's-referenced from parent
+        return true;
     },
+
+    //didCreateRecord: function (store, type, record, payload) {
+    //    this._super(store, type, record, payload);
+    //    for(specialType in get(this, 'createTypesAtBeginning')){
+    //        if (type === specialType) {
+
+    //        }
+    //    }
+    //},
 
     createRecord: function (store, type, record) {
         var root = this.rootForType(type);
