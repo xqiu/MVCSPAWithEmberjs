@@ -376,7 +376,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Scripts\appWithEmberData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

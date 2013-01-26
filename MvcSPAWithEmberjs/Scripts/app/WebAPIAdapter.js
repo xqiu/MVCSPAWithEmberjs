@@ -1,15 +1,11 @@
 ﻿get = Ember.get;                      // ember-metal/accessors
-DS.WebAPIAdapter = DS.Adapter.extend({
+DS.WebAPIAdapter = DS.RESTAdapter.extend({
     bulkCommit: false,
     since: 'since',
     //createTypesAtBeginning: [],
 
     serializer: DS.WebAPISerializer,
-
-    init: function () {
-        this._super.apply(this, arguments);
-    },
-
+    
     shouldSave: function (record) {
         // Different with RESETAdapter, we always return true here, even if it's-referenced from parent
         return true;
@@ -52,57 +48,11 @@ DS.WebAPIAdapter = DS.Adapter.extend({
         });
     },
 
-    dirtyRecordsForRecordChange: function (dirtySet, record) {
-        dirtySet.add(record);
-
-        get(this, 'serializer').eachEmbeddedRecord(record, function (embeddedRecord, embeddedType) {
-            if (embeddedType !== 'always') { return; }
-            if (dirtySet.has(embeddedRecord)) { return; }
-            this.dirtyRecordsForRecordChange(dirtySet, embeddedRecord);
-        }, this);
-
-        var reference = record.get('_reference');
-
-        if (reference.parent) {
-            var store = get(record, 'store');
-            var parent = store.recordForReference(reference.parent);
-            this.dirtyRecordsForRecordChange(dirtySet, parent);
-        }
-    },
-
-    dirtyRecordsForHasManyChange: Ember.K,
-
-    createRecords: function (store, type, records) {
-        if (get(this, 'bulkCommit') === false) {
-            return this._super(store, type, records);
-        }
-
-        var root = this.rootForType(type),
-            plural = this.pluralize(root);
-
-        var data = {};
-        data[plural] = [];
-        records.forEach(function (record) {
-            data[plural].push(this.serialize(record, { includeId: true }));
-        }, this);
-
-        this.ajax(this.buildURL(root), "POST", {
-            data: data,
-            context: this,
-            success: function (json) {
-                Ember.run(this, function () {
-                    this.didCreateRecords(store, type, records, json);
-                });
-            }
-        });
-    },
-
     updateRecord: function (store, type, record) {
         var id = get(record, 'id');
         var root = this.rootForType(type);
-        
-        //var data = {};
-        //data[root] = this.serialize(record);
+
+        // Different with RESTAdapter, do not include the root for data 
         data = this.serialize(record, { includeId: true });
 
         this.ajax(this.buildURL(root, id), "PUT", {
@@ -112,9 +62,15 @@ DS.WebAPIAdapter = DS.Adapter.extend({
                 Ember.run(this, function () {
                     this.didSaveRecord(store, type, record, json);
                 });
+                record.set("error", "");
             },
             error: function (xhr) {
-                this.didError(store, type, record, xhr);
+                // Different with RESTAdapter, we act on client side as if it is successful, then set model's error attribute
+                // this.didError(store, type, record, xhr);
+                Ember.run(this, function () {
+                    this.didSaveRecord(store, type, record);
+                });
+                record.set("error", "Server update failed");
             }
         });
     },
@@ -131,7 +87,7 @@ DS.WebAPIAdapter = DS.Adapter.extend({
             success: function (json) {
                 Ember.run(this, function () {
                     if (json[primaryKey] == id) {
-                        //webAPI delete will just return the original record, in this case, we ignore it
+                        // webAPI delete will just return the original record, in this case, we ignore it
                         this.didSaveRecord(store, type, record);
                     }
                     else {
@@ -141,78 +97,7 @@ DS.WebAPIAdapter = DS.Adapter.extend({
             }
         });
     },
-
-    find: function (store, type, id) {
-        var root = this.rootForType(type);
-
-        this.ajax(this.buildURL(root, id), "GET", {
-            success: function (json) {
-                Ember.run(this, function () {
-                    this.didFindRecord(store, type, json, id);
-                });
-            }
-        });
-    },
-
-
-    /**
-      Loads the response to a request for all records by type.
-  
-      You adapter should call this method from its `findAll`
-      method with the response from the backend.
-  
-      @param {DS.Store} store
-      @param {subclass of DS.Model} type
-      @param {any} payload 
-    */
-    didFindAll: function (store, type, payload) {
-        var loader = DS.loaderFor(store),
-            serializer = get(this, 'serializer');
-
-        store.didUpdateAll(type);
-
-        // todo: why the above call tries to update the todoItems that are seralized?  should we call store.didSaveRecords(type) instead?
-
-        serializer.extractMany(loader, payload, type);
-    },
-
-    findAll: function (store, type, since) {
-        var root = this.rootForType(type);
-
-        this.ajax(this.buildURL(root), "GET", {
-            data: this.sinceQuery(since),
-            success: function (json) {
-                Ember.run(this, function () {
-                    this.didFindAll(store, type, json);
-                });
-            }
-        });
-    },
-
-    /**
-      @private
-  
-      This method serializes a list of IDs using `serializeId`
-  
-      @returns {Array} an array of serialized IDs
-    */
-    serializeIds: function (ids) {
-        var serializer = get(this, 'serializer');
-
-        return Ember.EnumerableUtils.map(ids, function (id) {
-            return serializer.serializeId(id);
-        });
-    },
-
-    didError: function (store, type, record, xhr) {
-        if (xhr.status === 422) {
-            var data = JSON.parse(xhr.responseText);
-            store.recordWasInvalid(record, data['errors']);
-        } else {
-            this._super.apply(this, arguments);
-        }
-    },
-
+    
     ajax: function (url, type, hash) {
         hash.url = url;
         hash.type = type;
@@ -224,44 +109,14 @@ DS.WebAPIAdapter = DS.Adapter.extend({
             hash.data = JSON.stringify(hash.data);
         }
 
+        // todo:, if type == 'PUT', datatype should be text
+
         jQuery.ajax(hash);
-    },
-    
-    rootForType: function (type) {
-        var serializer = get(this, 'serializer');
-        return serializer.rootForType(type);
     },
 
     pluralize: function (string) {
-        var serializer = get(this, 'serializer');
-        //return serializer.pluralize(string);
         return string;
     },
 
-    buildURL: function (record, suffix) {
-        var url = [this.url];
-
-        Ember.assert("Namespace URL (" + this.namespace + ") must not start with slash", !this.namespace || this.namespace.toString().charAt(0) !== "/");
-        Ember.assert("Record URL (" + record + ") must not start with slash", !record || record.toString().charAt(0) !== "/");
-        Ember.assert("URL suffix (" + suffix + ") must not start with slash", !suffix || suffix.toString().charAt(0) !== "/");
-
-        if (this.namespace !== undefined) {
-            url.push(this.namespace);
-        }
-
-        //url.push(this.pluralize(record));
-        url.push(record);
-        if (suffix !== undefined) {
-            url.push(suffix);
-        }
-
-        return url.join("/");
-    },
-
-    sinceQuery: function (since) {
-        var query = {};
-        query[get(this, 'since')] = since;
-        return since ? query : null;
-    }
 });
 
