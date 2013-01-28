@@ -4,11 +4,13 @@ using System.Data.Entity.Infrastructure;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using MvcSPAWithEmberjs.Filters;
 using MvcSPAWithEmberjs.Models;
 
 namespace MvcSPAWithEmberjs.Controllers
 {
     [Authorize]
+    [ValidateHttpAntiForgeryToken]
     public class TodoController : ApiController
     {
         private TodoItemContext db = new TodoItemContext();
@@ -16,75 +18,76 @@ namespace MvcSPAWithEmberjs.Controllers
         // PUT api/Todo/5
         public HttpResponseMessage PutTodoItem(int id, TodoItemDto todoItemDto)
         {
-            if (ModelState.IsValid && id == todoItemDto.TodoItemId)
+            if (!ModelState.IsValid)
             {
-                TodoItem todoItem = todoItemDto.ToEntity();
-                TodoList todoList = db.TodoLists.Find(todoItem.TodoListId);
-                if (todoList == null)
-                {
-                    return Request.CreateResponse(HttpStatusCode.NotFound);
-                }
-
-                if (todoList.UserId != User.Identity.Name)
-                {
-                    // Trying to modify a record that does not belong to the user
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
-                }
-
-                // Need to detach to avoid duplicate primary key exception when SaveChanges is called
-                db.Entry(todoList).State = EntityState.Detached;
-                db.Entry(todoItem).State = EntityState.Modified;
-
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    return Request.CreateResponse(HttpStatusCode.InternalServerError);
-                }
-
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
-            else
+
+            if (id != todoItemDto.TodoItemId)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
+
+            TodoItem todoItem = todoItemDto.ToEntity();
+            TodoList todoList = db.TodoLists.Find(todoItem.TodoListId);
+            if (todoList == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+
+            if (todoList.UserId != User.Identity.Name)
+            {
+                // Trying to modify a record that does not belong to the user
+                return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+
+            // Need to detach to avoid duplicate primary key exception when SaveChanges is called
+            db.Entry(todoList).State = EntityState.Detached;
+            db.Entry(todoItem).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         // POST api/Todo
         public HttpResponseMessage PostTodoItem(TodoItemDto todoItemDto)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                TodoList todoList = db.TodoLists.Find(todoItemDto.TodoListId);
-                if (todoList == null)
-                {
-                    return Request.CreateResponse(HttpStatusCode.NotFound);
-                }
-
-                if (todoList.UserId != User.Identity.Name)
-                {
-                    // Trying to add a record that does not belong to the user
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
-                }
-
-                TodoItem todoItem = todoItemDto.ToEntity();
-
-                // Need to detach to avoid loop reference exception during JSON serialization
-                db.Entry(todoList).State = EntityState.Detached;
-                db.TodoItems.Add(todoItem);
-                db.SaveChanges();
-                todoItemDto.TodoItemId = todoItem.TodoItemId;
-
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, todoItemDto);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = todoItemDto.TodoItemId }));
-                return response;
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
-            else
+
+            TodoList todoList = db.TodoLists.Find(todoItemDto.TodoListId);
+            if (todoList == null)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
+                return Request.CreateResponse(HttpStatusCode.NotFound);
             }
+
+            if (todoList.UserId != User.Identity.Name)
+            {
+                // Trying to add a record that does not belong to the user
+                return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+
+            TodoItem todoItem = todoItemDto.ToEntity();
+
+            // Need to detach to avoid loop reference exception during JSON serialization
+            db.Entry(todoList).State = EntityState.Detached;
+            db.TodoItems.Add(todoItem);
+            db.SaveChanges();
+            todoItemDto.TodoItemId = todoItem.TodoItemId;
+
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, todoItemDto);
+            response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = todoItemDto.TodoItemId }));
+            return response;
         }
 
         // DELETE api/Todo/5

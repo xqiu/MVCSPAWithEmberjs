@@ -18,7 +18,5 @@
             App.store.commit();
             this.lastValue = newValue;
         }
-
-        //todo: how to handle commit error call back? e.g. empty title commit failure
     }
 });

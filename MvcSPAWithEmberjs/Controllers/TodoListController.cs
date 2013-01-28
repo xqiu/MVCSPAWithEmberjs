@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using MvcSPAWithEmberjs.Filters;
 using MvcSPAWithEmberjs.Models;
 
 namespace MvcSPAWithEmberjs.Controllers
@@ -44,58 +45,62 @@ namespace MvcSPAWithEmberjs.Controllers
         }
 
         // PUT api/TodoList/5
+        [ValidateHttpAntiForgeryToken]
         public HttpResponseMessage PutTodoList(int id, TodoListDto todoListDto)
         {
-            if (ModelState.IsValid && id == todoListDto.TodoListId)
+            if (!ModelState.IsValid)
             {
-                TodoList todoList = todoListDto.ToEntity();
-                if (db.Entry(todoList).Entity.UserId != User.Identity.Name)
-                {
-                    // Trying to modify a record that does not belong to the user
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
-                }
-
-                db.Entry(todoList).State = EntityState.Modified;
-
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    return Request.CreateResponse(HttpStatusCode.InternalServerError);
-                }
-
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
-            else
+
+            if (id != todoListDto.TodoListId)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
+
+            TodoList todoList = todoListDto.ToEntity();
+            if (db.Entry(todoList).Entity.UserId != User.Identity.Name)
+            {
+                // Trying to modify a record that does not belong to the user
+                return Request.CreateResponse(HttpStatusCode.Unauthorized);
+            }
+
+            db.Entry(todoList).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         // POST api/TodoList
+        [ValidateHttpAntiForgeryToken]
         public HttpResponseMessage PostTodoList(TodoListDto todoListDto)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                todoListDto.UserId = User.Identity.Name;
-                TodoList todoList = todoListDto.ToEntity();
-                db.TodoLists.Add(todoList);
-                db.SaveChanges();
-                todoListDto.TodoListId = todoList.TodoListId;
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, todoListDto);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = todoListDto.TodoListId }));
-                return response;
-            }
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
+            todoListDto.UserId = User.Identity.Name;
+            TodoList todoList = todoListDto.ToEntity();
+            db.TodoLists.Add(todoList);
+            db.SaveChanges();
+            todoListDto.TodoListId = todoList.TodoListId;
+
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, todoListDto);
+            response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = todoListDto.TodoListId }));
+            return response;
         }
 
         // DELETE api/TodoList/5
+        [ValidateHttpAntiForgeryToken]
         public HttpResponseMessage DeleteTodoList(int id)
         {
             TodoList todoList = db.TodoLists.Find(id);

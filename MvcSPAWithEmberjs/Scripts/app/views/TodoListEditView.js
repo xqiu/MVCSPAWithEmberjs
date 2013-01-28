@@ -1,10 +1,5 @@
 ﻿App.TodoListEditView = Em.TextField.extend({
     lastValue: '',
-    ////todo: see if we can use validate inside init function instead of calling focusIn and keyUp
-    //init: function () {
-    //    this._super();
-    //    $(this).parent("form").validate();  //initialize jquery.validate
-    //},
     focusIn: function (evt) {
         $(evt.target).parent("form").validate();  //initialize jquery.validate
         this.lastValue = this.get('parentView').templateData.view.content.get("title");

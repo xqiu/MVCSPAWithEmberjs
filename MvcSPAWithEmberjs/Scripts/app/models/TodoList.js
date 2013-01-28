@@ -1,5 +1,5 @@
 ﻿var attr = DS.attr;
-//App.TodoList = DS.Model.extend({
+//App.TodoList defined in TodoItem.js
 App.TodoList.reopen({
     todoListId: attr('number'),
     title: attr('string'),

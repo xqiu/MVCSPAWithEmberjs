@@ -27,7 +27,7 @@ namespace MvcSPAWithEmberjs
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
-                "~/Scripts/ajaxlogin.js"));
+                "~/Scripts/app/ajaxlogin.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/app/app.js",

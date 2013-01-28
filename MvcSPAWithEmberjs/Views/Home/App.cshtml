@@ -3,6 +3,15 @@
     Layout = null;
 }
 
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;                
+    }
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -19,6 +28,8 @@
     <div id="userSettings">
         @Html.Partial("_UserSettings")
     </div>
+    <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
+
     @Html.RenderEmber()
 
     @Scripts.Render("~/bundles/jquery")

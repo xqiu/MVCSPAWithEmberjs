@@ -72,7 +72,7 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
                 });
                 record.set("error", "Server update failed");
             }
-        });
+        }, "text");
     },
     
     deleteRecord: function (store, type, record) {
@@ -98,10 +98,10 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
         });
     },
     
-    ajax: function (url, type, hash) {
+    ajax: function (url, type, hash, dataType) {
         hash.url = url;
         hash.type = type;
-        hash.dataType = 'json';
+        hash.dataType = dataType || 'json';
         hash.contentType = 'application/json; charset=utf-8';
         hash.context = this;
 
@@ -109,7 +109,12 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
             hash.data = JSON.stringify(hash.data);
         }
 
-        // todo:, if type == 'PUT', datatype should be text
+        var antiForgeryToken = $("#antiForgeryToken").val();
+        if (antiForgeryToken) {
+            hash.headers = {
+                'RequestVerificationToken': antiForgeryToken
+            }
+        }
 
         jQuery.ajax(hash);
     },
