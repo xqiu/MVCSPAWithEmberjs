@@ -1,127 +1,119 @@
-﻿get = Ember.get;                      // ember-metal/accessors
-DS.WebAPIAdapter = DS.RESTAdapter.extend({
-    bulkCommit: false,
-    since: 'since',
-    //createTypesAtBeginning: [],
+﻿(function () {
+    get = Ember.get; // ember-metal/accessors
+    DS.WebAPIAdapter = DS.RESTAdapter.extend({
+        serializer: DS.WebAPISerializer,
 
-    serializer: DS.WebAPISerializer,
-    
-    shouldSave: function (record) {
-        // Different with RESETAdapter, we always return true here, even if it's-referenced from parent
-        return true;
-    },
+        shouldSave: function (record) {
+            // Different with RESETAdapter, we always return true here, even if it's-referenced from parent
+            return true;
+        },
 
-    //didCreateRecord: function (store, type, record, payload) {
-    //    this._super(store, type, record, payload);
-    //    for(specialType in get(this, 'createTypesAtBeginning')){
-    //        if (type === specialType) {
+        createRecord: function (store, type, record) {
+            var root = this.rootForType(type);
 
-    //        }
-    //    }
-    //},
+            // Different with RESTAdapter, do not include the root for data 
+            var data = this.serialize(record, { includeId: false });
 
-    createRecord: function (store, type, record) {
-        var root = this.rootForType(type);
+            // Different with RESTAdapter, we need to remove the primaryKey field
+            var config = get(this, 'serializer').configurationForType(type),
+                primaryKey = config && config.primaryKey;
 
-        // Different with RESTAdapter, do not include the root for data 
-        var data = this.serialize(record, { includeId: false });
-
-        // Different with RESTAdapter, we need to remove the primaryKey field
-        var config = get(this, 'serializer').configurationForType(type),
-            primaryKey = config && config.primaryKey;
-
-        if (primaryKey) {
-            delete data[primaryKey];
-        }
-
-        this.ajax(this.buildURL(root), "POST", {
-            data: data,
-            context: this,
-            success: function (json) {
-                Ember.run(this, function () {
-                    this.didCreateRecord(store, type, record, json);
-                });
-            },
-            error: function (xhr) {
-                this.didError(store, type, record, xhr);
+            if (primaryKey) {
+                delete data[primaryKey];
             }
-        });
-    },
 
-    updateRecord: function (store, type, record) {
-        var id = get(record, 'id');
-        var root = this.rootForType(type);
+            this.ajax(this.buildURL(root), "POST", {
+                data: data,
+                context: this,
+                success: function (json) {
+                    Ember.run(this, function () {
+                        this.didCreateRecord(store, type, record, json);
+                    });
+                },
+                error: function (xhr) {
+                    this.didError(store, type, record, xhr);
+                }
+            });
+        },
 
-        // Different with RESTAdapter, do not include the root for data 
-        data = this.serialize(record, { includeId: true });
+        updateRecord: function (store, type, record) {
+            var id = get(record, 'id');
+            var root = this.rootForType(type);
 
-        this.ajax(this.buildURL(root, id), "PUT", {
-            data: data,
-            context: this,
-            success: function (json) {
-                Ember.run(this, function () {
-                    this.didSaveRecord(store, type, record, json);
-                });
-                record.set("error", "");
-            },
-            error: function (xhr) {
-                // Different with RESTAdapter, we act on client side as if it is successful, then set model's error attribute
-                // this.didError(store, type, record, xhr);
-                Ember.run(this, function () {
-                    this.didSaveRecord(store, type, record);
-                });
-                record.set("error", "Server update failed");
-            }
-        }, "text");
-    },
-    
-    deleteRecord: function (store, type, record) {
-        var id = get(record, 'id');
-        var root = this.rootForType(type);
-        
-        var config = get(this, 'serializer').configurationForType(type),
-            primaryKey = config && config.primaryKey;
+            // Different with RESTAdapter, do not include the root for data 
+            data = this.serialize(record, { includeId: true });
 
-        this.ajax(this.buildURL(root, id), "DELETE", {
-            context: this,
-            success: function (json) {
-                Ember.run(this, function () {
-                    if (json[primaryKey] == id) {
-                        // webAPI delete will just return the original record, in this case, we ignore it
-                        this.didSaveRecord(store, type, record);
-                    }
-                    else {
+            this.ajax(this.buildURL(root, id), "PUT", {
+                data: data,
+                context: this,
+                success: function (json) {
+                    Ember.run(this, function () {
                         this.didSaveRecord(store, type, record, json);
-                    }
-                });
+                    });
+                    record.set("error", "");
+                },
+                error: function (xhr) {
+                    // Different with RESTAdapter, we act on client side as if it is successful, then set model's error attribute
+                    // this.didError(store, type, record, xhr);
+                    Ember.run(this, function () {
+                        this.didSaveRecord(store, type, record);
+                    });
+
+                    // Assume there is an error property in the record to indicate the error message
+                    record.set("error", "Server update failed");
+                }
+            }, "text");
+        },
+
+        deleteRecord: function (store, type, record) {
+            var id = get(record, 'id');
+            var root = this.rootForType(type);
+
+            var config = get(this, 'serializer').configurationForType(type),
+                primaryKey = config && config.primaryKey;
+
+            this.ajax(this.buildURL(root, id), "DELETE", {
+                context: this,
+                success: function (json) {
+                    Ember.run(this, function () {
+                        if (json[primaryKey] == id) {
+                            // webAPI delete will just return the original record, in this case, we ignore it
+                            this.didSaveRecord(store, type, record);
+                        }
+                        else {
+                            this.didSaveRecord(store, type, record, json);
+                        }
+                    });
+                }
+            });
+        },
+
+        ajax: function (url, type, hash, dataType) {
+            hash.url = url;
+            hash.type = type;
+            hash.dataType = dataType || 'json';
+            hash.contentType = 'application/json; charset=utf-8';
+            hash.context = this;
+
+            if (hash.data && type !== 'GET') {
+                hash.data = JSON.stringify(hash.data);
             }
-        });
-    },
-    
-    ajax: function (url, type, hash, dataType) {
-        hash.url = url;
-        hash.type = type;
-        hash.dataType = dataType || 'json';
-        hash.contentType = 'application/json; charset=utf-8';
-        hash.context = this;
 
-        if (hash.data && type !== 'GET') {
-            hash.data = JSON.stringify(hash.data);
-        }
-
-        var antiForgeryToken = $("#antiForgeryToken").val();
-        if (antiForgeryToken) {
-            hash.headers = {
-                'RequestVerificationToken': antiForgeryToken
+            var antiForgeryToken = $("#antiForgeryToken").val();
+            if (antiForgeryToken) {
+                hash.headers = {
+                    'RequestVerificationToken': antiForgeryToken
+                }
             }
-        }
 
-        jQuery.ajax(hash);
-    },
+            jQuery.ajax(hash);
+        },
 
-    pluralize: function (string) {
-        return string;
-    },
+        pluralize: function (string) {
+            return string;
+        },
 
-});
+    });
+
+})();
 

@@ -33,6 +33,6 @@ App.TodoList.reopen({
             transaction.commit();
             this.set('newTodoTitle', '');
         }
-    },   //do not .observes('newTodoTitle'), as otherwise it will be called for every key change instead of focusout
+    },   //do not .property('newTodoTitle'), as otherwise it will be called for every key change instead of focusout
 
 });

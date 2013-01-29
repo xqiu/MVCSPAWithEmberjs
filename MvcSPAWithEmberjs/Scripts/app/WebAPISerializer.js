@@ -1,23 +1,12 @@
 ﻿(function () {
-    get = Ember.get;                      // ember-metal/accessors
+    get = Ember.get; // ember-metal/accessors
 
     DS.WebAPISerializer = DS.JSONSerializer.extend({
         keyForAttributeName: function (type, name) {
-            //return Ember.String.decamelize(name);
             // Different with JsonSerializer, we do not do decamelize
             return name;
         },
-
-        keyForBelongsTo: function (type, name) {
-            var key = this.keyForAttributeName(type, name);
-
-            if (this.embeddedType(type, name)) {
-                return key;
-            }
-
-            return key + "_id";
-        },
-
+        
         extractMany: function (loader, json, type, records) {
             var root = this.rootForType(type);
             root = this.pluralize(root);
@@ -62,7 +51,8 @@
             // use the last part of the name as the URL
             var parts = typeString.split(".");
             var name = parts[parts.length - 1];
-            //return name.replace(/([A-Z])/g, '_$1').toLowerCase().slice(1);
+
+            // Different with JsonSerializer, we don't do capital case replacement
             return name.toLowerCase();
         },
 
