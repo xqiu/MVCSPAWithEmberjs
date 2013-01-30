@@ -4,6 +4,7 @@
         var transaction = App.store.transaction();
         transaction.add(todoList);
         todoList.deleteRecord();
+
         transaction.commit();
     },
 });

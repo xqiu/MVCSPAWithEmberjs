@@ -5,17 +5,10 @@ DS.WebAPIAdapter.map('App.TodoList', {
     todos: { embedded: 'load' } 
 });
 
-DS.WebAPIAdapter.map('App.TodoList', {
-    id: { key: 'todoListId' }
-});
-
-DS.WebAPIAdapter.map('App.Todo', {
-    id: { key: 'todoItemId' }
-});
-
 var adapter = DS.WebAPIAdapter.create({
     namespace: "api",
     bulkCommit: false,
+    antiForgeryTokenSelector: "#antiForgeryToken"
 });
 
 var serializer = Ember.get(adapter, 'serializer');

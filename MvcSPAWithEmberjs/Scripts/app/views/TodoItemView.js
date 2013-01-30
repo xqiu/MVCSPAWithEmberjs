@@ -14,5 +14,7 @@
         
         todoItem.deleteRecord();
         transaction.commit();
+
+        delete todoItem;
     },
 });

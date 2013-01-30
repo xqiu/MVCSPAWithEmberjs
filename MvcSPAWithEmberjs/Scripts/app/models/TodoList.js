@@ -32,6 +32,14 @@ App.TodoList.reopen({
 
             transaction.commit();
             this.set('newTodoTitle', '');
+
+            //Issue: 
+            // the following order will some times trigger error in a taskList, looks like ember-data state management problem
+            // add a new todo
+            // update the content of that todo
+            // delete this todo
+            // add a new todo
+            // update the content again
         }
     },   //do not .property('newTodoTitle'), as otherwise it will be called for every key change instead of focusout
 

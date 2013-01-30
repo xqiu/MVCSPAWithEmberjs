@@ -29,8 +29,8 @@ namespace MvcSPAWithEmberjs
             //    ));
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                "~/Scripts/app/WebAPISerializer.js",
-                "~/Scripts/app/WebAPIAdapter.js"
+                "~/Scripts/app/webapi_serializer.js",
+                "~/Scripts/app/webapi_adapter.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
