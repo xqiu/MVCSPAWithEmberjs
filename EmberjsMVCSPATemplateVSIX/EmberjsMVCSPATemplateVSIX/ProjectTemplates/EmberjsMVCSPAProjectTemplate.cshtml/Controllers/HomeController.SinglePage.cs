@@ -10,6 +10,10 @@ namespace $safeprojectname$.Controllers
     {
         public ActionResult Index(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return View("App");
+            }
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
