@@ -52,6 +52,7 @@
                 <ProjectItem OpenInEditor="true" OpenOrder="10" ReplaceParameters="true" TargetFileName="TodoController.cs">TodoController.cs</ProjectItem>
                 <ProjectItem OpenInEditor="true" OpenOrder="15" ReplaceParameters="true" TargetFileName="TodoListController.cs">TodoListController.cs</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="HomeController.cs">HomeController.SinglePage.cs</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="HtmlHelperExtensions.cs">HtmlHelperExtensions.cs</ProjectItem>
             </Folder>
             <Folder Name="Filters" TargetFolderName="Filters">
                 <ProjectItem ReplaceParameters="true" TargetFileName="InitializeSimpleMembershipAttribute.cs">InitializeSimpleMembershipAttribute.cs</ProjectItem>
@@ -116,6 +117,12 @@
                     </Folder>
                 </Folder>
             </Folder>
+            <Folder Name="Templates" TargetFolderName="Templates">
+              <ProjectItem ReplaceParameters="false" TargetFileName="aboutTemplate.html">aboutTemplate.html</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="applicationTemplate.html">applicationTemplate.html</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="indexTemplate.html">indexTemplate.html</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="todoListTemplate.html">todoListTemplate.html</ProjectItem>
+            </Folder>
             <Folder Name="Views" TargetFolderName="Views">
                 <Folder Name="Account" TargetFolderName="Account">
                     <ProjectItem ReplaceParameters="true" TargetFileName="_ChangePasswordPartial.cshtml">_ChangePasswordPartial.SinglePage.cshtml</ProjectItem>
@@ -129,7 +136,8 @@
                 </Folder>
                 <Folder Name="Home" TargetFolderName="Home">
                     <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.SinglePage.cshtml</ProjectItem>
-                    <ProjectItem ReplaceParameters="true" TargetFileName="_Login.cshtml">_Login.cshtml</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="App.cshtml">App.cshtml</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="_Login.cshtml">_Login.cshtml</ProjectItem>
                     <ProjectItem ReplaceParameters="true" TargetFileName="_Register.cshtml">_Register.cshtml</ProjectItem>
                 </Folder>
                 <Folder Name="Shared" TargetFolderName="Shared">

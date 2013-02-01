@@ -21,9 +21,9 @@
                Language="C#"
                ViewEngine="Razor"
                TemplateId="EmberjsMvcSPAApplication"
-               Title="MVC SPA Web Application with Ember.js"
-               Description="MVC SPA Web Application with Ember.js as client side framework (Razor)"
-               Version="4.5"/>
+               Title="Single Page Application with Ember.js"
+               Description="Single Page Application with Ember.js as client side framework"
+               Version="4.0"/>
     <Asset Type="Microsoft.VisualStudio.Mvc.Templates" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\AuthConfig.cs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Templates" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\FilterConfig.cs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Templates" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\RouteConfig.cs" />
