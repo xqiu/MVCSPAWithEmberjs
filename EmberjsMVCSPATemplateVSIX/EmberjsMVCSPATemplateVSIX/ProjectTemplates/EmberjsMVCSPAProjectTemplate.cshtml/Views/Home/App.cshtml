@@ -1,0 +1,45 @@
+﻿@using MvcHtmlHelpers;
+@{
+    Layout = null;
+}
+
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;                
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/themes/base/css")
+</head>
+<body>
+    <div id="userSettings">
+        @Html.Partial("_UserSettings")
+    </div>
+    <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
+
+    @Html.RenderEmber()
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/Scripts/handlebars-1.0.rc.2.js"></script>
+    <script src="~/Scripts/ember-1.0.0-pre.4.js"></script>
+    <script src="~/Scripts/ember-data.js"></script>
+
+    @Scripts.Render("~/bundles/ember")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>
