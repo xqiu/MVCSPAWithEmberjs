@@ -1,6 +1,7 @@
 ﻿<script type="text/x-handlebars" data-template-name="todoList">
 	<h2>Todo Lists</h2>
 	
+    <p class="error">{{error}}</p>
 	<input type="button" {{action "addTodoList"}} class="isActive" value="Add Todo list"></input>
 	
 	<section id="lists">

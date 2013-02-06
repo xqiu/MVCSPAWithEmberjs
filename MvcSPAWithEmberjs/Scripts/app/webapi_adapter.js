@@ -69,11 +69,12 @@ var get = Ember.get;
   ### if antiForgeryTokenSelector is defined, will include it in the ajax request sent
 
   ## Usage
-
+  
+  ```js
     window.App = Em.Application.create();
 
     DS.WebAPIAdapter.map('App.TodoList', {
-        // Web API server is not handling reference update/delete, so use "load" instead of "always"
+        // Web API server may not handling reference update/delete, so use "load" instead of "always"
         todos: { embedded: 'load' } 
     });
 
@@ -97,8 +98,7 @@ var get = Ember.get;
         adapter: adapter,
         revision: 11
     });
-
-
+  ```
 */
 DS.WebAPIAdapter = DS.RESTAdapter.extend({
     serializer: DS.WebAPISerializer,
