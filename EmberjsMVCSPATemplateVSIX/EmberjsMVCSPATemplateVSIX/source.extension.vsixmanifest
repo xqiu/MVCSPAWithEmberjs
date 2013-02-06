@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="EmberjsMVCSPATemplateVSIXOwnDatacontext..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.0" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>EmberjsMVCSPATemplateCustomizedData</DisplayName>
+    <Identity Id="Ember.js MVC SPA Template Customized Data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Ember.js MVC SPA Template Customized Data</DisplayName>
     <Description xml:space="preserve">ASP.NET MVC Ember.js SPA Template using customized data context</Description>
   </Metadata>
   <Installation AllUsers="true">
@@ -20,9 +20,9 @@
                ProjectType="MVC"
                Language="C#"
                ViewEngine="Razor"
-               TemplateId="EmberjsMvcSPAApplication"
-               Title="Single Page Application with Ember.js using own data context"
-               Description="Single Page Application with Ember.js as client side framework, using own data context insteads of ember-data"
+               TemplateId="EmberjsMvcSPAWithCustomizedData"
+               Title="Single Page Application with Ember.js using customized data context"
+               Description="Single Page Application with Ember.js as client side framework, using customized data context insteads of ember-data"
                Version="4.0"/>
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\AuthConfig.cs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\FilterConfig.cs" />
