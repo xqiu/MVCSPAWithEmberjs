@@ -1,0 +1,20 @@
+http://blogs.msdn.com/b/yjhong/archive/2012/12/13/custom-mvc-4-template-walkthrough.aspx
+http://www.asp.net/vnext/overview/fall-2012-update/custom-mvc-templates
+http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx
+
+In the manfiest file – remove the s. For RTM, we changed the namespace to be Micorosoft.VisualStudio.Mvc.Template instead.
+Change to Type="Microsoft.VisualStudio.Mvc.Template"
+from Type="Microsoft.VisualStudio.Mvc.Templates"
+
+
+<Asset d:VsixSubPath="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml"
+               Type="Microsoft.VisualStudio.Mvc.Template"
+               d:Source="File"
+               Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\EmberjsMVCSPAProjectTemplate.11.cshtml.vstemplate"
+               ProjectType="MVC"
+               Language="C#"
+               ViewEngine="Razor"
+               TemplateId="EmberjsMvcSPAApplication"
+               Title="MVC SPA Web Application with Ember.js"
+               Description="MVC SPA Web Application with Ember.js as client side framework (Razor)"
+               Version="4.5"/>
