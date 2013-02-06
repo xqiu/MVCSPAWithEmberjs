@@ -242,6 +242,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\todo.datacontext.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\ExternalLoginConfirmation.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -694,27 +698,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_adapter.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_serializer.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-pre.4.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-pre.4.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-data.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-data.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

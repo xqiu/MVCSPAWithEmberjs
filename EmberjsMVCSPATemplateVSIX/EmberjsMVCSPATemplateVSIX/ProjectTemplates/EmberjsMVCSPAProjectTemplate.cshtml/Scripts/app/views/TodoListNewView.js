@@ -32,6 +32,7 @@
     focusOut: function () {
         var todoList = this.templateData.view.content;
         todoList.addTodo(function (todoItem) {
+            todoList.get('todos').addObject(todoItem);
         });
     },
 

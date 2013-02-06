@@ -1,12 +1,9 @@
-﻿var attr = DS.attr;
-App.TodoList = DS.Model.extend();
-App.Todo = DS.Model.extend({
-    todoItemId: attr('number'),
-    title: attr('string'),
-    isDone: attr('boolean'),
-    todoListId: attr('number'),
-    error: attr('string'),
-    todoList: DS.belongsTo('App.TodoList'),
+﻿App.Todo = Ember.Object.extend({
+    todoItemId: 0,
+    title: '',
+    isDone: false,
+    todoListId: 0,
+    error: '',
 
     errorMessage: function (errorMsg) {
         this.set("error", errorMsg);
@@ -18,11 +15,35 @@ App.Todo = DS.Model.extend({
     }.property('error'),
 
     saveCheckbox: function () {
-        if(this.get("isDirty")){
-            if (this.get("todoItemId")) {
-                App.store.commit();
-            }
-        }
+        var self = this;
+        return window.todoApp.datacontext.saveChangedTodoItem(self);
     }.observes('isDone'),
 
+    toJson: function () {
+        var self = this;
+        return JSON.stringify({
+            todoItemId: self.todoItemId,
+            title: self.title,
+            isDone: self.isDone,
+            todoListId: self.todoListId
+        });
+    }
 });
+
+(function (ember, datacontext) {
+
+    datacontext.todoItem = todoItem;
+
+    function todoItem(data) {
+        var self = this;
+        data = data || {};
+        return App.Todo.create({
+            todoItemId: data.todoItemId,
+            title: data.title,
+            isDone: data.isDone,
+            todoListId: data.todoListId,
+        });
+    };
+
+})(Ember, todoApp.datacontext);
+

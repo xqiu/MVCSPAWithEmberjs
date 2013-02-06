@@ -251,8 +251,6 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\ember-1.0.0-pre.4.js" />
     <Content Include="Scripts\ember-1.0.0-pre.4.min.js" />
-    <Content Include="Scripts\ember-data.js" />
-    <Content Include="Scripts\ember-data.min.js" />
     <Content Include="Scripts\handlebars-1.0.rc.2.js" />
     <Content Include="Scripts\app\ajaxlogin.js" />
     <Content Include="Scripts\app\app.js" />
@@ -268,8 +266,7 @@
     <Content Include="Scripts\app\views\TodoListEditView.js" />
     <Content Include="Scripts\app\views\TodoListNewView.js" />
     <Content Include="Scripts\app\views\TodoListView.js" />
-    <Content Include="Scripts\app\webapi_adapter.js" />
-    <Content Include="Scripts\app\webapi_serializer.js" />
+    <Content Include="Scripts\app\todo.datacontext.js" />
     <Content Include="Templates\aboutTemplate.html" />
     <Content Include="Templates\applicationTemplate.html" />
     <Content Include="Templates\indexTemplate.html" />

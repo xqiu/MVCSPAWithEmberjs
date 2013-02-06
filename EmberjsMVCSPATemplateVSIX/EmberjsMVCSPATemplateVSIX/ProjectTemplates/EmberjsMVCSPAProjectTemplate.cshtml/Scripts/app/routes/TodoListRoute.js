@@ -1,5 +1,13 @@
 ﻿App.TodoListRoute = Ember.Route.extend({
     setupController: function (controller, model) {
-        controller.set('content', App.TodoList.find());
+        var self = this;
+        window.todoApp.datacontext.getTodoLists(
+            function (mappedTodoLists) {
+                controller.set('content', mappedTodoLists);
+            },
+            function (error) {
+                self.error = error;
+            }
+        );
     }
 });

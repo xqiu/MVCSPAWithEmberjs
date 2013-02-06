@@ -1,11 +1,8 @@
-﻿var attr = DS.attr;
-//App.TodoList defined in TodoItem.js
-App.TodoList.reopen({
-    todoListId: attr('number'),
-    title: attr('string'),
-    userId: attr('string'),
-    todos: DS.hasMany('App.Todo'),
-
+﻿App.TodoList = Ember.Object.extend({
+    todoListId: 0,
+    title: '',
+    userId: '',
+    todos: [],
     newTodoTitle: '',
     error: '',
 
@@ -19,28 +16,67 @@ App.TodoList.reopen({
     }.property('error'),
 
     addTodo: function (callback) {
-        if (this.get('newTodoTitle')) { // need a title to save
-            var transaction = App.store.transaction();
-            var newTodo = transaction.createRecord(App.Todo, {
-                title: this.get('newTodoTitle'),
-                todoListId: this.id,
-                isDone: false
-            });
+        var self = this;
+        if (self.newTodoTitle) { // need a title to save
+            var todoItem = window.todoApp.datacontext.createTodoItem(
+                {
+                    title: self.newTodoTitle,
+                    todoListId: self.todoListId,
+                    isDone: false
+                });
+            window.todoApp.datacontext.saveNewTodoItem(todoItem)
+                .then(addSucceeded);
 
-            var todoList = App.store.find(App.TodoList, this.id);
-            todoList.get('todos').addObject(newTodo);
-
-            transaction.commit();
-            this.set('newTodoTitle', '');
-
-            //Issue: 
-            // the following order will some times trigger error in a taskList, looks like ember-data state management problem
-            // add a new todo
-            // update the content of that todo
-            // delete this todo
-            // add a new todo
-            // update the content again
+            function addSucceeded() {
+                if (callback) {
+                    callback(todoItem);
+                }
+            }
+            self.set('newTodoTitle', '');
         }
-    },   //do not .property('newTodoTitle'), as otherwise it will be called for every key change instead of focusout
-
+    },   //do not .observes('newTodoTitle'), as otherwise it will be called for every key change instead of focusout
+    
+    toJson: function () {
+        var self = this;
+        return JSON.stringify({
+            todoListId: self.todoListId,
+            userId: self.userId,
+            title: self.title,
+            todo: [],
+            isEditingListTitle: true,
+        });
+    }
 });
+
+(function (ember, datacontext) {
+
+    datacontext.todoList = todoList;
+
+    function todoList(data) {
+
+        var self = this;
+        data = data || {};
+
+        var ret = App.TodoList.create({
+            todoListId: data.todoListId,
+            userId: data.userId || "to be replaced",
+            title: data.title || "My todos",
+            todos: importTodoItems(data.todos),
+
+            isEditingListTitle: false,
+            newTodoTitle: '',
+        });
+
+        return ret;
+    };
+
+    // convert raw todoItem data objects into array of TodoItems
+    function importTodoItems(todoItems) {
+        return $.map(todoItems || [],
+                function (todoItemData) {
+                    return window.todoApp.datacontext.createTodoItem(todoItemData);
+                });
+    }
+
+})(Ember, todoApp.datacontext);
+

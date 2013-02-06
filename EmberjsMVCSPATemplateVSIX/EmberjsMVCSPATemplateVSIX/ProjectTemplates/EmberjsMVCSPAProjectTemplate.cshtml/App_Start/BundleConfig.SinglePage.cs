@@ -22,14 +22,11 @@ namespace $safeprojectname$
             //bundles.Add(new ScriptBundle("~/bundles/ember").Include(
             //    "~/Scripts/handlebars-1.0.rc.2.js",
             //    "~/Scripts/ember-1.0.0-pre.4.js",
-            //    "~/Scripts/ember-data.js",
-            //    "~/Scripts/app/WebAPISerializer.js",
-            //    "~/Scripts/app/WebAPIAdapter.js"
+            //    "~/Scripts/app/todo.datacontext.js",
             //    ));
-
+            
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                "~/Scripts/app/webapi_serializer.js",
-                "~/Scripts/app/webapi_adapter.js"
+                "~/Scripts/app/todo.datacontext.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
