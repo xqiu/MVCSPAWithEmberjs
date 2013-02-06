@@ -298,14 +298,11 @@
     <None Include="Properties\PublishProfiles\MvcSPAWithEmberjs - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\todo.datacontext.js" />
     <Content Include="Scripts\app\views\TodoListView.js" />
-    <Content Include="Scripts\app\webapi_serializer.js" />
     <Content Include="Scripts\app\helpers.js" />
     <Content Include="Scripts\app\models\TodoItem.js" />
     <Content Include="Scripts\app\models\TodoList.js" />
-    <Content Include="Scripts\app\webapi_adapter.js" />
-    <Content Include="Scripts\ember-data.js" />
-    <Content Include="Scripts\ember-data.min.js" />
     <Content Include="Scripts\app\controllers\TodoItemController.js" />
     <Content Include="Scripts\app\controllers\TodoListController.js" />
     <Content Include="Scripts\app\router.js" />

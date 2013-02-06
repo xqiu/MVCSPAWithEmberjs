@@ -15,7 +15,7 @@
         var todoItem = this.get('parentView').templateData.view.content;
         var newValue = todoItem.get("title");
         if (this.lastValue != newValue) {
-            App.store.commit();
+            window.todoApp.datacontext.saveChangedTodoItem(todoItem);
             this.lastValue = newValue;
         }
     }
