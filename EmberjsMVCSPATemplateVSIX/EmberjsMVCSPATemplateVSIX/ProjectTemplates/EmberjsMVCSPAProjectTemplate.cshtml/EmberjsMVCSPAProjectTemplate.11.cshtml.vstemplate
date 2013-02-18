@@ -85,11 +85,11 @@
             </Folder>
             <Folder Name="Scripts" TargetFolderName="Scripts">
                 <ProjectItem ReplaceParameters="false" TargetFileName="_references.js">_references.SinglePage.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-pre.4.js">ember-1.0.0-pre.4.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-pre.4.min.js">ember-1.0.0-pre.4.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-rc.1.js">ember-1.0.0-rc.1.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-rc.1.min.js">ember-1.0.0-rc.1.min.js</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="ember-data.js">ember-data.js</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="ember-data.min.js">ember-data.min.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="handlebars-1.0.rc.2.js">handlebars-1.0.rc.2.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="handlebars-1.0.0-rc.3.js">handlebars-1.0.0-rc.3.js</ProjectItem>
                  <Folder Name="app" TargetFolderName="app">
                     <ProjectItem ReplaceParameters="false" TargetFileName="ajaxlogin.js">ajaxlogin.js</ProjectItem>
                     <ProjectItem ReplaceParameters="false" TargetFileName="app.js">app.js</ProjectItem>
