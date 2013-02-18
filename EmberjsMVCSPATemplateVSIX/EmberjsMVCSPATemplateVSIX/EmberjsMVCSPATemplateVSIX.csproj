@@ -698,15 +698,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-pre.4.js">
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-rc.1.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-pre.4.min.js">
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-rc.1.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\handlebars-1.0.rc.2.js">
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\handlebars-1.0.0-rc.3.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

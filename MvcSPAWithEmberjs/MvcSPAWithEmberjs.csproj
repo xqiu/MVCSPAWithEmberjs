@@ -311,9 +311,9 @@
     <Content Include="Scripts\app\views\TodoListEditView.js" />
     <Content Include="Scripts\app\views\TodoItemView.js" />
     <Content Include="Scripts\app\views\TodoListNewView.js" />
-    <Content Include="Scripts\ember-1.0.0-pre.4.js" />
-    <Content Include="Scripts\ember-1.0.0-pre.4.min.js" />
-    <Content Include="Scripts\handlebars-1.0.rc.2.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.1.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.1.min.js" />
+    <Content Include="Scripts\handlebars-1.0.0-rc.3.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
