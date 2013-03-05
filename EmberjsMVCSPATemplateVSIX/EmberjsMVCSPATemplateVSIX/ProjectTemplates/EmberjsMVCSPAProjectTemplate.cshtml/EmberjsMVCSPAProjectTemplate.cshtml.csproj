@@ -249,11 +249,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\TodoList.css" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.1.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.1.min.js" />
-    <Content Include="Scripts\ember-data.js" />
-    <Content Include="Scripts\ember-data.min.js" />
-    <Content Include="Scripts\handlebars-1.0.0-rc.3.js" />
     <Content Include="Scripts\app\ajaxlogin.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\TodoItemController.js" />
