@@ -85,11 +85,6 @@
             </Folder>
             <Folder Name="Scripts" TargetFolderName="Scripts">
                 <ProjectItem ReplaceParameters="false" TargetFileName="_references.js">_references.SinglePage.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-rc.1.js">ember-1.0.0-rc.1.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-rc.1.min.js">ember-1.0.0-rc.1.min.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ember-data.js">ember-data.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="ember-data.min.js">ember-data.min.js</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="handlebars-1.0.0-rc.3.js">handlebars-1.0.0-rc.3.js</ProjectItem>
                  <Folder Name="app" TargetFolderName="app">
                     <ProjectItem ReplaceParameters="false" TargetFileName="ajaxlogin.js">ajaxlogin.js</ProjectItem>
                     <ProjectItem ReplaceParameters="false" TargetFileName="app.js">app.js</ProjectItem>
@@ -160,10 +155,7 @@
     </WizardExtension>
     <WizardData>
         <packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true">
-            <package id="Ember" version="1.0.0-rc1" />
-            <package id="Ember-Data" version="0.5.0-alpha" />
             <package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" />
-            <package id="Handlebars" version="1.0.0-rc3" />
             <package id="jQuery" version="1.8.2" />
             <package id="jQuery.Validation" version="1.10.0" />
             <package id="jQuery.UI.Combined" version="1.9.2" />
@@ -198,9 +190,11 @@
             <package id="Microsoft.Data.OData" version="5.2.0" skipAssemblyReferences="true" />
             <package id="Microsoft.AspNet.WebApi.OData" version="4.0.0" skipAssemblyReferences="true" />
             <package id="WebGrease" version="1.3.0" skipAssemblyReferences="true" />
-          
-          <!-- //todo add handlebars, ember and ember-data packages when they have packages -->
-          
+        </packages>
+        <packages repository="extension" repositoryId="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a"  isPreunzipped="false">
+          <package id="Handlebars" version="1.0.0-rc3" />
+          <package id="Ember" version="1.0.0-rc1" />
+          <package id="Ember-Data" version="0.5.0-alpha" />
         </packages>
     </WizardData>
 </VSTemplate>
