@@ -160,7 +160,10 @@
     </WizardExtension>
     <WizardData>
         <packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true">
+            <package id="Ember" version="1.0.0-rc1" />
+            <package id="Ember-Data" version="0.5.0-alpha" />
             <package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" />
+            <package id="Handlebars" version="1.0.0-rc3" />
             <package id="jQuery" version="1.8.2" />
             <package id="jQuery.Validation" version="1.10.0" />
             <package id="jQuery.UI.Combined" version="1.9.2" />
