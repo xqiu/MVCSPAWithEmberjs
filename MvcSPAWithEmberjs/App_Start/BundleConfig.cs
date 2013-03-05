@@ -19,19 +19,12 @@ namespace MvcSPAWithEmberjs
                         "~/Scripts/jquery.validate*"));
 
 
-            // minimize ember-*.js causes error, working around it
-            //bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-            //    "~/Scripts/handlebars-1.0.0-rc.3.js",
-            //    "~/Scripts/ember-1.0.0-rc.1.js",
-            //    "~/Scripts/ember-data.js",
-            //    "~/Scripts/app/WebAPISerializer.js",
-            //    "~/Scripts/app/WebAPIAdapter.js"
-            //    ));
-
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
+                "~/Scripts/handlebars.js",
+                "~/Scripts/ember-1.0.0-rc.1.js",
+                "~/Scripts/ember-data.js",
                 "~/Scripts/app/webapi_serializer.js",
-                "~/Scripts/app/webapi_adapter.js"
-                ));
+                "~/Scripts/app/webapi_adapter.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
                 "~/Scripts/app/ajaxlogin.js"));
