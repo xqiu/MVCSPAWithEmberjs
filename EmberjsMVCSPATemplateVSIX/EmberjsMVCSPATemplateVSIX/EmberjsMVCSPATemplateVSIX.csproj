@@ -703,26 +703,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-rc.1.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-rc.1.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-data.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-data.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\handlebars-1.0.0-rc.3.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\_references.SinglePage.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
