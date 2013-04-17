@@ -24,8 +24,11 @@ namespace MvcSPAWithEmberjs
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            // required to precompile Handlebars templates into Ember.TEMPLATES
-            BundleTable.EnableOptimizations = true;
+            if (!HttpContext.Current.IsDebuggingEnabled)
+            {
+                // required to precompile Handlebars templates into Ember.TEMPLATES
+                BundleTable.EnableOptimizations = true;
+            }
         }
     }
 }

@@ -30,15 +30,18 @@
     </div>
     <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
 
-
-<<<<<<< HEAD
-=======
-    @*@Html.RenderEmber()*@
-
->>>>>>> pre-compile Handlebars Templates
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/ember")
     @Scripts.Render("~/bundles/app")
-    @Scripts.Render("~/bundles/templates")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        @Html.RenderEmber()
+    }
+    else
+    {
+        @Scripts.Render("~/bundles/templates")
+    }
 </body>
 </html>

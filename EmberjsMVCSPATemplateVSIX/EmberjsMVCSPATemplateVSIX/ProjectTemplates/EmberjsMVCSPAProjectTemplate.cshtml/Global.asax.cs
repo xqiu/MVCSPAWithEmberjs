@@ -23,6 +23,12 @@ namespace $safeprojectname$
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            if (!HttpContext.Current.IsDebuggingEnabled)
+            {
+                // required to precompile Handlebars templates into Ember.TEMPLATES
+                BundleTable.EnableOptimizations = true;
+            }
         }
     }
 }
