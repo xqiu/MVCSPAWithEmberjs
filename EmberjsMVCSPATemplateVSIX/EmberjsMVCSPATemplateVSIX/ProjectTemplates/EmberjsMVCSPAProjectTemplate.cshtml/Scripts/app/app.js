@@ -2,7 +2,7 @@
 
 DS.WebAPIAdapter.map('App.TodoList', {
     // Web API server is not handling reference update/delete, so use "load" instead of "always"
-    todos: { embedded: 'load' } 
+    todos: { embedded: 'load' }
 });
 
 var adapter = DS.WebAPIAdapter.create({
@@ -23,5 +23,5 @@ serializer.configure('App.Todo', {
 
 App.store = DS.Store.create({
     adapter: adapter,
-    revision: 11
+    revision: 12
 });

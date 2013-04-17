@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <Identity Id="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.1" Language="en-US" Publisher="Microsoft" />
     <DisplayName>Ember.js MVC SPA Template with ember-data</DisplayName>
     <Description xml:space="preserve">ASP.NET MVC Ember.js SPA Template with ember-data.js as data framework</Description>
   </Metadata>
@@ -21,7 +21,7 @@
                Language="C#"
                ViewEngine="Razor"
                TemplateId="EmberjsMvcSPAApplication"
-               Title="Single Page Application with Ember.js"
+               Title="Ember.js SPA Project"
                Description="Single Page Application with Ember.js as client side framework, ember-data.js as data layer"
                Version="4.0"/>
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\AuthConfig.cs" />
@@ -180,6 +180,11 @@
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\models\TodoList.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\router.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\routes\TodoListRoute.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\_navbar.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\about.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\application.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\index.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\todoList.hbs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemEditView.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemView.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListEditView.js" />
@@ -188,9 +193,5 @@
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_adapter.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_serializer.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\_references.SinglePage.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Templates\aboutTemplate.html" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Templates\applicationTemplate.html" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Templates\indexTemplate.html" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Templates\todoListTemplate.html" />
   </Assets>
 </PackageManifest>
