@@ -41,6 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ember.Handlebars">
+      <HintPath>..\packages\csharp-ember-handlebars-compiler.1.3.0-beta1\lib\net40\Ember.Handlebars.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -52,6 +55,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0-Beta1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -96,9 +103,6 @@
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -296,6 +300,11 @@
     <Compile Include="Controllers\HtmlHelperExtensions.cs" />
     <None Include="Properties\PublishProfiles\MvcSPAWithEmberjs - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\MvcSPAWithEmberjs - Web Deploy.pubxml" />
+    <Content Include="Scripts\app\templates\about.hbs" />
+    <Content Include="Scripts\app\templates\application.hbs" />
+    <Content Include="Scripts\app\templates\index.hbs" />
+    <Content Include="Scripts\app\templates\todoList.hbs" />
+    <Content Include="Scripts\app\templates\_navbar.hbs" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\views\TodoListView.js" />
     <Content Include="Scripts\app\webapi_serializer.js" />
@@ -303,6 +312,10 @@
     <Content Include="Scripts\app\models\TodoItem.js" />
     <Content Include="Scripts\app\models\TodoList.js" />
     <Content Include="Scripts\app\webapi_adapter.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.2.js" />
+    <Content Include="Scripts\ember-1.0.0-rc.2.min.js" />
+    <Content Include="Scripts\ember-data.js" />
+    <Content Include="Scripts\ember-data.min.js" />
     <Content Include="Scripts\app\controllers\TodoItemController.js" />
     <Content Include="Scripts\app\controllers\TodoListController.js" />
     <Content Include="Scripts\app\router.js" />
@@ -311,18 +324,19 @@
     <Content Include="Scripts\app\views\TodoListEditView.js" />
     <Content Include="Scripts\app\views\TodoItemView.js" />
     <Content Include="Scripts\app\views\TodoListNewView.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <None Include="Scripts\jquery-1.8.3.intellisense.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.1.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.1.min.js" />
-    <Content Include="Scripts\ember-data.js" />
-    <Content Include="Scripts\ember-data.min.js" />
+    <Content Include="Scripts\ember-data.min.js.map">
+      <DependentUpon>ember-data.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\handlebars.js" />
     <Content Include="Scripts\handlebars.runtime.js" />
-    <Content Include="Scripts\jquery-1.8.3.js" />
-    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -330,10 +344,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Templates\applicationTemplate.html" />
-    <Content Include="Templates\aboutTemplate.html" />
-    <Content Include="Templates\todoListTemplate.html" />
-    <Content Include="Templates\indexTemplate.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -383,6 +393,9 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

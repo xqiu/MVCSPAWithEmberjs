@@ -103,6 +103,13 @@
                     <Folder Name="routes" TargetFolderName="routes">
                       <ProjectItem ReplaceParameters="false" TargetFileName="TodoListRoute.js">TodoListRoute.js</ProjectItem>
                     </Folder>
+                    <Folder Name="templates" TargetFolderName="templates">
+                      <ProjectItem ReplaceParameters="false" TargetFileName="about.hbs">about.hbs</ProjectItem>
+                      <ProjectItem ReplaceParameters="false" TargetFileName="application.hbs">application.hbs</ProjectItem>
+                      <ProjectItem ReplaceParameters="false" TargetFileName="index.hbs">index.hbs</ProjectItem>
+                      <ProjectItem ReplaceParameters="false" TargetFileName="todoList.hbs">todoList.hbs</ProjectItem>
+                      <ProjectItem ReplaceParameters="false" TargetFileName="_navbar.hbs">_navbar.hbs</ProjectItem>
+                    </Folder>
                     <Folder Name="views" TargetFolderName="views">
                       <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemEditView.js">TodoItemEditView.js</ProjectItem>
                       <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemView.js">TodoItemView.js</ProjectItem>
@@ -111,12 +118,6 @@
                       <ProjectItem ReplaceParameters="false" TargetFileName="TodoListView.js">TodoListView.js</ProjectItem>
                     </Folder>
                 </Folder>
-            </Folder>
-            <Folder Name="Templates" TargetFolderName="Templates">
-              <ProjectItem ReplaceParameters="false" TargetFileName="aboutTemplate.html">aboutTemplate.html</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="applicationTemplate.html">applicationTemplate.html</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="indexTemplate.html">indexTemplate.html</ProjectItem>
-              <ProjectItem ReplaceParameters="false" TargetFileName="todoListTemplate.html">todoListTemplate.html</ProjectItem>
             </Folder>
             <Folder Name="Views" TargetFolderName="Views">
                 <Folder Name="Account" TargetFolderName="Account">
@@ -156,9 +157,6 @@
     <WizardData>
         <packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true">
             <package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" />
-            <package id="jQuery" version="1.8.2" />
-            <package id="jQuery.Validation" version="1.10.0" />
-            <package id="jQuery.UI.Combined" version="1.9.2" />
             <package id="Microsoft.jQuery.Unobtrusive.Validation" version="2.0.30116.0" />
             <package id="Microsoft.jQuery.Unobtrusive.Ajax" version="2.0.30116.0" />
             <package id="Modernizr" version="2.6.2" />
@@ -173,7 +171,6 @@
             <package id="Microsoft.AspNet.WebApi.Core" version="4.0.20710.0" skipAssemblyReferences="true" />
             <package id="Microsoft.AspNet.WebApi.WebHost" version="4.0.20710.0" skipAssemblyReferences="true" />
             <package id="Microsoft.AspNet.WebApi" version="4.0.20710.0" skipAssemblyReferences="true" />
-            <package id="Microsoft.AspNet.Web.Optimization" version="1.0.0" skipAssemblyReferences="true" />
             <package id="Microsoft.AspNet.WebApi.HelpPage" version="4.0.0" skipAssemblyReferences="true" />
             <package id="Microsoft.AspNet.WebApi.Tracing" version="4.0.0" skipAssemblyReferences="true" />
             <package id="Microsoft.AspNet.WebPages.Data" version="2.0.20710.0"  skipAssemblyReferences="true" />
@@ -193,8 +190,13 @@
         </packages>
         <packages repository="extension" repositoryId="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a"  isPreunzipped="false">
           <package id="Handlebars" version="1.0.0-rc3" />
-          <package id="Ember" version="1.0.0-rc1" />
-          <package id="Ember-Data" version="0.5.0-alpha" />
+          <package id="Ember" version="1.0.0-rc2" />
+          <package id="Ember-Data" version="0.6.0-alpha" />
+          <package id="csharp-ember-handlebars-compiler" version="1.3.0-beta1" />
+          <package id="jQuery" version="1.9.1" />
+          <package id="jQuery.UI.Combined" version="1.9.2" />
+          <package id="jQuery.Validation" version="1.11.1"  />
+          <package id="Microsoft.AspNet.Web.Optimization" version="1.1.0-Beta1" />
         </packages>
     </WizardData>
 </VSTemplate>

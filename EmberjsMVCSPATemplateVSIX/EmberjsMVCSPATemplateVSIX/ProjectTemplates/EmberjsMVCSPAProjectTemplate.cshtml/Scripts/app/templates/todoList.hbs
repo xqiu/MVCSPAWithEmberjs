@@ -1,0 +1,40 @@
+﻿<h2>Todo Lists</h2>
+	
+<p class="error">{{error}}</p>
+<input type="button" {{action "addTodoList"}} class="isActive" value="Add Todo list"></input>
+	
+<section id="lists">
+	{{#each controller}}
+	<article class="todoList">
+	    {{#view App.TodoListView}}
+            <form onsubmit="event.preventDefault();">
+	        {{#view App.TodoListEditView valueBinding="title" class="required" }}
+			{{/view}}
+			</form>
+			<a href="#" class="deletelist" {{action "deleteTodoList" target="view"}}>X</a>
+        {{/view}}
+		<ul>	
+		{{#each todos}}
+			<li>
+			{{#view App.TodoItemView}}
+			
+				{{view Ember.Checkbox checkedBinding="isDone"}}
+					
+                {{view App.TodoItemEditView valueBinding="title" class="required" disabledBinding="isDone" }}
+
+				<a href="#" {{action "deleteTodo" on="click" target="view"}}>X</a>
+    
+                {{#if hasError}}
+                <p class="error">{{error}}</p>
+                {{/if}}
+    
+			{{/view}}
+			</li>
+		{{/each}}
+		</ul>
+
+		{{#view App.TodoListNewView valueBinding="newTodoTitle" class="addTodo" placeholder="Type here to add"}}
+		{{/view}}
+	</article>
+	{{/each}}
+</section>

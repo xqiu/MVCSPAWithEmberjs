@@ -258,6 +258,11 @@
     <Content Include="Scripts\app\models\TodoList.js" />
     <Content Include="Scripts\app\router.js" />
     <Content Include="Scripts\app\routes\TodoListRoute.js" />
+    <Content Include="Scripts\app\templates\about.hbs" />
+    <Content Include="Scripts\app\templates\application.hbs" />
+    <Content Include="Scripts\app\templates\index.hbs" />
+    <Content Include="Scripts\app\templates\todoList.hbs" />
+    <Content Include="Scripts\app\templates\_navbar.hbs" />
     <Content Include="Scripts\app\views\TodoItemEditView.js" />
     <Content Include="Scripts\app\views\TodoItemView.js" />
     <Content Include="Scripts\app\views\TodoListEditView.js" />
@@ -265,10 +270,6 @@
     <Content Include="Scripts\app\views\TodoListView.js" />
     <Content Include="Scripts\app\webapi_adapter.js" />
     <Content Include="Scripts\app\webapi_serializer.js" />
-    <Content Include="Templates\aboutTemplate.html" />
-    <Content Include="Templates\applicationTemplate.html" />
-    <Content Include="Templates\indexTemplate.html" />
-    <Content Include="Templates\todoListTemplate.html" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />

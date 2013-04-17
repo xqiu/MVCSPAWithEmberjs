@@ -30,11 +30,18 @@
     </div>
     <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
 
-    @Html.RenderEmber()
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/ember")
-    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        @Html.RenderEmber()
+    }
+    else
+    {
+        @Scripts.Render("~/bundles/templates")
+    }
 </body>
 </html>
