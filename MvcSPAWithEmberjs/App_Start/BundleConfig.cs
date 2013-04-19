@@ -17,10 +17,32 @@ namespace MvcSPAWithEmberjs
                 "~/Scripts/jquery.validate*"
             ));
 
+            /* 
+             In developmet, the template will be rendered directly in the cshtml view
+             See ~/Views/Home/App.cshtml 
+              
+             To enable the bundle with pre-compilation of Handlebars templates, edit 
+             the web.config to disable debug, setting it to false:
+             
+             <configuration>
+                 ...
+                 <system.web>
+                     <compilation debug="false" targetFramework="4.5" />
+                     ...
+             
+             Optimizations must be enabled in Global.asax.cs Application_Start method:
+             
+             BundleTables.EnableOptimizations = true;
+              
+             The pre-compiled templates are minified by default
+             If for some reason one needs the template not to be minified, do:
+              
+             bundles.Add(new Bundle("~/bundles/templates", 
+                         new EmberHandlebarsBundleTransform() { minifyTemplate = false } ).Include(
+                "~/scripts/app/templates/*.hbs"
+             )); */
             if (!HttpContext.Current.IsDebuggingEnabled)
             {
-                // Compiled handle bars only works when Optimizations is enabled. 
-                // Fall back to the server caching version when debug is enabled, check Views/Home/App.cshtml
                 bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform()).Include(
                     "~/scripts/app/templates/*.hbs"
                 ));
