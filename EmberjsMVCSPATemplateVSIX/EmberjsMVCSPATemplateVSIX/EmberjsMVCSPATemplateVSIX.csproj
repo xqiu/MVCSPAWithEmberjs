@@ -342,24 +342,29 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\about.hbs">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\templates\about.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\about.hbs</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\application.hbs">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\templates\application.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\application.hbs</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\index.hbs">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\templates\index.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\index.hbs</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\todoList.hbs">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\templates\todoList.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\todoList.hbs</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\_navbar.hbs">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\templates\_navbar.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\_navbar.hbs</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Packages\jQuery.1.9.1.nupkg">
@@ -375,6 +380,130 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Packages\jQuery.Validation.1.11.1.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\DotNetOpenAuth.AspNet.4.1.4.12333.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\DotNetOpenAuth.Core.4.1.4.12333.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\EntityFramework.5.0.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.Mvc.4.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.Razor.2.0.20715.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebApi.4.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebApi.OData.4.0.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebApi.Tracing.4.0.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebPages.2.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.Data.Edm.5.2.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.Data.OData.5.2.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.jQuery.Unobtrusive.Ajax.2.0.30116.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.jQuery.Unobtrusive.Validation.2.0.30116.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.Net.Http.2.0.20710.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Microsoft.Web.Infrastructure.1.0.0.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Modernizr.2.6.2.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\Newtonsoft.Json.4.5.11.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\System.Spatial.5.2.0.nupkg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Packages\WebGrease.1.3.0.nupkg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -692,69 +821,85 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\ajaxlogin.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\ajaxlogin.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\ajaxlogin.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\app.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\app.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\app.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\controllers\TodoItemController.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\controllers\TodoItemController.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\controllers\TodoItemController.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\controllers\TodoListController.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\controllers\TodoListController.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\controllers\TodoListController.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\helpers.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\helpers.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\helpers.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\models\TodoItem.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\models\TodoItem.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\models\TodoItem.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\models\TodoList.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\models\TodoList.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\models\TodoList.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\router.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\router.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\router.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\routes\TodoListRoute.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\routes\TodoListRoute.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\routes\TodoListRoute.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemEditView.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\views\TodoItemEditView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemEditView.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemView.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\views\TodoItemView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemView.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListEditView.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\views\TodoListEditView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListEditView.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListNewView.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\views\TodoListNewView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListNewView.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListView.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\views\TodoListView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListView.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_adapter.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\webapi_adapter.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_adapter.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_serializer.js">
+    <Content Include="..\..\MvcSPAWithEmberjs\Scripts\app\webapi_serializer.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_serializer.js</Link>
     </Content>
     <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\_references.SinglePage.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
