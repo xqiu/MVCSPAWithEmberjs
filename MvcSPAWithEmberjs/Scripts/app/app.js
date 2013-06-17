@@ -22,6 +22,5 @@ serializer.configure('App.Todo', {
 });
 
 App.store = DS.Store.create({
-    adapter: adapter,
-    revision: 12
+    adapter: adapter
 });

@@ -53,7 +53,7 @@ namespace $safeprojectname$
 
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
                 "~/scripts/handlebars.js",
-                "~/scripts/ember-1.0.0-rc.2.js",
+                "~/scripts/ember-1.0.0-rc.5.js",
                 "~/scripts/ember-data.js",
                 "~/scripts/app/webapi_serializer.js",
                 "~/scripts/app/webapi_adapter.js"

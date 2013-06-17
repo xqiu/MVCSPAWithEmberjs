@@ -96,13 +96,18 @@ var get = Ember.get;
 
     App.store = DS.Store.create({
         adapter: adapter,
-        revision: 11
     });
   ```
 */
+
+function rejectionHandler(reason) {
+    Ember.Logger.error(reason, reason.message);
+    throw reason;
+}
+
 DS.WebAPIAdapter = DS.RESTAdapter.extend({
     serializer: DS.WebAPISerializer,
-    antiForgeryTokenSelector : null,
+    antiForgeryTokenSelector: null,
 
     shouldSave: function (record) {
         // By default Web API doesn't handle children update from parent.
@@ -114,6 +119,7 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
 
     createRecord: function (store, type, record) {
         var root = this.rootForType(type);
+        var adapter = this;
 
         var data = this.serialize(record, { includeId: false });
 
@@ -125,94 +131,94 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
             delete data[primaryKey];
         }
 
-        this.ajax(this.buildURL(root), "POST", {
-            data: data,
-            context: this,
-            success: function (json) {
-                Ember.run(this, function () {
-                    this.didCreateRecord(store, type, record, json);
-                });
-            },
-            error: function (xhr) {
-                this.didError(store, type, record, xhr);
-            }
-        });
+        return this.ajax(this.buildURL(root), "POST", {
+            data: data
+        }).then(function (json) {
+            adapter.didCreateRecord(store, type, record, json);
+        }, function (xhr) {
+            adapter.didError(store, type, record, xhr);
+            throw xhr;
+        }).then(null, rejectionHandler);
     },
 
     updateRecord: function (store, type, record) {
         var id = get(record, 'id');
+        var adapter = this;
         var root = this.rootForType(type);
 
         data = this.serialize(record, { includeId: true });
 
-        this.ajax(this.buildURL(root, id), "PUT", {
-            data: data,
-            context: this,
-            success: function (json) {
-                Ember.run(this, function () {
-                    this.didSaveRecord(store, type, record, json);
-                });
-                record.set("error", "");
-            },
-            error: function (xhr) {
-                // Act on client side as if it is successful, then set model's error attribute.
-                // This ensures an erroneous object does not cause the future commits to fail
-                Ember.run(this, function () {
-                    this.didSaveRecord(store, type, record);
-                });
+        return this.ajax(this.buildURL(root, id), "PUT", {
+            data: data
+        }, "text").then(function (json) {
+            adapter.didSaveRecord(store, type, record, json);
+            record.set("error", "");
+        }, function (xhr) {
+            adapter.didSaveRecord(store, type, record);
+            record.set("error", "Server update failed");
+        }).then(null, rejectionHandler);
 
-                record.set("error", "Server update failed");
-            }
-        }, "text");
     },
 
     deleteRecord: function (store, type, record) {
         var id = get(record, 'id');
+        var adapter = this;
         var root = this.rootForType(type);
 
         var config = get(this, 'serializer').configurationForType(type),
             primaryKey = config && config.primaryKey;
 
-        this.ajax(this.buildURL(root, id), "DELETE", {
-            context: this,
-            success: function (json) {
-                Ember.run(this, function () {
-                    if (json[primaryKey] == id) {
-                        // webAPI delete will just return the original record, shouldn't save it back
-                        // ignore the returned json object
-                        this.didSaveRecord(store, type, record);
-                    }
-                    else {
-                        this.didSaveRecord(store, type, record, json);
-                    }
-                });
+        return this.ajax(this.buildURL(root, id), "DELETE").then(function (json) {
+            if (json[primaryKey] == id) {
+                // webAPI delete will just return the original record, shouldn't save it back
+                // ignore the returned json object
+                adapter.didSaveRecord(store, type, record);
             }
-        });
+            else {
+                adapter.didSaveRecord(store, type, record, json);
+            }
+        }, function (xhr) {
+            adapter.didError(store, type, record, xhr);
+            throw xhr;
+        }).then(null, rejectionHandler);
     },
 
     ajax: function (url, type, hash, dataType) {
-        hash.url = url;
-        hash.type = type;
-        hash.dataType = dataType || 'json';
-        hash.contentType = 'application/json; charset=utf-8';
-        hash.context = this;
+        var adapter = this;
 
-        if (hash.data && type !== 'GET') {
-            hash.data = JSON.stringify(hash.data);
-        }
+        return new Ember.RSVP.Promise(function (resolve, reject) {
+            hash = hash || {};
+            hash.url = url;
+            hash.type = type;
+            hash.dataType = dataType || 'json';
+            hash.context = adapter;
 
-        // if antiForgeryTokenSelector attribute exists, pass it in the hearder
-        var antiForgeryTokenElemSelector = get(this, 'antiForgeryTokenSelector');
-        if (antiForgeryTokenElemSelector) {
-            var antiForgeryToken = $(antiForgeryTokenElemSelector).val();
-            if (antiForgeryToken) {
-                hash.headers = {
-                    'RequestVerificationToken': antiForgeryToken
+            if (hash.data && type !== 'GET') {
+                hash.contentType = 'application/json; charset=utf-8';
+                hash.data = JSON.stringify(hash.data);
+            }
+
+            // if antiForgeryTokenSelector attribute exists, pass it in the hearder
+            var antiForgeryTokenElemSelector = get(adapter, 'antiForgeryTokenSelector');
+            if (antiForgeryTokenElemSelector) {
+                var antiForgeryToken = $(antiForgeryTokenElemSelector).val();
+                if (antiForgeryToken) {
+                    hash.headers = {
+                        'RequestVerificationToken': antiForgeryToken
+                    }
                 }
             }
-        }
 
-        jQuery.ajax(hash);
+            hash.success = function (json) {
+                Ember.run(null, resolve, json);
+            };
+
+            hash.error = function (jqXHR, textStatus, errorThrown) {
+                Ember.run(null, reject, errorThrown);
+            };
+
+            jQuery.ajax(hash);
+        });
     },
 
     pluralize: function (string) {
