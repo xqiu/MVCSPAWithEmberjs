@@ -38,7 +38,48 @@
             </Folder> 
             <Folder Name="Areas" TargetFolderName="Areas">
                 <Folder Name="HelpPage" TargetFolderName="HelpPage">
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ApiDescriptionExtensions.cs">ApiDescriptionExtensions.cs</ProjectItem>
+                  <Folder Name="App_Start" TargetFolderName="App_Start">
+                    <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageConfig.cs">HelpPageConfig.cs</ProjectItem>
+                  </Folder>
+                  <Folder Name="Controllers" TargetFolderName="Controllers">
+                    <ProjectItem ReplaceParameters="true" TargetFileName="HelpController.cs">HelpController.cs</ProjectItem>
+                  </Folder>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageAreaRegistration.cs">HelpPageAreaRegistration.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageConfigurationExtensions.cs">HelpPageConfigurationExtensions.cs</ProjectItem>
+
+                  <Folder Name="Models" TargetFolderName="Models">
+                    <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageApiModel.cs">HelpPageApiModel.cs</ProjectItem>
+                  </Folder>
+                  <Folder Name="SampleGeneration" TargetFolderName="SampleGeneration">
+                  <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageSampleGenerator.cs">HelpPageSampleGenerator.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageSampleKey.cs">HelpPageSampleKey.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ImageSample.cs">ImageSample.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="InvalidSample.cs">InvalidSample.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ObjectGenerator.cs">ObjectGenerator.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="SampleDirection.cs">SampleDirection.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="TextSample.cs">TextSample.cs</ProjectItem>
+                  </Folder>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="XmlDocumentationProvider.cs">XmlDocumentationProvider.cs</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="HelpPage.css">HelpPage.css</ProjectItem>
                     <Folder Name="Views" TargetFolderName="Views">
+                      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+                      <Folder Name="Shared" TargetFolderName="Shared">
+                        <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+                      </Folder>
+                      <Folder Name="Help" TargetFolderName="Help">
+                      <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+                        <Folder Name="DisplayTemplates" TargetFolderName="DisplayTemplates">
+                          <ProjectItem ReplaceParameters="true" TargetFileName="TextSample.cshtml">TextSample.cshtml</ProjectItem>
+                          <ProjectItem ReplaceParameters="true" TargetFileName="Samples.cshtml">Samples.cshtml</ProjectItem>
+                          <ProjectItem ReplaceParameters="true" TargetFileName="Parameters.cshtml">Parameters.cshtml</ProjectItem>
+                          <ProjectItem ReplaceParameters="true" TargetFileName="InvalidSample.cshtml">InvalidSample.cshtml</ProjectItem>
+                          <ProjectItem ReplaceParameters="true" TargetFileName="ImageSample.cshtml">ImageSample.cshtml</ProjectItem>
+                          <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageApiModel.cshtml">HelpPageApiModel.cshtml</ProjectItem>
+                          <ProjectItem ReplaceParameters="true" TargetFileName="ApiGroup.cshtml">ApiGroup.cshtml</ProjectItem>
+                        </Folder>
+                        <ProjectItem ReplaceParameters="true" TargetFileName="Api.cshtml">Api.cshtml</ProjectItem>
+                      </Folder>
                         <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
                     </Folder>
                 </Folder>
@@ -46,6 +87,78 @@
             <Folder Name="Content" TargetFolderName="Content">
                 <ProjectItem ReplaceParameters="true" TargetFileName="Site.css">Site.SinglePage.css</ProjectItem>
                 <ProjectItem ReplaceParameters="true" TargetFileName="TodoList.css">TodoList.css</ProjectItem>
+              <Folder Name="themes" TargetFolderName="themes">
+                <Folder Name="base" TargetFolderName="base">
+                  <Folder Name="images" TargetFolderName="images">
+                    <ProjectItem ReplaceParameters="true" TargetFileName="animated-overlay.gif">animated-overlay.gif</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_flat_0_aaaaaa_40x100.png">ui-bg_flat_0_aaaaaa_40x100.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_flat_75_ffffff_40x100.png">ui-bg_flat_75_ffffff_40x100.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_55_fbf9ee_1x400.png">ui-bg_glass_55_fbf9ee_1x400.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_65_ffffff_1x400.png">ui-bg_glass_65_ffffff_1x400.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_75_dadada_1x400.png">ui-bg_glass_75_dadada_1x400.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_75_e6e6e6_1x400.png">ui-bg_glass_75_e6e6e6_1x400.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_95_fef1ec_1x400.png">ui-bg_glass_95_fef1ec_1x400.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_highlight-soft_75_cccccc_1x100.png">ui-bg_highlight-soft_75_cccccc_1x100.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_222222_256x240.png">ui-icons_222222_256x240.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_2e83ff_256x240.png">ui-icons_2e83ff_256x240.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_454545_256x240.png">ui-icons_454545_256x240.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_888888_256x240.png">ui-icons_888888_256x240.png</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_cd0a0a_256x240.png">ui-icons_cd0a0a_256x240.png</ProjectItem>
+                  </Folder>
+                  <Folder Name="minified" TargetFolderName="minified">
+                    <Folder Name="images" TargetFolderName="images">
+                      <ProjectItem ReplaceParameters="true" TargetFileName="animated-overlay.gif">animated-overlay.gif</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_flat_0_aaaaaa_40x100.png">ui-bg_flat_0_aaaaaa_40x100.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_flat_75_ffffff_40x100.png">ui-bg_flat_75_ffffff_40x100.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_55_fbf9ee_1x400.png">ui-bg_glass_55_fbf9ee_1x400.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_65_ffffff_1x400.png">ui-bg_glass_65_ffffff_1x400.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_75_dadada_1x400.png">ui-bg_glass_75_dadada_1x400.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_75_e6e6e6_1x400.png">ui-bg_glass_75_e6e6e6_1x400.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_glass_95_fef1ec_1x400.png">ui-bg_glass_95_fef1ec_1x400.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-bg_highlight-soft_75_cccccc_1x100.png">ui-bg_highlight-soft_75_cccccc_1x100.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_222222_256x240.png">ui-icons_222222_256x240.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_2e83ff_256x240.png">ui-icons_2e83ff_256x240.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_454545_256x240.png">ui-icons_454545_256x240.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_888888_256x240.png">ui-icons_888888_256x240.png</ProjectItem>
+                      <ProjectItem ReplaceParameters="true" TargetFileName="ui-icons_cd0a0a_256x240.png">ui-icons_cd0a0a_256x240.png</ProjectItem>
+                    </Folder>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui.min.css">jquery-ui.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.accordion.min.css">jquery.ui.accordion.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.autocomplete.min.css">jquery.ui.autocomplete.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.button.min.css">jquery.ui.button.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.core.min.css">jquery.ui.core.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.datepicker.min.css">jquery.ui.datepicker.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.dialog.min.css">jquery.ui.dialog.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.menu.min.css">jquery.ui.menu.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.progressbar.min.css">jquery.ui.progressbar.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.resizable.min.css">jquery.ui.resizable.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.selectable.min.css">jquery.ui.selectable.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.slider.min.css">jquery.ui.slider.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.spinner.min.css">jquery.ui.spinner.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tabs.min.css">jquery.ui.tabs.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.theme.min.css">jquery.ui.theme.min.css</ProjectItem>
+                    <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tooltip.min.css">jquery.ui.tooltip.min.css</ProjectItem>
+                  </Folder>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery-ui.css">jquery-ui.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.accordion.css">jquery.ui.accordion.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.all.css">jquery.ui.all.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.autocomplete.css">jquery.ui.autocomplete.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.base.css">jquery.ui.base.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.button.css">jquery.ui.button.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.core.css">jquery.ui.core.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.datepicker.css">jquery.ui.datepicker.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.dialog.css">jquery.ui.dialog.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.menu.css">jquery.ui.menu.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.progressbar.css">jquery.ui.progressbar.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.resizable.css">jquery.ui.resizable.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.selectable.css">jquery.ui.selectable.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.slider.css">jquery.ui.slider.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.spinner.css">jquery.ui.spinner.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tabs.css">jquery.ui.tabs.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.theme.css">jquery.ui.theme.css</ProjectItem>
+                  <ProjectItem ReplaceParameters="true" TargetFileName="jquery.ui.tooltip.css">jquery.ui.tooltip.css</ProjectItem>
+                </Folder>
+              </Folder>
             </Folder>
             <Folder Name="Controllers" TargetFolderName="Controllers">
                 <ProjectItem ReplaceParameters="true" TargetFileName="AccountController.cs">AccountController.SinglePage.cs</ProjectItem>
@@ -85,7 +198,26 @@
             </Folder>
             <Folder Name="Scripts" TargetFolderName="Scripts">
                 <ProjectItem ReplaceParameters="false" TargetFileName="_references.js">_references.SinglePage.js</ProjectItem>
-                 <Folder Name="app" TargetFolderName="app">
+                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-rc.5.js">ember-1.0.0-rc.5.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ember-1.0.0-rc.5.min.js">ember-1.0.0-rc.5.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ember-data.js">ember-data.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="ember-data.min.js">ember-data.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="handlebars.js">handlebars.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="handlebars.runtime.js">handlebars.runtime.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery-2.0.2.intellisense.js">jquery-2.0.2.intellisense.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery-2.0.2.js">jquery-2.0.2.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery-2.0.2.min.js">jquery-2.0.2.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery-ui-1.10.3.js">jquery-ui-1.10.3.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery-ui-1.10.3.min.js">jquery-ui-1.10.3.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery.unobtrusive-ajax.js">jquery.unobtrusive-ajax.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery.unobtrusive-ajax.min.js">jquery.unobtrusive-ajax.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery.validate.unobtrusive.js">jquery.validate.unobtrusive.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="jquery.validate.unobtrusive.min.js">jquery.validate.unobtrusive.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="modernizr-2.6.2.js">modernizr-2.6.2.js</ProjectItem>
+                <Folder Name="app" TargetFolderName="app">
                     <ProjectItem ReplaceParameters="false" TargetFileName="ajaxlogin.js">ajaxlogin.js</ProjectItem>
                     <ProjectItem ReplaceParameters="false" TargetFileName="app.js">app.js</ProjectItem>
                     <ProjectItem ReplaceParameters="false" TargetFileName="helpers.js">helpers.js</ProjectItem>
@@ -145,6 +277,7 @@
                 <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
             </Folder>
             <ProjectItem>favicon.ico</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.SinglePage.config</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
@@ -156,47 +289,6 @@
     </WizardExtension>
     <WizardData>
         <packages repository="extension" repositoryId="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a"  isPreunzipped="false">
-          <package id="csharp-ember-handlebars-compiler" version="1.4.1-beta1" />
-          <package id="DotNetOpenAuth.AspNet" version="4.3.0.13117" />
-          <package id="DotNetOpenAuth.Core" version="4.3.0.13117"  />
-          <package id="DotNetOpenAuth.OAuth.Consumer" version="4.3.0.13117"  />
-          <package id="DotNetOpenAuth.OAuth.Core" version="4.3.0.13117"  />
-          <package id="DotNetOpenAuth.OpenId.Core" version="4.3.0.13117"  />
-          <package id="DotNetOpenAuth.OpenId.RelyingParty" version="4.3.0.13117"  />
-          <package id="Ember" version="1.0.0-rc5a" />
-          <package id="Ember-Data" version="0.13.1-alpha" />
-          <package id="EntityFramework" version="6.0.0-beta1"  />
-          <package id="Handlebars" version="1.0.0-rc4" />
-          <package id="jQuery" version="2.0.2" />
-          <package id="jQuery.UI.Combined" version="1.10.3" />
-          <package id="jQuery.Validation" version="1.11.1"  />
-          <package id="Microsoft.AspNet.Mvc" version="4.0.30506.0"  />
-          <package id="Microsoft.AspNet.Mvc.FixedDisplayModes" version="1.0.1"  />
-          <package id="Microsoft.AspNet.Razor" version="2.0.30506.0"  />
-          <package id="Microsoft.AspNet.Web.Optimization" version="1.1.0-Beta1" />
-          <package id="Microsoft.AspNet.WebApi" version="4.0.30506.0"  />
-          <package id="Microsoft.AspNet.WebApi.Client" version="5.0.0-alpha1"  />
-          <package id="Microsoft.AspNet.WebApi.Core" version="4.0.30506.0"  />
-          <package id="Microsoft.AspNet.WebApi.HelpPage" version="4.0.30506"  />
-          <package id="Microsoft.AspNet.WebApi.OData" version="4.0.30506"  />
-          <package id="Microsoft.AspNet.WebApi.Tracing" version="4.0.30506"  />
-          <package id="Microsoft.AspNet.WebApi.WebHost" version="4.0.30506.0"  />
-          <package id="Microsoft.AspNet.WebPages" version="2.0.30506.0"  />
-          <package id="Microsoft.AspNet.WebPages.Data" version="2.0.20710.0"   />
-          <package id="Microsoft.AspNet.WebPages.OAuth" version="2.0.30506.0"  />
-          <package id="Microsoft.AspNet.WebPages.WebData" version="2.0.30506.0"  />
-          <package id="Microsoft.Bcl" version="1.0.19" targetFramework="net45"  />
-          <package id="Microsoft.Bcl.Build" version="1.0.7" targetFramework="net45"  />
-          <package id="Microsoft.Data.Edm" version="5.5.0"  />
-          <package id="Microsoft.Data.OData" version="5.5.0"  />
-          <package id="Microsoft.jQuery.Unobtrusive.Validation" version="2.0.30506.0" />
-          <package id="Microsoft.jQuery.Unobtrusive.Ajax" version="2.0.30506.0" />
-          <package id="Microsoft.Net.Http" version="2.2.3-beta"  />
-          <package id="Microsoft.Web.Infrastructure" version="1.0.0.0"  />
-          <package id="Modernizr" version="2.6.2" />
-          <package id="Newtonsoft.Json" version="5.0.6"  />
-          <package id="System.Spatial" version="5.5.0"  />
-          <package id="WebGrease" version="1.3.0"  />
         </packages>
     </WizardData>
 </VSTemplate>

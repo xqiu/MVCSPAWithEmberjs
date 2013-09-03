@@ -114,6 +114,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\animated-overlay.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\animated-overlay.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Controllers\HtmlHelperExtensions.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -244,6 +252,82 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-rc.5.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-1.0.0-rc.5.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-data.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\ember-data.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\handlebars.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\handlebars.runtime.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery-2.0.2.intellisense.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery-2.0.2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery-2.0.2.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery-ui-1.10.3.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery-ui-1.10.3.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery.unobtrusive-ajax.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery.unobtrusive-ajax.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery.validate-vsdoc.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery.validate.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery.validate.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery.validate.unobtrusive.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery.validate.unobtrusive.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\modernizr-2.6.2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\ExternalLoginConfirmation.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -351,175 +435,11 @@
       <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\_navbar.hbs</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Packages\csharp-ember-handlebars-compiler.1.4.1-beta1.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\DotNetOpenAuth.AspNet.4.3.0.13117.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\DotNetOpenAuth.Core.4.3.0.13117.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\DotNetOpenAuth.OAuth.Consumer.4.3.0.13117.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\DotNetOpenAuth.OAuth.Core.4.3.0.13117.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\DotNetOpenAuth.OpenId.Core.4.3.0.13117.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.0.13117.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Ember-Data.0.13.1-alpha.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Ember.1.0.0-rc5a.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\EntityFramework.6.0.0-beta1.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Handlebars.1.0.0-rc4.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\jQuery.2.0.2.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\jQuery.UI.Combined.1.10.3.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\knockoutjs.2.2.1.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.Mvc.4.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.1.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.Razor.2.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.Web.Optimization.1.0.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebApi.4.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebApi.Client.5.0.0-alpha1.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebApi.HelpPage.4.0.30506.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebApi.OData.4.0.30506.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebApi.Tracing.4.0.30506.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebPages.2.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.Bcl.1.0.19.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.Bcl.Build.1.0.7.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.Data.Edm.5.5.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.Data.OData.5.5.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.jQuery.Unobtrusive.Ajax.2.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.jQuery.Unobtrusive.Validation.2.0.30506.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Microsoft.Net.Http.2.2.3-beta.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\Newtonsoft.Json.5.0.6.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\System.Spatial.5.5.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Packages\jQuery.Validation.1.11.1.nupkg">
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\packages.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Packages\Microsoft.AspNet.Web.Optimization.1.1.0-Beta1.nupkg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="Packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0.nupkg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="Packages\Microsoft.Web.Infrastructure.1.0.0.0.nupkg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="Packages\Modernizr.2.6.2.nupkg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="Packages\WebGrease.1.3.0.nupkg">
+    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\jquery-2.0.2.min.map">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

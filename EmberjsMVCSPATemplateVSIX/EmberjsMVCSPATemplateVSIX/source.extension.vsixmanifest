@@ -91,6 +91,7 @@
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Home\Index.SinglePage.cshtml" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Shared\_Layout.SinglePage.cshtml" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Web.SinglePage.config" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\packages.config" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
