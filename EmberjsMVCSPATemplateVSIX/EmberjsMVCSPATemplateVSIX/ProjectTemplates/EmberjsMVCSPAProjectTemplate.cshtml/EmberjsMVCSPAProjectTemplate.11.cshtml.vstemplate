@@ -85,39 +85,39 @@
             </Folder>
             <Folder Name="Scripts" TargetFolderName="Scripts">
                 <ProjectItem ReplaceParameters="false" TargetFileName="_references.js">_references.SinglePage.js</ProjectItem>
-                 <Folder Name="app" TargetFolderName="app">
-                    <ProjectItem ReplaceParameters="false" TargetFileName="ajaxlogin.js">ajaxlogin.js</ProjectItem>
-                    <ProjectItem ReplaceParameters="false" TargetFileName="app.js">app.js</ProjectItem>
-                    <ProjectItem ReplaceParameters="false" TargetFileName="helpers.js">helpers.js</ProjectItem>
-                    <ProjectItem ReplaceParameters="false" TargetFileName="router.js">router.js</ProjectItem>
-                    <ProjectItem ReplaceParameters="false" TargetFileName="webapi_adapter.js">webapi_adapter.js</ProjectItem>
-                    <ProjectItem ReplaceParameters="false" TargetFileName="webapi_serializer.js">webapi_serializer.js</ProjectItem>
-                    <Folder Name="controllers" TargetFolderName="controllers">
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemController.js">TodoItemController.js</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoListController.js">TodoListController.js</ProjectItem>
-                    </Folder>
-                    <Folder Name="models" TargetFolderName="models">
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoItem.js">TodoItem.js</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoList.js">TodoList.js</ProjectItem>
-                    </Folder>
-                    <Folder Name="routes" TargetFolderName="routes">
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoListRoute.js">TodoListRoute.js</ProjectItem>
-                    </Folder>
-                    <Folder Name="templates" TargetFolderName="templates">
-                      <ProjectItem ReplaceParameters="false" TargetFileName="about.hbs">about.hbs</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="application.hbs">application.hbs</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="index.hbs">index.hbs</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="todoList.hbs">todoList.hbs</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="_navbar.hbs">_navbar.hbs</ProjectItem>
-                    </Folder>
-                    <Folder Name="views" TargetFolderName="views">
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemEditView.js">TodoItemEditView.js</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemView.js">TodoItemView.js</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoListEditView.js">TodoListEditView.js</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoListNewView.js">TodoListNewView.js</ProjectItem>
-                      <ProjectItem ReplaceParameters="false" TargetFileName="TodoListView.js">TodoListView.js</ProjectItem>
-                    </Folder>
-                </Folder>
+            </Folder>
+            <Folder Name="App" TargetFolderName="app">
+              <ProjectItem ReplaceParameters="false" TargetFileName="ajaxlogin.js">ajaxlogin.js</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="app.js">app.js</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="helpers.js">helpers.js</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="router.js">router.js</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="webapi_adapter.js">webapi_adapter.js</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="webapi_serializer.js">webapi_serializer.js</ProjectItem>
+              <Folder Name="controllers" TargetFolderName="controllers">
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemController.js">TodoItemController.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoListController.js">TodoListController.js</ProjectItem>
+              </Folder>
+              <Folder Name="models" TargetFolderName="models">
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoItem.js">TodoItem.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoList.js">TodoList.js</ProjectItem>
+              </Folder>
+              <Folder Name="routes" TargetFolderName="routes">
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoListRoute.js">TodoListRoute.js</ProjectItem>
+              </Folder>
+              <Folder Name="templates" TargetFolderName="templates">
+                <ProjectItem ReplaceParameters="false" TargetFileName="about.hbs">about.hbs</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="application.hbs">application.hbs</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="index.hbs">index.hbs</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="todoList.hbs">todoList.hbs</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_navbar.hbs">_navbar.hbs</ProjectItem>
+              </Folder>
+              <Folder Name="views" TargetFolderName="views">
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemEditView.js">TodoItemEditView.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemView.js">TodoItemView.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoListEditView.js">TodoListEditView.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoListNewView.js">TodoListNewView.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoListView.js">TodoListView.js</ProjectItem>
+              </Folder>
             </Folder>
             <Folder Name="Views" TargetFolderName="Views">
                 <Folder Name="Account" TargetFolderName="Account">
@@ -163,17 +163,17 @@
           <package id="DotNetOpenAuth.OAuth.Core" version="4.3.0.13117"  />
           <package id="DotNetOpenAuth.OpenId.Core" version="4.3.0.13117"  />
           <package id="DotNetOpenAuth.OpenId.RelyingParty" version="4.3.0.13117"  />
-          <package id="Ember" version="1.0.0-rc5a" />
-          <package id="Ember-Data" version="0.13.1-alpha" />
-          <package id="EntityFramework" version="6.0.0-beta1"  />
-          <package id="Handlebars" version="1.0.0-rc4" />
+          <package id="Ember" version="1.0.0" />
+          <package id="Ember-Data" version="1.0.0-beta2" />
+          <package id="EntityFramework" version="6.0.0-rc1"  />
+          <package id="Handlebars" version="1.0.1" />
           <package id="jQuery" version="2.0.2" />
           <package id="jQuery.UI.Combined" version="1.10.3" />
           <package id="jQuery.Validation" version="1.11.1"  />
           <package id="Microsoft.AspNet.Mvc" version="4.0.30506.0"  />
           <package id="Microsoft.AspNet.Mvc.FixedDisplayModes" version="1.0.1"  />
           <package id="Microsoft.AspNet.Razor" version="2.0.30506.0"  />
-          <package id="Microsoft.AspNet.Web.Optimization" version="1.1.0-Beta1" />
+          <package id="Microsoft.AspNet.Web.Optimization" version="1.1.0" />
           <package id="Microsoft.AspNet.WebApi" version="4.0.30506.0"  />
           <package id="Microsoft.AspNet.WebApi.Client" version="5.0.0-alpha1"  />
           <package id="Microsoft.AspNet.WebApi.Core" version="4.0.30506.0"  />
@@ -185,13 +185,13 @@
           <package id="Microsoft.AspNet.WebPages.Data" version="2.0.20710.0"   />
           <package id="Microsoft.AspNet.WebPages.OAuth" version="2.0.30506.0"  />
           <package id="Microsoft.AspNet.WebPages.WebData" version="2.0.30506.0"  />
-          <package id="Microsoft.Bcl" version="1.0.19" targetFramework="net45"  />
-          <package id="Microsoft.Bcl.Build" version="1.0.7" targetFramework="net45"  />
+          <package id="Microsoft.Bcl" version="1.1.3" targetFramework="net45"  />
+          <package id="Microsoft.Bcl.Build" version="1.0.10" targetFramework="net45"  />
           <package id="Microsoft.Data.Edm" version="5.5.0"  />
           <package id="Microsoft.Data.OData" version="5.5.0"  />
           <package id="Microsoft.jQuery.Unobtrusive.Validation" version="2.0.30506.0" />
           <package id="Microsoft.jQuery.Unobtrusive.Ajax" version="2.0.30506.0" />
-          <package id="Microsoft.Net.Http" version="2.2.3-beta"  />
+          <package id="Microsoft.Net.Http" version="2.2.13"  />
           <package id="Microsoft.Web.Infrastructure" version="1.0.0.0"  />
           <package id="Modernizr" version="2.6.2" />
           <package id="Newtonsoft.Json" version="5.0.6"  />

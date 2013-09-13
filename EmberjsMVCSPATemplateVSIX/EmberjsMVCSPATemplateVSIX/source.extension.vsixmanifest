@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.2" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>Ember.js MVC SPA Template with ember-data</DisplayName>
-    <Description xml:space="preserve">ASP.NET MVC Ember.js SPA Template with ember-data.js as data framework</Description>
+    <Identity Id="Ember.js MVC4 SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.3" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Ember.js MVC4 SPA Template with ember-data</DisplayName>
+    <Description xml:space="preserve">ASP.NET MVC4 Ember.js SPA Template with ember-data.js as data framework</Description>
   </Metadata>
   <Installation AllUsers="true">
     <InstallationTarget Version="[11.0,12.0]" Id="Microsoft.VisualStudio.Pro" />
@@ -171,27 +171,27 @@
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList7.png" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList8.png" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList9.png" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\ajaxlogin.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\app.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\controllers\TodoItemController.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\controllers\TodoListController.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\helpers.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\models\TodoItem.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\models\TodoList.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\router.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\routes\TodoListRoute.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\_navbar.hbs" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\about.hbs" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\application.hbs" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\index.hbs" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\templates\todoList.hbs" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemEditView.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoItemView.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListEditView.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListNewView.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\views\TodoListView.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_adapter.js" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\app\webapi_serializer.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\ajaxlogin.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\app.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\controllers\TodoItemController.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\controllers\TodoListController.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\helpers.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\models\TodoItem.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\models\TodoList.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\router.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\routes\TodoListRoute.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\_navbar.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\about.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\application.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\index.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\todoList.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoItemEditView.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoItemView.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoListEditView.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoListNewView.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoListView.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\webapi_adapter.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\webapi_serializer.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\_references.SinglePage.js" />
   </Assets>
 </PackageManifest>
