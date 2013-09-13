@@ -316,7 +316,9 @@
     <Content Include="Scripts\app\templates\about.hbs" />
     <Content Include="Scripts\app\templates\application.hbs" />
     <Content Include="Scripts\app\templates\index.hbs" />
-    <Content Include="Scripts\app\templates\todoList.hbs" />
+    <Content Include="Scripts\app\templates\todoList.hbs">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\app\templates\_navbar.hbs" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\views\TodoListView.js" />
@@ -325,10 +327,12 @@
     <Content Include="Scripts\app\models\TodoItem.js" />
     <Content Include="Scripts\app\models\TodoList.js" />
     <Content Include="Scripts\app\webapi_adapter.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.5.js" />
-    <Content Include="Scripts\ember-1.0.0-rc.5.min.js" />
-    <Content Include="Scripts\ember-data.js" />
-    <Content Include="Scripts\ember-data.min.js" />
+    <Content Include="Scripts\ember-1.0.0.debug.js" />
+    <Content Include="Scripts\ember-1.0.0.js" />
+    <Content Include="Scripts\ember-1.0.0.min.js" />
+    <Content Include="Scripts\ember-data-1.0.0-beta2.debug.js" />
+    <Content Include="Scripts\ember-data-1.0.0-beta2.js" />
+    <Content Include="Scripts\ember-data-1.0.0-beta2.min.js" />
     <Content Include="Scripts\app\controllers\TodoItemController.js" />
     <Content Include="Scripts\app\controllers\TodoListController.js" />
     <Content Include="Scripts\app\router.js" />
@@ -337,9 +341,6 @@
     <Content Include="Scripts\app\views\TodoListEditView.js" />
     <Content Include="Scripts\app\views\TodoItemView.js" />
     <Content Include="Scripts\app\views\TodoListNewView.js" />
-    <Content Include="Scripts\ember-data.min.js.map">
-      <DependentUpon>ember-data.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\handlebars.js" />
     <Content Include="Scripts\handlebars.runtime.js" />
     <None Include="Scripts\jquery-2.0.2.intellisense.js" />

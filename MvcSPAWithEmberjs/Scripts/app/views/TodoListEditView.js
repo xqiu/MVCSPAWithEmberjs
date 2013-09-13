@@ -17,7 +17,15 @@
         var todoList = this.get('parentView').templateData.view.content;
         var newValue = todoList.get("title");
         if (this.lastValue != newValue) {
-            App.store.commit();
+
+            todoList.save().then(function () {
+                // work with saved data
+                // newly created records are guaranteed to have IDs assigned
+            }, function (data) {
+                // work with data that failed to save
+                todoList.set('error', 'error updating:' + data.message);
+            });
+
             this.lastValue = newValue;
         }
     }

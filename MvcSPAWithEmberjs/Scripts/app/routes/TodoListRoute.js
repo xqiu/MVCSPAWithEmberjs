@@ -1,5 +1,5 @@
 ﻿App.TodoListRoute = Ember.Route.extend({
     model: function () {
-        return App.TodoList.find();
+        return this.store.find('todoList');
     },
 });

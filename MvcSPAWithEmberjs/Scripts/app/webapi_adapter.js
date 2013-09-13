@@ -5,6 +5,7 @@
 /*global jQuery*/
 
 var get = Ember.get;
+var forEach = Ember.ArrayPolyfills.forEach;
 
 /**
   The WebAPI adapter allows your store to communicate with a REST server 
@@ -72,125 +73,56 @@ var get = Ember.get;
   
   ```js
     window.App = Em.Application.create();
-
-    DS.WebAPIAdapter.map('App.TodoList', {
-        // Web API server may not handling reference update/delete, so use "load" instead of "always"
-        todos: { embedded: 'load' } 
-    });
-
-    var adapter = DS.WebAPIAdapter.create({
-        namespace: "api",
-        bulkCommit: false,
-        antiForgeryTokenSelector: "#antiForgeryToken"
-    });
-
-    var serializer = Ember.get(adapter, 'serializer');
-    serializer.configure('App.TodoList', {
-        sideloadAs: "todoList",
-        primaryKey: "todoListId"
-    });
-    serializer.configure('App.Todo', {
-        sideloadAs: "todo",
-        primaryKey: "todoItemId"
-    });
-
-    App.store = DS.Store.create({
-        adapter: adapter,
+    App.ApplicationAdapter = DS.WebAPIAdapter.extend({
+        namespace: 'api',
+        antiForgeryTokenSelector: "#antiForgeryToken",
     });
   ```
 */
 
-function rejectionHandler(reason) {
-    Ember.Logger.error(reason, reason.message);
-    throw reason;
-}
-
 DS.WebAPIAdapter = DS.RESTAdapter.extend({
-    serializer: DS.WebAPISerializer,
-    antiForgeryTokenSelector: null,
-
-    shouldSave: function (record) {
-        // By default Web API doesn't handle children update from parent.
-        return true;
-    },
-
-    // Delete parent records does not dirty the children records
-    dirtyRecordsForBelongsToChange: null,
+    defaultSerializer: "DS/WebAPI", //Ember.Data 1.0 beta 1 way
 
     createRecord: function (store, type, record) {
-        var root = this.rootForType(type);
-        var adapter = this;
+        var data = {};
+        data = store.serializerFor(type.typeKey).serialize(record, { includeId: false });
 
-        var data = this.serialize(record, { includeId: false });
-
-        // need to remove the primaryKey field
-        var config = get(this, 'serializer').configurationForType(type),
-            primaryKey = config && config.primaryKey;
-
+        var primaryKey = store.serializerFor(type.typeKey).primaryKey;
         if (primaryKey) {
             delete data[primaryKey];
         }
 
-        return this.ajax(this.buildURL(root), "POST", {
-            data: data
-        }).then(function (json) {
-            adapter.didCreateRecord(store, type, record, json);
-        }, function (xhr) {
-            adapter.didError(store, type, record, xhr);
-            throw xhr;
-        }).then(null, rejectionHandler);
+        return this.ajax(this.buildURL(type.typeKey), "POST", { data: data });
     },
 
     updateRecord: function (store, type, record) {
+        var data = {};
+        data = store.serializerFor(type.typeKey).serialize(record);
+
         var id = get(record, 'id');
-        var adapter = this;
-        var root = this.rootForType(type);
 
-        data = this.serialize(record, { includeId: true });
-
-        return this.ajax(this.buildURL(root, id), "PUT", {
-            data: data
-        }, "text").then(function (json) {
-            adapter.didSaveRecord(store, type, record, json);
-            record.set("error", "");
-        }, function (xhr) {
-            adapter.didSaveRecord(store, type, record);
-            record.set("error", "Server update failed");
-        }).then(null, rejectionHandler);
-
+        return this.ajax(this.buildURL(type.typeKey, id), "PUT", { data: data });
     },
 
-    deleteRecord: function (store, type, record) {
-        var id = get(record, 'id');
-        var adapter = this;
-        var root = this.rootForType(type);
-
-        var config = get(this, 'serializer').configurationForType(type),
-            primaryKey = config && config.primaryKey;
-
-        return this.ajax(this.buildURL(root, id), "DELETE").then(function (json) {
-            if (json[primaryKey] == id) {
-                // webAPI delete will just return the original record, shouldn't save it back
-                // ignore the returned json object
-                adapter.didSaveRecord(store, type, record);
+    ajax: function(url, type, hash) {
+        // if antiForgeryTokenSelector attribute exists, pass it in the hearder
+        var antiForgeryTokenElemSelector = get(this, 'antiForgeryTokenSelector');
+        if (antiForgeryTokenElemSelector) {
+            var antiForgeryToken = $(antiForgeryTokenElemSelector).val();
+            if (antiForgeryToken) {
+                this.headers = {
+                    'RequestVerificationToken': antiForgeryToken
+                }
             }
-            else {
-                adapter.didSaveRecord(store, type, record, json);
-            }
-        }, function (xhr) {
-            adapter.didError(store, type, record, xhr);
-            throw xhr;
-        }).then(null, rejectionHandler);
-    },
-
-    ajax: function (url, type, hash, dataType) {
+        }
+        
         var adapter = this;
 
-        return new Ember.RSVP.Promise(function (resolve, reject) {
+        return new Ember.RSVP.Promise(function(resolve, reject) {
             hash = hash || {};
             hash.url = url;
             hash.type = type;
-            hash.dataType = dataType || 'json';
+            hash.dataType = 'json';
             hash.context = adapter;
 
             if (hash.data && type !== 'GET') {
@@ -198,31 +130,38 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
                 hash.data = JSON.stringify(hash.data);
             }
 
-            // if antiForgeryTokenSelector attribute exists, pass it in the hearder
-            var antiForgeryTokenElemSelector = get(adapter, 'antiForgeryTokenSelector');
-            if (antiForgeryTokenElemSelector) {
-                var antiForgeryToken = $(antiForgeryTokenElemSelector).val();
-                if (antiForgeryToken) {
-                    hash.headers = {
-                        'RequestVerificationToken': antiForgeryToken
-                    }
-                }
+            if (adapter.headers !== undefined) {
+                var headers = adapter.headers;
+                hash.beforeSend = function (xhr) {
+                    forEach.call(Ember.keys(headers), function(key) {
+                        xhr.setRequestHeader(key, headers[key]);
+                    });
+                };
             }
 
             hash.success = function (json) {
+                // if PUT and returns no data, use the original hash data
+                if (json === undefined && type === "PUT") {
+                    json = JSON.parse(hash.data);
+                }
+
                 Ember.run(null, resolve, json);
             };
 
-            hash.error = function (jqXHR, textStatus, errorThrown) {
-                Ember.run(null, reject, errorThrown);
+            hash.error = function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR) {
+                    jqXHR.then = null;
+                }
+
+                Ember.run(null, reject, jqXHR);
             };
 
-            jQuery.ajax(hash);
+            Ember.$.ajax(hash);
         });
     },
 
-    pluralize: function (string) {
-        return string;
+    rootForType: function (type) {
+        return type;
     },
 
 });

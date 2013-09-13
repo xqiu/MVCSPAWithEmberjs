@@ -4,7 +4,7 @@ App.TodoList.reopen({
     todoListId: attr('number'),
     title: attr('string'),
     userId: attr('string'),
-    todos: DS.hasMany('App.Todo'),
+    todos: DS.hasMany('todo'),
 
     newTodoTitle: '',
     error: '',
@@ -18,29 +18,45 @@ App.TodoList.reopen({
         return !(currentError === '' || currentError === null);
     }.property('error'),
 
-    addTodo: function (callback) {
-        if (this.get('newTodoTitle')) { // need a title to save
-            var transaction = App.store.transaction();
-            var newTodo = transaction.createRecord(App.Todo, {
-                title: this.get('newTodoTitle'),
-                todoListId: this.id,
-                isDone: false
+});
+
+App.TodoListSerializer = DS.WebAPISerializer.extend({
+    primaryKey: 'todoListId',
+
+    // ember-data-1.0.0-beta2 does not handle embedded data like they once did in 0.13, so we've to update individually if present
+    // once embedded is implemented in future release, we'll move this back to WebAPISerializer.
+    extractArray: function (store, primaryType, payload) {
+        var primaryTypeName = primaryType.typeKey;
+
+        var typeName = primaryTypeName,
+            type = store.modelFor(typeName);
+        
+        var data = {};
+        data[typeName] = payload;
+        data.todos = [];
+        
+        var normalizedArray = payload.map(function (hash) {
+            hash.todos.map(function (todo) {
+                data.todos.push(todo);
             });
-
-            var todoList = App.store.find(App.TodoList, this.id);
-            todoList.get('todos').addObject(newTodo);
-
-            transaction.commit();
-            this.set('newTodoTitle', '');
-
-            //Issue: 
-            // the following order will some times trigger error in a taskList, looks like ember-data state management problem
-            // add a new todo
-            // update the content of that todo
-            // delete this todo
-            // add a new todo
-            // update the content again
+            hash.todos = hash.todos.mapProperty('todoItemId');
+            return hash;
+        }, this);
+        
+        payload = data;
+        return this._super.apply(this, arguments);
+    },
+    
+    normalizeHash: {
+        todos: function (hash) {
+            hash.todoListId = hash.id;
+            hash.id = hash.todoItemId;
+            return hash;
+        },
+        todoList: function (hash) {
+            hash.todoListId = hash.id;
+            return hash;
         }
-    },   //do not .property('newTodoTitle'), as otherwise it will be called for every key change instead of focusout
+    }
 
 });

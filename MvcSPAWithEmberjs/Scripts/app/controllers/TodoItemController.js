@@ -1,2 +1,2 @@
-﻿App.TodoItemController = Ember.ObjectController.extend({
+﻿App.TodoController = Ember.ObjectController.extend({
 });

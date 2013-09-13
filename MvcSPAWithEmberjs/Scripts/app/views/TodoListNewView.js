@@ -31,8 +31,39 @@
     //},
     focusOut: function () {
         var todoList = this.templateData.view.content;
-        todoList.addTodo(function (todoItem) {
-        });
+        
+        if (todoList.get('newTodoTitle')) { // need a title to save
+            //todo, try use store.push
+
+            var newTodo = todoList.store.createRecord("todo", {
+                title: todoList.get('newTodoTitle'),
+                todoListId: todoList.id,
+                isDone: false
+            });
+
+            newTodo.save().then(function (data) {
+                // work with saved data
+                // newly created records are guaranteed to have IDs assigned
+                newTodo.set("todoItemId", data.get("id"));
+            }, function (data) {
+                // work with data that failed to save
+                todoList.set('error', 'Add new todo failed: ' + data.message);
+            });
+
+            todoList.get('todos').addObject(newTodo);
+
+            //todoList.save().then(function (data) {
+            //    // work with saved data
+            //    // newly created records are guaranteed to have IDs assigned
+
+            //}, function (data) {
+            //    // work with data that failed to save
+            //    todoList.set('error', 'Add new todo failed: ' + data.message);
+            //});
+
+            todoList.set('newTodoTitle', '');
+        }
+
     },
 
     insertNewline: function (evt) {

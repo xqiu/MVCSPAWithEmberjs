@@ -9,10 +9,52 @@
     }.property('error'),
 
     addTodoList: function () {
-        var transaction = App.store.transaction();
-        var todoList = transaction.createRecord(App.TodoList, { title: "My todos", todos: [], userId: "to be replaced" });
-        transaction.commit();
+        var todoList = this.store.createRecord("todoList", { title: "My todos", todos: [], userId: "to be replaced" });
 
-        //todo: error handling once ember-data provide better error handling mechnism
+        todoList.save().then(function (data) {
+            // work with saved data
+            // newly created records are guaranteed to have IDs assigned
+            todoList.set("todoListId", data.get("todoListId"));
+        }, function (data) {
+            // work with data that failed to save
+            error = "Error: " + data.message;
+        });
     },
+
+    actions: {
+
+        deleteTodoList: function (todoListId) {
+            var self = this;
+            this.store.find("todoList", todoListId).then(function (todoList) {
+                todoList.deleteRecord();
+                todoList.save().then(function () {
+                    // work with saved data
+                    // newly created records are guaranteed to have IDs assigned
+                }, function () {
+                    // work with data that failed to save
+                    todoList.set('error', "Delete Error: " + data.message);
+                });
+            });
+        },
+
+        deleteTodo: function (todoItemId) {
+            var self = this;
+            this.store.find("todo", todoItemId).then(function (todoItem) {
+                self.store.find("todoList", todoItem.get("todoListId")).then(function (todoList) {
+                    todoList.get('todos').removeObject(todoItem);
+
+                    todoItem.deleteRecord();
+                    todoItem.save().then(function () {
+                        // work with saved data
+                    }, function (data) {
+                        // work with data that failed to save
+                        todoItem.set('error', "Delete Error: " + data.message);
+                    });
+
+                    delete todoItem;
+                });
+            });
+        },
+    }
+
 });

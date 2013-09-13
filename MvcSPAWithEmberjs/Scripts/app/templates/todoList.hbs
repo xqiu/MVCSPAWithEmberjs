@@ -6,23 +6,25 @@
 <section id="lists">
 	{{#each controller}}
 	<article class="todoList">
+    <p class="error">{{error}}</p>
 	    {{#view App.TodoListView}}
             <form onsubmit="event.preventDefault();">
 	        {{#view App.TodoListEditView valueBinding="title" class="required" }}
 			{{/view}}
 			</form>
-			<a href="#" class="deletelist" {{action "deleteTodoList" target="view"}}>X</a>
+			<a href="#" class="deletelist" {{action "deleteTodoList" todoListId}}>X</a>
         {{/view}}
 		<ul>	
 		{{#each todos}}
 			<li>
-			{{#view App.TodoItemView}}
-			
-				{{view Ember.Checkbox checkedBinding="isDone"}}
-					
-                {{view App.TodoItemEditView valueBinding="title" class="required" disabledBinding="isDone" }}
+        {{#view App.TodoItemView}}
 
-				<a href="#" {{action "deleteTodo" on="click" target="view"}}>X</a>
+        {{#view Ember.Checkbox checkedBinding="isDone"}}{{/view}}
+
+        {{#view App.TodoItemEditView valueBinding="title" class="required" disabledBinding="isDone" }}
+        {{/view}}
+
+        <a href="#" {{action "deleteTodo" todoItemId on="click" }}>X</a>
     
                 {{#if hasError}}
                 <p class="error">{{error}}</p>

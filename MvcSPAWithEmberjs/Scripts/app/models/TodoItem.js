@@ -6,7 +6,7 @@ App.Todo = DS.Model.extend({
     isDone: attr('boolean'),
     todoListId: attr('number'),
     error: attr('string'),
-    todoList: DS.belongsTo('App.TodoList'),
+    todoList: DS.belongsTo('todoList'),
 
     errorMessage: function (errorMsg) {
         this.set("error", errorMsg);
@@ -25,4 +25,8 @@ App.Todo = DS.Model.extend({
         }
     }.observes('isDone'),
 
+});
+
+App.TodoSerializer = DS.WebAPISerializer.extend({
+    primaryKey: 'todoItemId'
 });
