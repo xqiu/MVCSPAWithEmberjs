@@ -6,9 +6,11 @@
 <section id="lists">
 	{{#each controller}}
 	<article class="todoList">
+    {{#if hasError}}
     <p class="error">{{error}}</p>
-	    {{#view App.TodoListView}}
-            <form onsubmit="event.preventDefault();">
+    {{/if}}
+    {{#view App.TodoListView}}
+    <form onsubmit="event.preventDefault();">
 	        {{#view App.TodoListEditView valueBinding="title" class="required" }}
 			{{/view}}
 			</form>

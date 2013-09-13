@@ -33,7 +33,6 @@
         var todoList = this.templateData.view.content;
         
         if (todoList.get('newTodoTitle')) { // need a title to save
-            //todo, try use store.push
 
             var newTodo = todoList.store.createRecord("todo", {
                 title: todoList.get('newTodoTitle'),
@@ -41,26 +40,15 @@
                 isDone: false
             });
 
+            todoList.set('error', '');
             newTodo.save().then(function (data) {
-                // work with saved data
-                // newly created records are guaranteed to have IDs assigned
+                // assign the newly created id
                 newTodo.set("todoItemId", data.get("id"));
             }, function (data) {
-                // work with data that failed to save
                 todoList.set('error', 'Add new todo failed: ' + data.message);
             });
 
             todoList.get('todos').addObject(newTodo);
-
-            //todoList.save().then(function (data) {
-            //    // work with saved data
-            //    // newly created records are guaranteed to have IDs assigned
-
-            //}, function (data) {
-            //    // work with data that failed to save
-            //    todoList.set('error', 'Add new todo failed: ' + data.message);
-            //});
-
             todoList.set('newTodoTitle', '');
         }
 

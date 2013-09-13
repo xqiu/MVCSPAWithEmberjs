@@ -9,7 +9,7 @@ namespace MvcHtmlHelpers
 {
     public static class HtmlHelperExtensions
     {
-        private static string templateFolder = HttpContext.Current.Server.MapPath("Scripts/app/templates");
+        private static string templateFolder = HttpContext.Current.Server.MapPath("App/templates");
 
         public static MvcHtmlString RenderEmber(this HtmlHelper helper, string path="", bool noTemplateName=false)
         {

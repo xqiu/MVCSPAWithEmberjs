@@ -39,34 +39,34 @@ namespace MvcSPAWithEmberjs
               
              bundles.Add(new Bundle("~/bundles/templates", 
                          new EmberHandlebarsBundleTransform() { minifyTemplate = false } ).Include(
-                "~/scripts/app/templates/*.hbs"
+                "~/app/templates/*.hbs"
              )); */
             if (!HttpContext.Current.IsDebuggingEnabled)
             {
                 bundles.Add(new Bundle("~/bundles/templates", new EmberHandlebarsBundleTransform()).Include(
-                    "~/scripts/app/templates/*.hbs"
+                    "~/app/templates/*.hbs"
                 ));
             }
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
                 "~/scripts/handlebars.js",
                 "~/scripts/ember-{version}.js",
                 "~/scripts/ember-data-{version}.js",
-                "~/scripts/app/webapi_serializer.js",
-                "~/scripts/app/webapi_adapter.js"
+                "~/app/webapi_serializer.js",
+                "~/app/webapi_adapter.js"
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
-                "~/Scripts/app/ajaxlogin.js"
+                "~/app/ajaxlogin.js"
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/Scripts/app/app.js",
-                "~/Scripts/app/router.js",
-                "~/Scripts/app/helpers.js"
-                ).IncludeDirectory("~/Scripts/app/routes", "*.js")
-                 .IncludeDirectory("~/Scripts/app/models", "*.js")
-                 .IncludeDirectory("~/Scripts/app/views", "*.js")
-                 .IncludeDirectory("~/Scripts/app/controllers", "*.js")
+                "~/app/app.js",
+                "~/app/router.js",
+                "~/app/helpers.js"
+                ).IncludeDirectory("~/app/routes", "*.js")
+                 .IncludeDirectory("~/app/models", "*.js")
+                 .IncludeDirectory("~/app/views", "*.js")
+                 .IncludeDirectory("~/app/controllers", "*.js")
             );
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
