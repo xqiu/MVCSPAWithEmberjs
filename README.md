@@ -1,8 +1,8 @@
-##MVC SPA With Emberjs
+##MVC4 SPA With Emberjs
 
-[ASP.NET MVC4 SPA Template][1] for [Ember.js][2]
+[ASP.NET MVC4 SPA Template][1] for [Ember.js][2] 1.0.
 
-Uses [Ember-Data][3] revision 12 to communicate with RESTful backend API, built with [.NET Web API][4]
+Uses [Ember-Data][3] 1.0.0-beta1 to communicate with RESTful backend API, built with [.NET Web API][4]
 
 Supports pre-compilation of [Handlebars.js][5] Templates with [C# Ember-Handlebars Compiler][6]
 
