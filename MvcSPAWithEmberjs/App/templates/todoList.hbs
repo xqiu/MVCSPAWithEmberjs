@@ -26,7 +26,7 @@
         {{#view App.TodoItemEditView valueBinding="title" class="required" disabledBinding="isDone" }}
         {{/view}}
 
-        <a href="#" {{action "deleteTodo" todoItemId on="click" }}>X</a>
+        <a href="#" {{action "deleteTodo" id on="click" }}>X</a>
     
                 {{#if hasError}}
                 <p class="error">{{error}}</p>

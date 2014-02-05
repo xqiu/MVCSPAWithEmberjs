@@ -163,9 +163,9 @@ DS.WebAPIAdapter = DS.RESTAdapter.extend({
         });
     },
 
-    rootForType: function (type) {
+    pathForType: function (type) {
+        // override the default action of camelize and pluralize
         return type;
     },
-
 });
 
