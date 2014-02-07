@@ -62,316 +62,316 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\AuthConfig.cs">
+    <Content Include="ProjectTemplates\Template\App_Start\AuthConfig.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\FilterConfig.cs">
+    <Content Include="ProjectTemplates\Template\App_Start\FilterConfig.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\RouteConfig.cs">
+    <Content Include="ProjectTemplates\Template\App_Start\RouteConfig.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\ApiDescriptionExtensions.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\ApiDescriptionExtensions.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\App_Start\HelpPageConfig.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\App_Start\HelpPageConfig.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Controllers\HelpController.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Controllers\HelpController.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\HelpPageAreaRegistration.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\HelpPageAreaRegistration.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\HelpPageConfigurationExtensions.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\HelpPageConfigurationExtensions.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Models\HelpPageApiModel.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Models\HelpPageApiModel.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\SampleGeneration\ImageSample.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\SampleGeneration\ImageSample.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\SampleGeneration\InvalidSample.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\SampleGeneration\InvalidSample.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\SampleGeneration\SampleDirection.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\SampleGeneration\SampleDirection.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\SampleGeneration\TextSample.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\SampleGeneration\TextSample.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\XmlDocumentationProvider.cs">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\XmlDocumentationProvider.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\Site.SinglePage.css">
+    <Content Include="ProjectTemplates\Template\Content\Site.SinglePage.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Controllers\HtmlHelperExtensions.cs">
+    <Content Include="ProjectTemplates\Template\Controllers\HtmlHelperExtensions.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Controllers\TodoController.cs">
+    <Content Include="ProjectTemplates\Template\Controllers\TodoController.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Controllers\TodoListController.cs">
+    <Content Include="ProjectTemplates\Template\Controllers\TodoListController.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\EmberjsMVCSPAProjectTemplate.11.cshtml.vstemplate">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\EmberjsMVCSPAProjectTemplate.cshtml.csproj">
+    <Content Include="ProjectTemplates\Template\EmberjsMVCSPAProjectTemplate.11.cshtml.vstemplate">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Filters\InitializeSimpleMembershipAttribute.cs">
+    <Content Include="ProjectTemplates\Template\Template.csproj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProjectTemplates\Template\Filters\InitializeSimpleMembershipAttribute.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Filters\ValidateHttpAntiForgeryTokenAttribute.cs">
+    <Content Include="ProjectTemplates\Template\Filters\ValidateHttpAntiForgeryTokenAttribute.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Global.asax.cs">
+    <Content Include="ProjectTemplates\Template\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Models\AccountModels.cs">
+    <Content Include="ProjectTemplates\Template\Models\AccountModels.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Models\TodoItem.cs">
+    <Content Include="ProjectTemplates\Template\Models\TodoItem.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Models\TodoItemContext.cs">
+    <Content Include="ProjectTemplates\Template\Models\TodoItemContext.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Models\TodoItemDto.cs">
+    <Content Include="ProjectTemplates\Template\Models\TodoItemDto.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Models\TodoList.cs">
+    <Content Include="ProjectTemplates\Template\Models\TodoList.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Models\TodoListDto.cs">
+    <Content Include="ProjectTemplates\Template\Models\TodoListDto.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Properties\AssemblyInfo.cs">
+    <Content Include="ProjectTemplates\Template\Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\BundleConfig.SinglePage.cs">
+    <Content Include="ProjectTemplates\Template\App_Start\BundleConfig.SinglePage.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App_Start\WebApiConfig.SinglePage.cs">
+    <Content Include="ProjectTemplates\Template\App_Start\WebApiConfig.SinglePage.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Controllers\AccountController.SinglePage.cs">
+    <Content Include="ProjectTemplates\Template\Controllers\AccountController.SinglePage.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Controllers\HomeController.SinglePage.cs">
+    <Content Include="ProjectTemplates\Template\Controllers\HomeController.SinglePage.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\Api.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\Api.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Help\Index.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Help\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Shared\_Layout.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Shared\_Layout.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\Web.config">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\Views\_ViewStart.cshtml">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\Views\_ViewStart.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\ExternalLoginConfirmation.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\ExternalLoginConfirmation.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\ExternalLoginFailure.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\ExternalLoginFailure.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\_ExternalLoginsListPartial.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\_ExternalLoginsListPartial.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\_RemoveExternalLoginsPartial.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\_RemoveExternalLoginsPartial.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\_SetPasswordPartial.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\_SetPasswordPartial.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Home\App.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Home\App.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Home\_Login.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Home\_Login.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Home\_Register.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Home\_Register.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Shared\Error.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Shared\Error.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Shared\_UserSettings.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Shared\_UserSettings.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Web.config">
+    <Content Include="ProjectTemplates\Template\Views\Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\_ViewStart.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\_ViewStart.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Web.Debug.config">
+    <Content Include="ProjectTemplates\Template\Web.Debug.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Web.Release.config">
+    <Content Include="ProjectTemplates\Template\Web.Release.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\Login.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\Login.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\Manage.SinglePage.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\Manage.SinglePage.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Account\_ChangePasswordPartial.SinglePage.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Account\_ChangePasswordPartial.SinglePage.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Home\Index.SinglePage.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Home\Index.SinglePage.cshtml">
       <SubType>Code</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Views\Shared\_Layout.SinglePage.cshtml">
+    <Content Include="ProjectTemplates\Template\Views\Shared\_Layout.SinglePage.cshtml">
       <SubType>Code</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Web.SinglePage.config">
+    <Content Include="ProjectTemplates\Template\Web.SinglePage.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\templates\about.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\about.hbs</Link>
+      <Link>ProjectTemplates\Template\App\templates\about.hbs</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\templates\application.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\application.hbs</Link>
+      <Link>ProjectTemplates\Template\App\templates\application.hbs</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\templates\index.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\index.hbs</Link>
+      <Link>ProjectTemplates\Template\App\templates\index.hbs</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\templates\todoList.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\todoList.hbs</Link>
+      <Link>ProjectTemplates\Template\App\templates\todoList.hbs</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\templates\_navbar.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\templates\_navbar.hbs</Link>
+      <Link>ProjectTemplates\Template\App\templates\_navbar.hbs</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Packages\csharp-ember-handlebars-compiler.1.4.1-beta1.nupkg">
+    <Content Include="Packages\csharp-ember-handlebars-compiler.1.5.0-beta1.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -561,395 +561,395 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Areas\HelpPage\HelpPage.css">
+    <Content Include="ProjectTemplates\Template\Areas\HelpPage\HelpPage.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-icons_222222_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-icons_222222_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-icons_2e83ff_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-icons_2e83ff_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-icons_454545_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-icons_454545_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-icons_888888_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-icons_888888_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\images\ui-icons_cd0a0a_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\images\ui-icons_cd0a0a_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery-ui.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery-ui.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.accordion.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.accordion.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.all.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.all.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.autocomplete.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.autocomplete.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.base.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.base.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.button.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.button.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.core.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.core.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.datepicker.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.datepicker.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.dialog.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.dialog.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.menu.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.menu.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.progressbar.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.progressbar.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.resizable.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.resizable.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.selectable.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.selectable.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.slider.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.slider.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.spinner.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.spinner.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.tabs.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.tabs.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.theme.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.theme.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\jquery.ui.tooltip.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\jquery.ui.tooltip.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-icons_222222_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-icons_222222_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-icons_454545_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-icons_454545_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-icons_888888_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-icons_888888_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery-ui.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery-ui.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.accordion.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.accordion.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.autocomplete.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.autocomplete.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.button.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.button.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.core.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.core.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.datepicker.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.datepicker.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.dialog.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.dialog.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.menu.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.menu.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.progressbar.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.progressbar.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.resizable.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.resizable.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.selectable.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.selectable.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.slider.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.slider.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.spinner.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.spinner.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.tabs.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.tabs.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.theme.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.theme.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\themes\base\minified\jquery.ui.tooltip.min.css">
+    <Content Include="ProjectTemplates\Template\Content\themes\base\minified\jquery.ui.tooltip.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Content\TodoList.css">
+    <Content Include="ProjectTemplates\Template\Content\TodoList.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\favicon.ico">
+    <Content Include="ProjectTemplates\Template\favicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Global.asax">
+    <Content Include="ProjectTemplates\Template\Global.asax">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\accent.png">
+    <Content Include="ProjectTemplates\Template\Images\accent.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\bullet.png">
+    <Content Include="ProjectTemplates\Template\Images\bullet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\heroAccent.png">
+    <Content Include="ProjectTemplates\Template\Images\heroAccent.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList0.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList1.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList2.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList3.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList4.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList5.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList6.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList7.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList7.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList8.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Images\orderedList9.png">
+    <Content Include="ProjectTemplates\Template\Images\orderedList9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\ajaxlogin.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\ajaxlogin.js</Link>
+      <Link>ProjectTemplates\Template\App\ajaxlogin.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\app.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\app.js</Link>
+      <Link>ProjectTemplates\Template\App\app.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\controllers\TodoItemController.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\controllers\TodoItemController.js</Link>
+      <Link>ProjectTemplates\Template\App\controllers\TodoItemController.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\controllers\TodoListController.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\controllers\TodoListController.js</Link>
+      <Link>ProjectTemplates\Template\App\controllers\TodoListController.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\helpers.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\helpers.js</Link>
+      <Link>ProjectTemplates\Template\App\helpers.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\models\TodoItem.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\models\TodoItem.js</Link>
+      <Link>ProjectTemplates\Template\App\models\TodoItem.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\models\TodoList.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\models\TodoList.js</Link>
+      <Link>ProjectTemplates\Template\App\models\TodoList.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\router.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\router.js</Link>
+      <Link>ProjectTemplates\Template\App\router.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\routes\TodoListRoute.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\routes\TodoListRoute.js</Link>
+      <Link>ProjectTemplates\Template\App\routes\TodoListRoute.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\views\TodoItemEditView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoItemEditView.js</Link>
+      <Link>ProjectTemplates\Template\App\views\TodoItemEditView.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\views\TodoItemView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoItemView.js</Link>
+      <Link>ProjectTemplates\Template\App\views\TodoItemView.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\views\TodoListEditView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoListEditView.js</Link>
+      <Link>ProjectTemplates\Template\App\views\TodoListEditView.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\views\TodoListNewView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoListNewView.js</Link>
+      <Link>ProjectTemplates\Template\App\views\TodoListNewView.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\views\TodoListView.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\views\TodoListView.js</Link>
+      <Link>ProjectTemplates\Template\App\views\TodoListView.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\webapi_adapter.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\webapi_adapter.js</Link>
+      <Link>ProjectTemplates\Template\App\webapi_adapter.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\webapi_serializer.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\App\webapi_serializer.js</Link>
+      <Link>ProjectTemplates\Template\App\webapi_serializer.js</Link>
     </Content>
-    <Content Include="ProjectTemplates\EmberjsMVCSPAProjectTemplate.cshtml\Scripts\_references.SinglePage.js">
+    <Content Include="ProjectTemplates\Template\Scripts\_references.SinglePage.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

@@ -67,7 +67,7 @@
     </Reference>
     <Reference Include="Ember.Handlebars, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\csharp-ember-handlebars-compiler.1.4.1-beta1\lib\net40\Ember.Handlebars.dll</HintPath>
+      <HintPath>..\packages\csharp-ember-handlebars-compiler.1.5.0-beta1\lib\net40\Ember.Handlebars.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -313,15 +313,15 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="Properties\PublishProfiles\MvcSPAWithEmberjs - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\MvcSPAWithEmberjs - Web Deploy.pubxml" />
-    <None Include="App\templates\about.hbs" />
-    <None Include="App\templates\application.hbs" />
-    <None Include="App\templates\index.hbs" />
-    <None Include="App\templates\todoList.hbs">
+    <Content Include="App\templates\about.hbs" />
+    <Content Include="App\templates\application.hbs" />
+    <Content Include="App\templates\index.hbs" />
+    <Content Include="App\templates\todoList.hbs">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="App\templates\_navbar.hbs">
+    </Content>
+    <Content Include="App\templates\_navbar.hbs">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
     <Content Include="App\app.js" />
     <Content Include="App\views\TodoListView.js" />
     <Content Include="App\webapi_serializer.js" />
