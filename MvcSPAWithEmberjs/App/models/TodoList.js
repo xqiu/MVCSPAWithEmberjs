@@ -20,7 +20,7 @@ App.TodoList.reopen({
 
 });
 
-App.TodoListSerializer = DS.WebAPISerializer.extend({
+App.TodoListSerializer = DS.RESTSerializer.extend({
     primaryKey: 'todoListId',
 
     //// ember-data-1.0.0-beta2 does not handle embedded data like they once did in 0.13, so we've to update individually if present
@@ -48,7 +48,30 @@ App.TodoListSerializer = DS.WebAPISerializer.extend({
         payload = data;
         return this._super.apply(this, arguments);
     },
-    
+
+    extractSingle: function (store, primaryType, payload, recordId, requestType) {
+        var primaryTypeName = primaryType.typeKey;
+        var typeName = primaryTypeName;
+        var data = {};
+        data[typeName] = payload;
+        data.todos = [];
+
+        if(payload.todos != null){
+            payload.todos.map(function (todo) {
+                todo.id = todo.todoItemId;
+                todo.type = App.Todo;
+                data.todos.push(todo);
+            });
+            payload.todos = payload.todos.mapProperty('todoItemId');
+        }
+        else {
+            payload.todos = [];
+        }
+
+        payload = data;
+        return this._super.apply(this, arguments);
+    },
+
     normalizeHash: {
         todoList: function (hash) {
             hash.todoListId = hash.id;

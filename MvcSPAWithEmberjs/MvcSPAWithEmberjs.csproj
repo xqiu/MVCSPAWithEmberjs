@@ -234,6 +234,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\controllers\TodoListController.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -311,12 +312,17 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="App\templates\todoList\index.hbs">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\MvcSPAWithEmberjs - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\MvcSPAWithEmberjs - Web Deploy.pubxml" />
     <Content Include="App\templates\about.hbs" />
     <Content Include="App\templates\application.hbs" />
-    <Content Include="App\templates\index.hbs" />
-    <Content Include="App\templates\todoList.hbs">
+    <Content Include="App\templates\index.hbs">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App\templates\todoLists.hbs">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App\templates\_navbar.hbs">
@@ -330,7 +336,7 @@
     <Content Include="App\models\TodoList.js" />
     <Content Include="App\webapi_adapter.js" />
     <Content Include="App\controllers\TodoItemController.js" />
-    <Content Include="App\controllers\TodoListController.js" />
+    <Content Include="App\controllers\TodoListsController.js" />
     <Content Include="App\router.js" />
     <Content Include="App\routes\TodoListRoute.js" />
     <Content Include="App\views\TodoItemEditView.js" />

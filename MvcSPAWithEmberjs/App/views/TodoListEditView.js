@@ -2,7 +2,8 @@
     lastValue: '',
     focusIn: function (evt) {
         $(evt.target).parent("form").validate();  //initialize jquery.validate
-        this.lastValue = this.get('parentView').templateData.view.content.get("title");
+        //this.lastValue = this.get('parentView').templateData.view.content.get("title");
+        this.lastValue = this.templateData.view.content.get("title");
     },
     focusOut: function (evt) {
         this.changeContent();
@@ -14,7 +15,8 @@
     },
 
     changeContent: function () {
-        var todoList = this.get('parentView').templateData.view.content;
+        //var todoList = this.get('parentView').templateData.view.content;
+        var todoList = this.templateData.view.content;
         var newValue = todoList.get("title");
         if (this.lastValue != newValue) {
             todoList.set('error', '');

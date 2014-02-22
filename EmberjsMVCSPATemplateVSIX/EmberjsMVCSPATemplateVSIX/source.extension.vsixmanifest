@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.4.1" Language="en-US" Publisher="Microsoft" />
+    <Identity Id="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.4.2" Language="en-US" Publisher="Microsoft" />
     <DisplayName>Ember.js MVC4 SPA Template with ember-data</DisplayName>
     <Description xml:space="preserve">ASP.NET MVC4 Ember.js SPA Template with ember-data.js as data framework</Description>
   </Metadata>
@@ -175,16 +175,18 @@
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\app.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\controllers\TodoItemController.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\controllers\TodoListController.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\controllers\TodoListsController.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\helpers.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\models\TodoItem.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\models\TodoList.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\router.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\routes\TodoListRoute.js" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\templates\todoList\index.hbs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\templates\_navbar.hbs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\templates\about.hbs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\templates\application.hbs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\templates\index.hbs" />
-    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\templates\todoList.hbs" />
+    <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\templates\todoLists.hbs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\views\TodoItemEditView.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\views\TodoItemView.js" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App\views\TodoListEditView.js" />

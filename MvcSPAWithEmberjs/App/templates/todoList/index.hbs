@@ -1,0 +1,14 @@
+﻿<article class="todoList">
+  <form onsubmit="event.preventDefault();">
+    {{title}}
+  </form>
+  <ul>
+    {{#each todos}}
+    <li>
+      {{#view App.TodoItemView}}
+      {{title}}
+      {{/view}}
+    </li>
+    {{/each}}
+  </ul>
+</article>

@@ -346,6 +346,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="..\..\MvcSPAWithEmberjs\App\templates\todoList\index.hbs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\Template\App\templates\todoList\index.hbs</Link>
+    </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\templates\about.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -361,10 +366,10 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <Link>ProjectTemplates\Template\App\templates\index.hbs</Link>
     </Content>
-    <Content Include="..\..\MvcSPAWithEmberjs\App\templates\todoList.hbs">
+    <Content Include="..\..\MvcSPAWithEmberjs\App\templates\todoLists.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
-      <Link>ProjectTemplates\Template\App\templates\todoList.hbs</Link>
+      <Link>ProjectTemplates\Template\App\templates\todoLists.hbs</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\templates\_navbar.hbs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -888,6 +893,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
       <Link>ProjectTemplates\Template\App\controllers\TodoListController.js</Link>
+    </Content>
+    <Content Include="..\..\MvcSPAWithEmberjs\App\controllers\TodoListsController.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <Link>ProjectTemplates\Template\App\controllers\TodoListsController.js</Link>
     </Content>
     <Content Include="..\..\MvcSPAWithEmberjs\App\helpers.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

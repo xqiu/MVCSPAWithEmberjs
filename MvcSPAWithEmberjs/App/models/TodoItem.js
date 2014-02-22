@@ -15,6 +15,10 @@ App.Todo = DS.Model.extend({
 
     saveCheckbox: function () {
         var self = this;
+        if (this.get("isDeleted")) {
+            return;
+        }
+
         if (this.get("todoItemId")) {
             self.set('error', '');
             this.save().then(function () {
@@ -32,6 +36,10 @@ App.TodoSerializer = DS.WebAPISerializer.extend({
     normalizeHash: {
         todos: function (hash) {
             hash.todoItemId = hash.id;
+            return hash;
+        },
+        todo: function (hash) {
+                hash.todoItemId = hash.id;
             return hash;
         },
     }

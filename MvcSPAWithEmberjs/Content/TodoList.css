@@ -86,6 +86,22 @@
             height: 20px;
             display: inline-block;
         }
+        
+        .todoList a.singleList {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            background: silver;
+            color: white;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
 
 .todoItemInput::-ms-clear {
     display: none;

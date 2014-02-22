@@ -96,6 +96,7 @@
               <Folder Name="controllers" TargetFolderName="controllers">
                 <ProjectItem ReplaceParameters="false" TargetFileName="TodoItemController.js">TodoItemController.js</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="TodoListController.js">TodoListController.js</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="TodoListsController.js">TodoListsController.js</ProjectItem>
               </Folder>
               <Folder Name="models" TargetFolderName="models">
                 <ProjectItem ReplaceParameters="false" TargetFileName="TodoItem.js">TodoItem.js</ProjectItem>
@@ -105,10 +106,13 @@
                 <ProjectItem ReplaceParameters="false" TargetFileName="TodoListRoute.js">TodoListRoute.js</ProjectItem>
               </Folder>
               <Folder Name="templates" TargetFolderName="templates">
+                <Folder Name="todoList" TargetFolderName="todoList">
+                  <ProjectItem ReplaceParameters="false" TargetFileName="index.hbs">index.hbs</ProjectItem>
+                </Folder>
                 <ProjectItem ReplaceParameters="false" TargetFileName="about.hbs">about.hbs</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="application.hbs">application.hbs</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="index.hbs">index.hbs</ProjectItem>
-                <ProjectItem ReplaceParameters="false" TargetFileName="todoList.hbs">todoList.hbs</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="todoLists.hbs">todoLists.hbs</ProjectItem>
                 <ProjectItem ReplaceParameters="false" TargetFileName="_navbar.hbs">_navbar.hbs</ProjectItem>
               </Folder>
               <Folder Name="views" TargetFolderName="views">

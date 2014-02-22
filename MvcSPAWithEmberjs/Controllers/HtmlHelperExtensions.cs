@@ -11,7 +11,7 @@ namespace MvcHtmlHelpers
     {
         private static string templateFolder = HttpContext.Current.Server.MapPath("App/templates");
 
-        public static MvcHtmlString RenderEmber(this HtmlHelper helper, string path="", bool noTemplateName=false)
+        public static MvcHtmlString RenderEmber(this HtmlHelper helper, string path = "", bool noTemplateName = false)
         {
             if (HttpRuntime.Cache[path] == null)
             {
@@ -23,7 +23,7 @@ namespace MvcHtmlHelpers
                 }
                 else
                 {
-                    templateName = path.Replace("\\", "-");
+                    templateName = path.Replace("\\", "/");
                     absolutePath = Path.Combine(templateFolder, path);
                 }
 
@@ -43,12 +43,12 @@ namespace MvcHtmlHelpers
                 {
                     if (Directory.Exists(absolutePath))
                     {
-                        if (templateName.Length > 0 && templateName[templateName.Length - 1] != '-')
+                        if (templateName.Length > 0 && templateName[templateName.Length - 1] != '/')
                         {
-                            templateName += "-";
+                            templateName += "/";
                         }
                         List<string> dependencyList = new List<string>();
-                        
+
                         MvcHtmlString result = new MvcHtmlString(GetDirectoryTemplates(templateName, "", new DirectoryInfo(absolutePath), dependencyList));
                         HttpRuntime.Cache.Insert(path, result, new CacheDependency(dependencyList.ToArray()));
                     }
@@ -69,7 +69,7 @@ namespace MvcHtmlHelpers
             var newSubRelativeDirName = relativeDirName;
             if (!string.IsNullOrEmpty(newSubRelativeDirName))
             {
-                newSubRelativeDirName = newSubRelativeDirName + "-";
+                newSubRelativeDirName = newSubRelativeDirName + "/";
             }
             var content = "";
 
@@ -86,9 +86,9 @@ namespace MvcHtmlHelpers
                 {
                     subtemplateName = subtemplateName.Substring(0, fileExtensionPosition);
                 }
-                if (relativeDirName.Length > 0 && relativeDirName[relativeDirName.Length - 1] != '-')
+                if (relativeDirName.Length > 0 && relativeDirName[relativeDirName.Length - 1] != '/')
                 {
-                    relativeDirName += "-";
+                    relativeDirName += "/";
                 }
                 content += ReadTemplate(templateName + relativeDirName + subtemplateName, templateFile);
             }
