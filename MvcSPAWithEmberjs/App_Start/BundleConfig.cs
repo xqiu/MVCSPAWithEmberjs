@@ -48,9 +48,9 @@ namespace MvcSPAWithEmberjs
                     );
             }
             bundles.Add(new ScriptBundle("~/bundles/ember").Include(
-                "~/scripts/handlebars-{version}.js",
-                "~/scripts/ember-{version}.js",
-                "~/scripts/ember-data-{version}.js",
+                "~/scripts/handlebars.js",
+                "~/scripts/ember.js",
+                "~/scripts/ember-data.js",
                 "~/app/webapi_serializer.js",
                 "~/app/webapi_adapter.js"
             ));

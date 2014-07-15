@@ -9,6 +9,11 @@ App.TodoList.reopen({
     newTodoTitle: '',
     error: '',
 
+    hasID: function () {
+        //ensure we don't display user actionable views when we don't have todoItemId yet
+        return this.get("todoListId") != null;
+    }.property('todoListId'),
+
     errorMessage: function (errorMsg) {
         this.set("error", errorMsg);
     },

@@ -8,6 +8,11 @@ App.Todo = DS.Model.extend({
     error: attr('string'),
     todoList: DS.belongsTo('todoList'),
     
+    hasID: function () {
+        //ensure we don't display user actionable views when we don't have todoItemId yet
+        return this.get("todoItemId") != null;
+    }.property('todoItemId'),
+
     hasError: function () {
         var currentError = this.get("error");
         return !(currentError === '' || currentError == null);

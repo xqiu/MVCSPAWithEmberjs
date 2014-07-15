@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.4.2" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>Ember.js MVC4 SPA Template with ember-data</DisplayName>
-    <Description xml:space="preserve">ASP.NET MVC4 Ember.js SPA Template with ember-data.js as data framework</Description>
+    <Identity Id="Ember.js MVC SPA Template with ember-data..338350ee-4d0b-4f0d-a99d-20285a82f82a" Version="1.6.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Ember.js MVC5 SPA Template with ember-data</DisplayName>
+    <Description xml:space="preserve">ASP.NET MVC5 Ember.js SPA Template with ember-data.js as data framework</Description>
   </Metadata>
   <Installation AllUsers="true">
     <InstallationTarget Version="[11.0,12.0]" Id="Microsoft.VisualStudio.Pro" />
@@ -21,8 +21,8 @@
                Language="C#"
                ViewEngine="Razor"
                TemplateId="EmberjsMvcSPAApplication"
-               Title="Ember.js SPA Project"
-               Description="Single Page Application with Ember.js as client side framework, ember-data.js as data layer"
+               Title="Ember.js SPA Project MVC5"
+               Description="MVC5 Single Page Application with Ember.js as client side framework, ember-data.js as data layer"
                Version="4.0"/>
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App_Start\AuthConfig.cs" />
     <Asset Type="Microsoft.VisualStudio.Mvc.Template" d:Source="File" Path="ProjectTemplates\Template\App_Start\FilterConfig.cs" />

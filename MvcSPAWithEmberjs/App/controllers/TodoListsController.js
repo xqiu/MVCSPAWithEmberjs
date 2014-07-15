@@ -1,6 +1,6 @@
 ﻿App.TodoListsController = Ember.ArrayController.extend({
     error: "",
-    sortProperties: ['todoListId'],
+    sortProperties: ['id'],
     sortAscending: false,
 
     hasError: function () {
@@ -9,7 +9,7 @@
     }.property('error'),
 
     addTodoList: function () {
-        var todoList = this.store.createRecord("todoList", { title: "My todos", todos: [], userId: "to be replaced" });
+        var todoList = this.store.createRecord("todoList", { title: "My todos", userId: "to be replaced" });
 
         todoList.save().then(function (data) {
             // Need to re-assign Id, a work we might be able to fix in the future when ember-data stablized
